@@ -12,15 +12,15 @@ import { GoogleadsComponent } from './component/servicepage/googleads/googleads.
 
 
 export const routes: Routes = [
-    {path:'', component:HomeLayoutComponent},
-    {path:'services', component:ServicepageComponent},
-    {path:'seopage', component:SeopageComponent},
-    {path:'paidmarketing', component:PaidmarketingComponent},
-    {path:'brandbuilding', component:BrandbuildingComponent},
-    {path:'webbuilding', component:WebdevlopmentComponent},
-    {path:'workflowautomation', component:WorkflowautomationComponent},
-    {path:'markersategy', component:MarkersategyComponent},
-    {path:'influencemarketing', component:InfluencemarketingComponent},
-    {path:'googleads', component:GoogleadsComponent}
+    {path:'', component:HomeLayoutComponent, title:'Bhiive | Web Design & Digital Marketing Company in Chennai'},
+    {path:'services', component:ServicepageComponent, title:'services'},
+    {path:'seopage', component:SeopageComponent, title:'Search Engine Optimization'},
+    {path:'paidmarketing', component:PaidmarketingComponent, title:'Paid Marketing'},
+    {path:'brandbuilding', component:BrandbuildingComponent, title:'Branding'},
+    {path:'webbuilding', component:WebdevlopmentComponent, title:'Web Development'},
+    {path:'workflowautomation', component:WorkflowautomationComponent, title:'Work Flow Auutomation'},
+    {path:'markersategy', component:MarkersategyComponent, title:'Marketing Strategy'},
+    {path:'influencemarketing', component:InfluencemarketingComponent, title:'Influencer Marketing'},
+    {path:'googleads', component:GoogleadsComponent, title:'Google Ads'}
 
 ];
