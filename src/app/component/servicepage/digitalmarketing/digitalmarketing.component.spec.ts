@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SeopageComponent } from './seopage.component';
+import { DigitalmarketingComponent } from './digitalmarketing.component';
 
-describe('SeopageComponent', () => {
-  let component: SeopageComponent;
-  let fixture: ComponentFixture<SeopageComponent>;
+describe('DigitalmarketingComponent', () => {
+  let component: DigitalmarketingComponent;
+  let fixture: ComponentFixture<DigitalmarketingComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SeopageComponent]
+      imports: [DigitalmarketingComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SeopageComponent);
+    fixture = TestBed.createComponent(DigitalmarketingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

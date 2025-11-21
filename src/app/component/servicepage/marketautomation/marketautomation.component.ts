@@ -3,12 +3,12 @@ import { ServicebannerComponent } from '../servicebanner/servicebanner.component
 import { SidebarsecComponent } from '../sidebarsec/sidebarsec.component';
 
 @Component({
-  selector: 'app-markersategy',
+  selector: 'app-marketautomation',
   standalone: true,
-  imports: [ServicebannerComponent],
-  templateUrl: './markersategy.component.html',
-  styleUrl: './markersategy.component.scss'
+  imports: [ServicebannerComponent, SidebarsecComponent],
+  templateUrl: './marketautomation.component.html',
+  styleUrl: './marketautomation.component.scss'
 })
-export class MarkersategyComponent {
+export class MarketautomationComponent {
 
 }

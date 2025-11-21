@@ -4626,7 +4626,7 @@ p {
   margin-bottom: 10px;
 }
 .service-details-wrapper .service-details-content .how-title {
-  font-size: 32px;
+  /* font-size: 32px; */
   font-weight: 600;
   margin-top: 50px;
 }

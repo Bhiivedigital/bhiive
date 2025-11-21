@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MarkersategyComponent } from './markersategy.component';
+import { MarketautomationComponent } from './marketautomation.component';
 
-describe('MarkersategyComponent', () => {
-  let component: MarkersategyComponent;
-  let fixture: ComponentFixture<MarkersategyComponent>;
+describe('MarketautomationComponent', () => {
+  let component: MarketautomationComponent;
+  let fixture: ComponentFixture<MarketautomationComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MarkersategyComponent]
+      imports: [MarketautomationComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(MarkersategyComponent);
+    fixture = TestBed.createComponent(MarketautomationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

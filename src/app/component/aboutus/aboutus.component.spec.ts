@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GoogleadsComponent } from './googleads.component';
+import { AboutusComponent } from './aboutus.component';
 
-describe('GoogleadsComponent', () => {
-  let component: GoogleadsComponent;
-  let fixture: ComponentFixture<GoogleadsComponent>;
+describe('AboutusComponent', () => {
+  let component: AboutusComponent;
+  let fixture: ComponentFixture<AboutusComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [GoogleadsComponent]
+      imports: [AboutusComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(GoogleadsComponent);
+    fixture = TestBed.createComponent(AboutusComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -40,13 +40,13 @@ export class ServicebannerComponent {
     } 
     else if (url.includes('brandbuilding')) {
       this.pageName = 'Brand Building';
-      this.bannerImage = '../../../../assets/img/breadcrumb.jpg';
+      this.bannerImage = '../../../../assets/img/service/servicebanner/brand.jpg';
       this.breadcrumbName = ' Brand Building';
     } 
-     else if (url.includes('seopage')) {
-      this.pageName = 'Search Engine Optimization';
+     else if (url.includes('digitalmarketing')) {
+      this.pageName = 'Digital Marketing';
       this.bannerImage = '../../../../assets/img/breadcrumb.jpg';
-      this.breadcrumbName = 'Search Engine Optimization';
+      this.breadcrumbName = 'Digital Marketing';
     } 
      else if (url.includes('webbuilding')) {
       this.pageName = ' Website Development ';
@@ -63,15 +63,15 @@ export class ServicebannerComponent {
       this.bannerImage = '../../../../assets/img/breadcrumb.jpg';
       this.breadcrumbName = 'Marketing Strategy';
     } 
-     else if (url.includes('influencemarketing')) {
-      this.pageName = 'Influencer Marketing';
+     else if (url.includes('marketautomation')) {
+      this.pageName = 'Market Automation & Stategy';
       this.bannerImage = '../../../../assets/img/breadcrumb.jpg';
-      this.breadcrumbName = 'Influencer Marketing';
+      this.breadcrumbName = 'Market Automation & Stategy';
     } 
-     else if (url.includes('googleads')) {
-      this.pageName = 'Google and Meta Ads';
+      else if (url.includes('aboutus')) {
+      this.pageName = 'About Our Company';
       this.bannerImage = '../../../../assets/img/breadcrumb.jpg';
-      this.breadcrumbName = 'Google and Meta Ads';
+      this.breadcrumbName = 'About Our Company';
     } 
     else {
       this.pageName = 'Default';
