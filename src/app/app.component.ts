@@ -13,7 +13,7 @@ import { FooterComponent } from './component/shared/footer/footer.component';
 })
 
 export class AppComponent {
-  title = 'hunterproperty';
+  title = 'bhiive';
 constructor() {
    
   }
