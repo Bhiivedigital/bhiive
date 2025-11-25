@@ -73,6 +73,11 @@ export class ServicebannerComponent {
       this.bannerImage = '../../../../assets/img/breadcrumb.jpg';
       this.breadcrumbName = 'About Our Company';
     } 
+    else if (url.includes('contactus')) {
+      this.pageName = 'Contact Us';
+      this.bannerImage = '../../../../assets/img/breadcrumb.jpg';
+      this.breadcrumbName = 'Contact Us';
+    } 
     else {
       this.pageName = 'Default';
       this.bannerImage = 'assets/banners/default-banner.jpg';

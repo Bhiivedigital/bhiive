@@ -7,8 +7,8 @@ import { WebdevlopmentComponent } from './component/servicepage/webdevlopment/we
 import { WorkflowautomationComponent } from './component/servicepage/workflowautomation/workflowautomation.component';
 import { DigitalmarketingComponent } from './component/servicepage/digitalmarketing/digitalmarketing.component';
 import { MarketautomationComponent } from './component/servicepage/marketautomation/marketautomation.component';
-import { AboutsectionComponent } from './component/home-layout/aboutsection/aboutsection.component';
 import { AboutusComponent } from './component/aboutus/aboutus.component';
+import { ContactpageComponent } from './component/contactpage/contactpage.component';
 
 
 export const routes: Routes = [
@@ -20,6 +20,8 @@ export const routes: Routes = [
     {path:'webbuilding', component:WebdevlopmentComponent, title:'Web Development'},
     {path:'workflowautomation', component:WorkflowautomationComponent, title:'Work Flow Auutomation'},
     {path:'digitalmarketing', component:DigitalmarketingComponent, title:'Digital Marketing'},
-    {path:'marketautomation', component:MarketautomationComponent, title:'Market Automation & Stategy'}
+    {path:'marketautomation', component:MarketautomationComponent, title:'Market Automation & Stategy'},
+    {path:'contactus', component:ContactpageComponent, title:'Contatus'}
+
 
 ];

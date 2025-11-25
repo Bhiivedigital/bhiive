@@ -125,7 +125,7 @@ Version: 1.0.0
     Template Default Fonts & Fonts Styles
  ---------------------------------------------- */
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 30px;
@@ -302,7 +302,7 @@ p {
   }
 }
 .preloader .animation-preloader .txt-loading .letters-loading {
-  color: #ff792e;
+  color: #003566;
   position: relative;
 }
 .preloader .animation-preloader .txt-loading .letters-loading:nth-child(2):before {
@@ -528,7 +528,7 @@ p {
 }
 
 .section-padding {
-  padding: 120px 0;
+  padding: 80px 0;
 }
 @media (max-width: 1199px) {
   .section-padding {
@@ -4626,7 +4626,7 @@ p {
   margin-bottom: 10px;
 }
 .service-details-wrapper .service-details-content .how-title {
-  font-size: 32px;
+  /* font-size: 32px; */
   font-weight: 600;
   margin-top: 50px;
 }
@@ -8029,13 +8029,13 @@ p.sticky-label {
   font-size: 28px;
   font-weight: 600;
 }
-.contact-box-items .contact-info li {
+.contact-box-items .contact-info .contact-div {
   display: flex;
   gap: 20px;
   align-items: center;
   margin-top: 30px;
 }
-.contact-box-items .contact-info li .icon {
+.contact-box-items .contact-info .contact-div .icon {
   width: 50px;
   height: 50px;
   line-height: 50px;
@@ -8044,7 +8044,7 @@ p.sticky-label {
   background: var(--white);
   box-shadow: 11px 6px 50.5px 77px rgba(10, 3, 45, 0.03);
 }
-.contact-box-items .contact-info li .icon i {
+.contact-box-items .contact-info .contact-div .icon i {
   color: var(--theme-color);
 }
 

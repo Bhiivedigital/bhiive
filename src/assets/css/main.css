@@ -8029,13 +8029,13 @@ p.sticky-label {
   font-size: 28px;
   font-weight: 600;
 }
-.contact-box-items .contact-info li {
+.contact-box-items .contact-info .contact-div {
   display: flex;
   gap: 20px;
   align-items: center;
   margin-top: 30px;
 }
-.contact-box-items .contact-info li .icon {
+.contact-box-items .contact-info .contact-div .icon {
   width: 50px;
   height: 50px;
   line-height: 50px;
@@ -8044,7 +8044,7 @@ p.sticky-label {
   background: var(--white);
   box-shadow: 11px 6px 50.5px 77px rgba(10, 3, 45, 0.03);
 }
-.contact-box-items .contact-info li .icon i {
+.contact-box-items .contact-info .contact-div .icon i {
   color: var(--theme-color);
 }
 
