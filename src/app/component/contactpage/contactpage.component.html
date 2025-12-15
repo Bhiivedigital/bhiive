@@ -16,7 +16,7 @@
                                 </div>
                                 <div class="content">
                                     <h5>Our Email</h5>
-                                    <p>mailinfo&#64;bhiive.com</p>
+                                    <p>info&#64;bhiive.com</p>
                                 </div>
                             </div>
                             <div class="col-12 col-lg-4 col-md-4 col-sm-12 contact-div">
@@ -34,7 +34,7 @@
                                 </div>
                                 <div class="content">
                                     <h5>Our Contact</h5>
-                                    <p>+91-94459 7497</p>
+                                    <p>+91-94459 74970</p>
                                 </div>
                            </div>
                         </div>
@@ -56,38 +56,56 @@
                     <span class="wow fadeInUp">Contact Us</span>
                     <h2 class="char-animation">Let Us Take Your Product <br> To The Next Level</h2>
                 </div>
-                <form action="#" id="contact-form" class="contact-form-box">
+                <form [formGroup]="form" (ngSubmit)="onSubmit()" id="contact-form" class="contact-form-box">
                     <div class="row g-4 align-items-center justify-content-center">
                         <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
                             <div class="form-clt">
-                                <input type="text" name="name" id="name" placeholder="Name">
+                                <input type="text" name="name" id="name" placeholder="Name" formControlName="name" [ngClass]="{ 'is-invalid': submitted && f['name'].errors }">
+                                <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+                                    <div *ngIf="f['name'].errors['required']">Name is required</div>
+                                    <div *ngIf="f['name'].errors['minlength']">
+                                    Name must be at least 3 characters
+                                    </div>
+                                    <div *ngIf="f['name'].errors['maxlength']">
+                                        Name must not exceed 20 characters
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
                             <div class="form-clt">
-                                <input type="text" name="email" id="email2" placeholder="Email address">
+                                <input type="text" name="email" id="email2" placeholder="Email address" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
+                                 <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                                    <div *ngIf="f['email'].errors['required']">Email is required</div>
+                                    <div *ngIf="f['email'].errors['email']">Email is invalid</div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".6s">
+                        <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay=".6s">
                             <div class="form-clt">
-                                <input type="text" name="phone" id="phone" placeholder="Phone number">
-                            </div>
+                                    <input type="text" name="phone" id="phone" placeholder="Phone number" formControlName="mobile" class="form-control" (keypress)="allowOnlyNumbers($event)" [ngClass]="{ 'is-invalid': submitted && f['mobile'].errors }" maxlength="10">
+                                <div *ngIf="submitted && f['mobile'].errors" class="invalid-feedback">
+                                <div *ngIf="f['mobile'].errors['required']">Mobile No is required</div>
+                                <div *ngIf="f['mobile'].errors['minlength']">
+                                    Mobile No must be at least 10 characters
+                                </div>
+                                <div *ngIf="f['mobile'].errors['maxlength']">
+                                    Mobile No must be at least 13 characters
+                                </div>
+                                </div>
+                                </div>
                         </div>
-                        <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".7s">
-                            <div class="form-clt">
-                                <input type="text" name="subject" id="subject" placeholder="Your subject">
-                            </div>
-                        </div>
+                       
                         <div class="col-lg-12 wow fadeInUp" data-wow-delay=".8s">
                             <div class="form-clt">
-                                <textarea name="message" id="message" placeholder="Write a message..."></textarea>
+                                <textarea formControlName="message" class="form-control"  width="100%"></textarea>
                             </div>
                         </div>
                         <div class="col-lg-12 wow fadeInUp" data-wow-delay=".9s">
                             <div class="contact-button text-center">
                                 <button type="submit" class="theme-btn">
-                                    Send Your Message
-                                    <i class="far fa-arrow-right"></i>
+                                    Request to Quote
+                                    <i class="fa fa-arrow-right"></i>
                                 </button>
                             </div>
                         </div>
@@ -101,6 +119,5 @@
         <div class="google-map">
             <iframe src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d248770.79016982295!2d80.02141595233306!3d13.032895771012333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d12.9302528!2d80.1570816!4m5!1s0x3a5265d389abf1a7%3A0xc7611a2b78639661!2sBhiive%20Digi%20Tech%2C%20Sriraman%20Street%2C%20Sembiyan%2C%20Perambur%2C%20Chennai%2C%20Tamil%20Nadu%20600011!3m2!1d13.1154008!2d80.2366622!5e0!3m2!1sen!2sin!4v1764077265830!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
             </iframe>
-           
         </div>
     </div>

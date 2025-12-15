@@ -9,19 +9,23 @@ import { DigitalmarketingComponent } from './component/servicepage/digitalmarket
 import { MarketautomationComponent } from './component/servicepage/marketautomation/marketautomation.component';
 import { AboutusComponent } from './component/aboutus/aboutus.component';
 import { ContactpageComponent } from './component/contactpage/contactpage.component';
+import { BlogComponent } from './component/blog/blog.component';
+import { BlogdetailsComponent } from './component/blog/blogdetails/blogdetails.component';
+import { PricvacypolicyComponent } from './component/pricvacypolicy/pricvacypolicy.component';
 
 
 export const routes: Routes = [
     {path:'', component:HomeLayoutComponent, title:'Bhiive | Web Design & Digital Marketing Company in Chennai'},       
-    {path:'aboutus', component:AboutusComponent, title:'About Us'},
+    {path:'about-us', component:AboutusComponent, title:'About Us'},
     {path:'services', component:ServicepageComponent, title:'services'},
-    {path:'paidmarketing', component:PaidmarketingComponent, title:'Paid Marketing'},
-    {path:'brandbuilding', component:BrandbuildingComponent, title:'Branding'},
-    {path:'webbuilding', component:WebdevlopmentComponent, title:'Web Development'},
-    {path:'workflowautomation', component:WorkflowautomationComponent, title:'Work Flow Auutomation'},
-    {path:'digitalmarketing', component:DigitalmarketingComponent, title:'Digital Marketing'},
-    {path:'marketautomation', component:MarketautomationComponent, title:'Market Automation & Stategy'},
-    {path:'contactus', component:ContactpageComponent, title:'Contatus'}
-
-
+    {path:'paid-marketing', component:PaidmarketingComponent, title:'Paid Marketing'},
+    {path:'brand-building', component:BrandbuildingComponent, title:'Branding'},
+    {path:'web-development', component:WebdevlopmentComponent, title:'Web Development'},
+    {path:'workflow-automation', component:WorkflowautomationComponent, title:'Work Flow Auutomation'},
+    {path:'digital-marketing', component:DigitalmarketingComponent, title:'Digital Marketing'},
+    {path:'market-automation', component:MarketautomationComponent, title:'Market Automation & Stategy'},
+    {path:'blog', component:BlogComponent, title:'Blogs'},
+    {path:'blog-details', component:BlogdetailsComponent, title:'Blog Details'},
+    {path:'privacy-policy', component:PricvacypolicyComponent, title:'Privacy Policy'},
+    {path:'contact-us', component:ContactpageComponent, title:'Contatus'}
 ];

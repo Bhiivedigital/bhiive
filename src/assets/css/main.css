@@ -1771,7 +1771,7 @@ p {
 
 @media (max-width: 450px) {
   .offcanvas__info {
-    width: 350px;
+    width: 100%;
   }
 }
 @media (max-width: 575px) {
@@ -5966,7 +5966,7 @@ p {
 .faq-items .accordion-item .accordion-header .accordion-button::after {
   content: "\f078";
   background: transparent;
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 7 Free";
   font-weight: 300;
   transition: all 0.3s ease-in-out !important;
   color: var(--header);
@@ -5977,7 +5977,7 @@ p {
 .faq-items .accordion-item .accordion-header .accordion-button:not(.collapsed)::after {
   content: "\f077";
   background: transparent;
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 7 Free";
   font-weight: 300;
   transform: rotate(0);
   color: var(--theme-color);
@@ -6988,7 +6988,7 @@ p {
   right: 30px;
   font-size: 110px;
   line-height: 1;
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 7 Free";
   position: absolute;
   content: "\f10d";
   bottom: -20px;
@@ -7209,14 +7209,14 @@ p {
   font-size: 18px;
   padding-left: 30px;
 }
-.blog-wrapper .single-blog-post .post-content ul li::before {
+/* .blog-wrapper .single-blog-post .post-content ul li::before {
   position: absolute;
   left: 0;
   top: 0;
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 7 Free";
   content: "\f00c";
   color: #6C57D2;
-}
+} */
 .blog-wrapper .single-blog-post .post-content ol {
   margin-bottom: 0;
   list-style-type: decimal;
@@ -7920,7 +7920,6 @@ p.sticky-label {
   line-height: 1;
   padding: 20px 25px;
   width: 100%;
-  text-transform: capitalize;
   color: var(--text);
 }
 .contect-wrapper .contact-content .contact-form-box .form-clt textarea {
@@ -8094,7 +8093,6 @@ p.sticky-label {
   line-height: 1;
   padding: 20px 25px;
   width: 100%;
-  text-transform: capitalize;
   color: var(--text);
 }
 .contact-wrapper-6 .contact-form-box .form-clt textarea {

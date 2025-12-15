@@ -1,6 +1,5 @@
 import { ApplicationConfig, provideZoneChangeDetection, isDevMode, importProvidersFrom } from '@angular/core';
 import { provideRouter, withInMemoryScrolling } from '@angular/router';
-
 import { routes } from './app.routes';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { HttpClient, provideHttpClient } from '@angular/common/http';
@@ -11,8 +10,11 @@ import { HttpLoaderFactory } from './component/shared/http-loader.factory';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }),
-     provideRouter(routes, withInMemoryScrolling({scrollPositionRestoration:'top'})),
-      provideAnimations(), 
+     provideRouter(routes,withInMemoryScrolling({
+        scrollPositionRestoration: 'top',     // Always scroll to top
+        anchorScrolling: 'enabled',           // Enable #anchor scrolling
+      })),
+      provideAnimations(),
       provideHttpClient(), 
       provideTransloco({
         config: { 

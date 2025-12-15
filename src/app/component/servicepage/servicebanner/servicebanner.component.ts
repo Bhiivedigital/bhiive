@@ -33,50 +33,60 @@ export class ServicebannerComponent {
       this.bannerImage = '../../../../assets/img/breadcrumb.jpg';
       this.breadcrumbName = 'Services';
     } 
-    else if (url.includes('paidmarketing')) {
+    else if (url.includes('paid-marketing')) {
       this.pageName = 'Paid Marketing';
       this.bannerImage = '../../../../assets/img/breadcrumb.jpg';
       this.breadcrumbName = 'Paid Marketing';
     } 
-    else if (url.includes('brandbuilding')) {
+    else if (url.includes('brand-building')) {
       this.pageName = 'Brand Building';
       this.bannerImage = '../../../../assets/img/service/servicebanner/brand.jpg';
       this.breadcrumbName = ' Brand Building';
     } 
-     else if (url.includes('digitalmarketing')) {
+     else if (url.includes('digital-marketing')) {
       this.pageName = 'Digital Marketing';
       this.bannerImage = '../../../../assets/img/breadcrumb.jpg';
       this.breadcrumbName = 'Digital Marketing';
     } 
-     else if (url.includes('webbuilding')) {
+     else if (url.includes('web-development')) {
       this.pageName = ' Website Development ';
       this.bannerImage = '../../../../assets/img/breadcrumb.jpg';
       this.breadcrumbName = ' Website Development ';
     } 
-     else if (url.includes('workflowautomation')) {
+     else if (url.includes('workflow-automation')) {
       this.pageName = 'Workflow Automation';
       this.bannerImage = '../../../../assets/img/breadcrumb.jpg';
       this.breadcrumbName = 'Workflow Automation';
     } 
-     else if (url.includes('markersategy')) {
+     else if (url.includes('market-sategy')) {
       this.pageName = 'Marketing Strategy';
       this.bannerImage = '../../../../assets/img/breadcrumb.jpg';
       this.breadcrumbName = 'Marketing Strategy';
     } 
-     else if (url.includes('marketautomation')) {
+     else if (url.includes('market-automation')) {
       this.pageName = 'Market Automation & Stategy';
       this.bannerImage = '../../../../assets/img/breadcrumb.jpg';
       this.breadcrumbName = 'Market Automation & Stategy';
     } 
-      else if (url.includes('aboutus')) {
+      else if (url.includes('about-us')) {
       this.pageName = 'About Our Company';
       this.bannerImage = '../../../../assets/img/breadcrumb.jpg';
       this.breadcrumbName = 'About Our Company';
     } 
-    else if (url.includes('contactus')) {
+    else if (url.includes('contact-us')) {
       this.pageName = 'Contact Us';
       this.bannerImage = '../../../../assets/img/breadcrumb.jpg';
       this.breadcrumbName = 'Contact Us';
+    } 
+    else if (url.includes('blog')) {
+      this.pageName = 'Blogs and News';
+      this.bannerImage = '../../../../assets/img/breadcrumb.jpg';
+      this.breadcrumbName = 'Blogs and News';
+    } 
+    else if (url.includes('blog-details')) {
+      this.pageName = 'Blog Details';
+      this.bannerImage = '../../../../assets/img/breadcrumb.jpg';
+      this.breadcrumbName = 'Blog Details';
     } 
     else {
       this.pageName = 'Default';
