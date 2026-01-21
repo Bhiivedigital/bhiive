@@ -6,7 +6,7 @@
             <div class="offcanvas__content">
                 <div class="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
                     <div class="offcanvas__logo">
-                        <a href="index.php">
+                        <a routerLink="">
                             <img src="assets/img/logo/logo1.png" alt="logo-img">
                         </a>
                     </div>
@@ -16,14 +16,13 @@
                         </button>
                     </div>
                 </div>
-                <h3 class="offcanvas-title">Hello There!</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur <br> adipiscing elit, </p>
+                
                 <div class="mobile-menu fix mt-3"></div>
                 <div class="social-icon d-flex align-items-center">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.facebook.com/share/1APJ3Ujr7A/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/bhiivedigital?igsh=OTEzaXlvZGNpdnRx" target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
                 <div class="offcanvas__contact">
                     <h3>Information</h3>
@@ -32,25 +31,25 @@
                             <span>
                                 Address:
                             </span>
-                            Graaf Floriss 22A CH NY
+                            Chennai, Tamilnadu
                         </li>
                         <li>
                             <span>
                                 Call Us:
                             </span>
-                            <a href="tel:+00012345688">+000 123 456 88</a>
+                            <a href="tel:9445974970">+91 94459 74970</a>
                         </li>
                         <li>
                             <span>
                                 Email:
                             </span>
-                            <!-- <a href="mailto:helloseoz@gmial.com">
-                                helloseoz@gmial.com
-                            </a> -->
+                            <a href="mailto:info@bhiive.com">
+                                info&#64;bhiive.com
+                            </a>
                         </li>
                     </ul>
                 </div>
-                <a href="contact.php" class="theme-btn">Get a Quote <i class="far fa-arrow-right"></i></a>
+                <a data-bs-toggle="modal" data-bs-target="#requestQuote" class="theme-btn">Get a Quote <i class="fa fa-arrow-right"></i></a>
             </div>
         </div>
     </div>
@@ -62,7 +61,7 @@
         <div class="mega-menu-wrapper">
             <div class="header-main">
                 <div class="header-left">
-                    <a href="index.php" class="header-logo1">
+                    <a href="" class="header-logo1">
                         <img src="assets/img/logo/logo1.png" alt="logo-img">
                     </a>
                 </div>
@@ -70,58 +69,114 @@
                     <div class="mean__menu-wrapper">
                         <div class="main-menu">
                             <nav id="mobile-menu">
-    <ul>
-        <li class="has-dropdown menu-thumb">
-            <a href="index.php">
-                Home
-            </a>
-        </li>
-       
-        <li>
-            <a href="/services">
-                Services
-                <!-- <i class="fas fa-chevron-down"></i> -->
-            </a>
-            <!-- <ul class="submenu">
-                <li><a href="">Services</a></li>
-                <li><a href="">Services Details</a></li>
-            </ul> -->
-        </li>
-        <li>
-            <a href="project.php">
-                Portfolio
-            </a>
-        </li>
-        
-        <li>
-            <a href="news.php">
-                Blog
-            </a>
-        </li>
-        <li>
-            <a href="contact.php">
-                Contact Us
-            </a>
-        </li>
-    </ul>
-</nav>                        </div>
-                    </div>
-                                            <div class="link-btn">
-                            Support: <a href="tel:88812345678">+91 94459 74970</a>
+                                <ul>
+                                    <li> <a routerLink="" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}"> Home </a> </li>
+                                    <li> <a routerLink="/about-us" [routerLinkActive]="'active'">About us</a></li>
+                                    <li> <a routerLink="/services" [routerLinkActive]="'active'">Services </a> </li>
+                                    <!-- <li> <a routerLink="">Portfolio</a></li> -->
+                                    <li><a routerLink="/blog" [routerLinkActive]="'active'">Blog</a></li>
+                                    <li><a routerLink="/contact-us" [routerLinkActive]="'active'"> Contact Us</a></li>
+                                </ul>
+                            </nav>                        
                         </div>
-                    
-                                            <a href="contact.php" class="theme-btn">
-                            Get Quote
-                            <i class="far fa-arrow-right"></i>
-                        </a>
+                    </div>
+                        <div class="link-btn">
+                            Call Us: <a href="tel:88812345678">+91 94459 74970</a>
+                        </div>
+                            <a class="theme-btn" data-bs-toggle="modal" data-bs-target="#requestQuote">
+                                Get Quote
+                                <i class="fa fa-arrow-right"></i>
+                            </a>
                     
                     <div class="header__hamburger d-xl-none my-auto">
                         <div class="sidebar__toggle">
-                            <i class="fal fa-bars"></i>
+                            <i class="fa fa-bars"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="sidebaricons">
+        <div class="whatsapp-icon" (click)="goToWhatsApp()">
+            <i class="fa-brands fa-whatsapp mt-2"></i>
+        </div>
+        <div class="call-icon" (click)="callNow()">
+            <i class="fa-solid fa-phone"></i>
+        </div>
+    </div>
 </header>
+
+
+<div class="modal modal-lg fade" id="requestQuote" tabindex="-1" aria-labelledby="requestQuoteLabel" aria-hidden="true">
+  <div class="modal-dialog  modal-dialog-centered">
+    <div class="modal-content ">
+        <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Get A Quote</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body ">
+         <div class="quote-form p-3">
+               <form [formGroup]="form" (ngSubmit)="onSubmit()" id="contact-form" class="contact-form-box">
+                    <div class="row g-4 align-items-center justify-content-center">
+                        <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                            <div class="form-clt">
+                                <input type="text" name="name" id="name" placeholder="Name" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['name'].errors }">
+                                <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+                                    <div *ngIf="f['name'].errors['required']">Name is required</div>
+                                    <div *ngIf="f['name'].errors['minlength']">
+                                    Name must be at least 3 characters
+                                    </div>
+                                    <div *ngIf="f['name'].errors['maxlength']">
+                                        Name must not exceed 20 characters
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
+                            <div class="form-clt">
+                                <input type="text" name="email" id="email2" placeholder="Email address"  class="form-control"  formControlName="email" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
+                                 <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                                    <div *ngIf="f['email'].errors['required']">Email is required</div>
+                                    <div *ngIf="f['email'].errors['email']">Email is invalid</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay=".6s">
+                            <div class="form-clt">
+                                    <input type="text" name="phone" id="phone" placeholder="Phone number"  (keypress)="allowOnlyNumbers($event)" formControlName="mobile" class="form-control" appOnlynumber [ngClass]="{ 'is-invalid': submitted && f['mobile'].errors }" maxlength="10">
+                                <div *ngIf="submitted && f['mobile'].errors" class="invalid-feedback">
+                                <div *ngIf="f['mobile'].errors['required']">Mobile No is required</div>
+                                <div *ngIf="f['mobile'].errors['minlength']">
+                                    Mobile No must be at least 10 characters
+                                </div>
+                                <div *ngIf="f['mobile'].errors['maxlength']">
+                                    Mobile No must be at least 13 characters
+                                </div>
+                                </div>
+                                </div>
+                        </div>
+                       
+                        <div class="col-lg-12 wow fadeInUp" data-wow-delay=".8s">
+                            <div class="form-clt">
+                                <textarea formControlName="message" class="form-control"  width="100%"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 wow fadeInUp" data-wow-delay=".9s">
+                            <div class="contact-button">
+                                <button type="submit" class="theme-btn">
+                                    Request to Quote
+                                    <i class="fa fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>

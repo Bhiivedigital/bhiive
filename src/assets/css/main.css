@@ -34,7 +34,6 @@ Version: 1.0.0
   padding-right: 5px;
   border-radius: 0;
   line-height: 1;
-  text-transform: capitalize;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   position: relative;
@@ -125,7 +124,7 @@ Version: 1.0.0
     Template Default Fonts & Fonts Styles
  ---------------------------------------------- */
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 30px;
@@ -302,7 +301,7 @@ p {
   }
 }
 .preloader .animation-preloader .txt-loading .letters-loading {
-  color: #ff792e;
+  color: #003566;
   position: relative;
 }
 .preloader .animation-preloader .txt-loading .letters-loading:nth-child(2):before {
@@ -528,7 +527,7 @@ p {
 }
 
 .section-padding {
-  padding: 120px 0;
+  padding: 80px 0;
 }
 @media (max-width: 1199px) {
   .section-padding {
@@ -1771,7 +1770,7 @@ p {
 
 @media (max-width: 450px) {
   .offcanvas__info {
-    width: 350px;
+    width: 100%;
   }
 }
 @media (max-width: 575px) {
@@ -4626,7 +4625,7 @@ p {
   margin-bottom: 10px;
 }
 .service-details-wrapper .service-details-content .how-title {
-  font-size: 32px;
+  /* font-size: 32px; */
   font-weight: 600;
   margin-top: 50px;
 }
@@ -5966,8 +5965,8 @@ p {
 .faq-items .accordion-item .accordion-header .accordion-button::after {
   content: "\f078";
   background: transparent;
-  font-family: "Font Awesome 5 Pro";
-  font-weight: 300;
+  font-family: "Font Awesome 7 free";
+  font-weight: 900;
   transition: all 0.3s ease-in-out !important;
   color: var(--header);
   top: 18px;
@@ -5977,8 +5976,8 @@ p {
 .faq-items .accordion-item .accordion-header .accordion-button:not(.collapsed)::after {
   content: "\f077";
   background: transparent;
-  font-family: "Font Awesome 5 Pro";
-  font-weight: 300;
+  font-family: "Font Awesome 7 free";
+  font-weight: 900;
   transform: rotate(0);
   color: var(--theme-color);
 }
@@ -6988,7 +6987,7 @@ p {
   right: 30px;
   font-size: 110px;
   line-height: 1;
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 7 Free";
   position: absolute;
   content: "\f10d";
   bottom: -20px;
@@ -7209,14 +7208,14 @@ p {
   font-size: 18px;
   padding-left: 30px;
 }
-.blog-wrapper .single-blog-post .post-content ul li::before {
+/* .blog-wrapper .single-blog-post .post-content ul li::before {
   position: absolute;
   left: 0;
   top: 0;
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 7 Free";
   content: "\f00c";
   color: #6C57D2;
-}
+} */
 .blog-wrapper .single-blog-post .post-content ol {
   margin-bottom: 0;
   list-style-type: decimal;
@@ -7920,7 +7919,6 @@ p.sticky-label {
   line-height: 1;
   padding: 20px 25px;
   width: 100%;
-  text-transform: capitalize;
   color: var(--text);
 }
 .contect-wrapper .contact-content .contact-form-box .form-clt textarea {
@@ -8029,13 +8027,13 @@ p.sticky-label {
   font-size: 28px;
   font-weight: 600;
 }
-.contact-box-items .contact-info li {
+.contact-box-items .contact-info .contact-div {
   display: flex;
   gap: 20px;
   align-items: center;
   margin-top: 30px;
 }
-.contact-box-items .contact-info li .icon {
+.contact-box-items .contact-info .contact-div .icon {
   width: 50px;
   height: 50px;
   line-height: 50px;
@@ -8044,7 +8042,7 @@ p.sticky-label {
   background: var(--white);
   box-shadow: 11px 6px 50.5px 77px rgba(10, 3, 45, 0.03);
 }
-.contact-box-items .contact-info li .icon i {
+.contact-box-items .contact-info .contact-div .icon i {
   color: var(--theme-color);
 }
 
@@ -8094,7 +8092,6 @@ p.sticky-label {
   line-height: 1;
   padding: 20px 25px;
   width: 100%;
-  text-transform: capitalize;
   color: var(--text);
 }
 .contact-wrapper-6 .contact-form-box .form-clt textarea {

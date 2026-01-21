@@ -7,58 +7,16 @@
                 <h2 class="text-white char-animation">The Perfect Services <br> We're Offering</h2>
             </div>
             <div class="row g-0">
-                <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                    <div class="service-card-items border-radius-style">
+                <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s" *ngFor="let service of services">
+                    <div  [ngClass]="service.cardClass">
                         <div class="service-icon">
-                            <img src="assets/img/service/icon-01.png" alt="img">
+                            <img src="{{service.img}}" alt="img">
                         </div>
                         <div class="service-content">
-                            <h3><a href="service-details.php">Search Engine Optimization (SEO)</a></h3>
-                            <p>We pride ourselves on delivering a value proposition that goes beyond expectations. Our approach is centered on understanding.</p>
-                            <a href="service-details.php" class="link-btn">More Details
-                                <i class="far fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
-                    <div class="service-card-items bg-1">
-                        <div class="service-icon">
-                            <img src="assets/img/service/icon-02.png" alt="img">
-                        </div>
-                        <div class="service-content">
-                            <h3><a href="service-details.php">Website Design and Development</a></h3>
-                            <p>We pride ourselves on delivering a value proposition that goes beyond expectations. Our approach is centered on understanding.</p>
-                            <a href="service-details.php" class="link-btn">More Details
-                                <i class="far fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
-                    <div class="service-card-items bg-2">
-                        <div class="service-icon">
-                            <img src="assets/img/service/icon-03.png" alt="img">
-                        </div>
-                        <div class="service-content">
-                            <h3><a href="service-details.php">Pay-Per-Click (PPC) Advertising</a></h3>
-                            <p>We pride ourselves on delivering a value proposition that goes beyond expectations. Our approach is centered on understanding.</p>
-                            <a href="service-details.php" class="link-btn">More Details
-                                <i class="far fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
-                    <div class="service-card-items bg-3">
-                        <div class="service-icon">
-                            <img src="assets/img/service/icon-04.png" alt="img">
-                        </div>
-                        <div class="service-content">
-                            <h3><a href="service-details.php">Email & Social Media Marketing</a></h3>
-                            <p>We pride ourselves on delivering a value proposition that goes beyond expectations. Our approach is centered on understanding.</p>
-                            <a href="service-details.php" class="link-btn">More Details
-                                <i class="far fa-arrow-right"></i>
+                            <h3><a [routerLink]="'/services'">{{service.title}}</a></h3>
+                             <p> {{ service.description | lineclamp:40:3 }}</p>
+                            <a [routerLink]="'/services'" class="link-btn">More Details
+                                <i class="fa fa-arrow-right"></i>
                             </a>
                         </div>
                     </div>

@@ -1,0 +1,79 @@
+
+<div class="comments-section-wrap pt-40">
+    <div class="comments-heading wow fadeInUp" data-wow-delay=".2s">
+        <h3>{{ comments.length }} Comments</h3>
+    </div>
+    <ul class="comments-item-list">
+        <li *ngFor="let c of comments" class="single-comment-item wow fadeInUp" data-wow-delay=".4s">
+             <button *ngIf="!isAdmin" class="delete-btn"  (click)="deleteComment(c.id)">
+                🗑 Delete
+            </button>
+             <div class="author-img">
+                <img src="" alt="user">
+            </div>
+             <div class="author-info-comment border-0">
+                <div class="info">
+                    <h5>{{ c.name }}</h5>
+                    <span>{{ c.date | date:'mediumDate' }}</span>
+                    <a class="theme-btn minimal-btn" (click)="toggleReply(c)"><i class="fa fa-reply"></i>Reply</a>
+                </div>
+                <div class="comment-text">
+                    <p>{{ c.comment }}</p>
+                    <small>{{ c.email }}</small><br>
+                    <small *ngIf="c.website">Website: {{ c.website }}</small>
+                </div>
+            </div>
+         
+        <!-- 🔹 Reply box -->
+        <div *ngIf="c.showReplyBox" class="reply-box comment-form">
+            <div class="row">
+                <div class="col-12 col-lg-12 col-md-12">
+                 <textarea placeholder="Reply..." [(ngModel)]="replyData[c.id!].comment"></textarea>
+                </div>
+                 <div class="col-12 col-lg-6 col-md-6">
+                    <input placeholder="Name" [(ngModel)]="replyData[c.id!].name">
+                </div>
+                 <div class="col-12 col-lg-6 col-md-6">
+                    <button (click)="postReply(c)" class="theme-btn center wow fadeInUp mt-0" data-wow-delay=".9s">Post Reply</button>
+                </div>
+             </div>
+        </div>
+
+        <!-- 🔹 Replies -->
+        <div class="replies author-info-comment border-0" *ngIf="c.replies?.length">
+             <h4>Reply</h4>
+            <div *ngFor="let r of c.replies" class="reply mt-2">
+            <h5>{{ r.name }} <span> <small>{{ r.date | date:'mediumDate' }} </small></span></h5>
+             <p>{{ r.comment }}</p>
+            </div>
+        </div>
+    </li>
+
+        
+    </ul>
+</div>
+
+
+<div class="comment-form-wrap d-block pt-5">
+    <h3 class="wow fadeInUp">Post Comment</h3>
+    <form (ngSubmit)="postComment()" #commentForm="ngForm" class="comment-form">
+        <div class="row">
+        <div class="single-form-input wow fadeInUp col-12 col-md-12 col-lg-12" data-wow-delay=".2s">
+            <textarea placeholder="Type your comments...." name="comment" [(ngModel)]="formData.comment" required></textarea>
+        </div>
+        <div class="single-form-input wow fadeInUpcol-12 col-md-6 col-lg-6" data-wow-delay=".4s">
+            <input type="text" placeholder="Type your name...." name="name" [(ngModel)]="formData.name" required>
+        </div>
+        <div class="single-form-input wow fadeInUp col-12 col-md-6 col-lg-6" data-wow-delay=".6s">
+            <input type="email" placeholder="Type your email...." name="email" [(ngModel)]="formData.email" required="">
+        </div>
+        <div class="single-form-input wow fadeInUp col-12 col-md-12 col-lg-12" data-wow-delay=".8s">
+            <input type="text" placeholder="Type your website...." name="website" [(ngModel)]="formData.website" required="">
+        </div>
+        </div>
+        <button class="theme-btn center wow fadeInUp" data-wow-delay=".9s" type="submit">
+            <span><i class="fa fa-comments"></i>Post Comment</span>
+        </button>
+    </form>
+</div>
+

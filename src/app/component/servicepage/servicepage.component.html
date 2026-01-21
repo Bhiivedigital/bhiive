@@ -1,23 +1,4 @@
- <!-- Breadcrumb-section Start -->
-    <section class="breadcrumb-section fix bg-cover" style="background-image: url(../../../assets/img/breadcrumb.jpg);">
-    <div class="container">
-        <div class="row">
-            <div class="page-heading">
-                <ul class="breadcrumb-list wow fadeInUp" data-wow-delay=".5s">
-                    <li>
-                        <a href="index.php">Home</a>
-                    </li>
-                    <li>
-                        <i class="fal fa-long-arrow-right"></i>
-                    </li>
-                    <li>
-                        Our Services                    </li>
-                </ul>
-                <h2 class="wow fadeInUp" data-wow-delay=".3s">Our Services</h2>
-            </div>
-        </div>
-    </div>
-</section>
+<app-servicebanner></app-servicebanner>
     <!-- Service Section Start -->
     <section class="service-section-2 section-padding fix">
         <div class="container">
@@ -26,68 +7,7 @@
                 <h2 class="char-animation">Our Services Can Solve any<br> Marketing Problem</h2>
             </div>
             <div class="row g-5">
-                 <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
-                    <div class="service-icon-box-items-2">
-                        <div class="icon">
-                            <i class="flaticon-email-marketing"></i>
-                            <div class="icon-bg">
-                                <img src="../../../assets/img/service/icon-bg-4.png" alt="img">
-                            </div>
-                        </div>
-                        <div class="content">
-                            <h3><a href="/paidmarketing">Paid <br> Marketing</a></h3>
-                            <p>
-                                Our strategy includes consistently evolving, to ensure we’re producing exceptional SEO
-                                for business. Nullam vel accumsan nisi.
-                            </p>
-                            <a href="/paidmarketing" class="link-btn">More Details
-                                <i class="far fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                    <div class="service-icon-box-items-2">
-                        <div class="icon">
-                            <i class="flaticon-seo"></i>
-                            <div class="icon-bg">
-                                <img src="../../../assets/img/service/icon-bg-1.png" alt="img">
-                            </div>
-                        </div>
-                        <div class="content">
-                            <h3><a href="service-details.php">Brand<br> Building</a></h3>
-                            <p>
-                                Our strategy includes consistently evolving, to ensure we’re producing exceptional SEO
-                                for business. Nullam vel accumsan nisi.
-                            </p>
-                            <a href="service-details.php" class="link-btn">More Details
-                                <i class="far fa-arrow-right"></i>
-                            </a>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
-                    <div class="service-icon-box-items-2">
-                        <div class="icon">
-                            <i class="flaticon-email-marketing-1"></i>
-                            <div class="icon-bg">
-                                <img src="../../../assets/img/service/icon-bg-2.png" alt="img">
-                            </div>
-                        </div>
-                        <div class="content">
-                            <h3><a href="service-details.php">Search Engine <br>Optimization</a></h3>
-                            <p>
-                                Our strategy includes consistently evolving, to ensure we’re producing exceptional SEO
-                                for business. Nullam vel accumsan nisi.
-                            </p>
-                            <a href="service-details.php" class="link-btn">More Details
-                                <i class="far fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
+                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
                     <div class="service-icon-box-items-2">
                         <div class="icon">
                             <i class="flaticon-performance"></i>
@@ -96,61 +16,18 @@
                             </div>
                         </div>
                         <div class="content">
-                            <h3><a href="service-details.php">Website <br>Development</a></h3>
+                            <h3><a [routerLink]="'/web-development'">Website Development</a></h3>
                             <p>
-                                Our strategy includes consistently evolving, to ensure we’re producing exceptional SEO
-                                for business. Nullam vel accumsan nisi.
+                                Your website is the digital face of your brand — and a powerful tool to attract customers, build trust, and drive business growth...
                             </p>
-                            <a href="/seopage" class="link-btn">More Details
-                                <i class="far fa-arrow-right"></i>
+                            <a [routerLink]="'/web-development'" class="link-btn">More Details
+                                <i class="fa fa-arrow-right"></i>
                             </a>
                         </div>
 
                     </div>
                 </div>
-               
-                <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                    <div class="service-icon-box-items-2">
-                        <div class="icon">
-                            <i class="flaticon-seo"></i>
-                            <div class="icon-bg">
-                                <img src="../../../assets/img/service/icon-bg-5.png" alt="img">
-                            </div>
-                        </div>
-                        <div class="content">
-                            <h3><a href="service-details.php">Workflow <br> Automation</a></h3>
-                            <p>
-                                Our strategy includes consistently evolving, to ensure we’re producing exceptional SEO
-                                for business. Nullam vel accumsan nisi.
-                            </p>
-                            <a href="service-details.php" class="link-btn">More Details
-                                <i class="far fa-arrow-right"></i>
-                            </a>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
-                    <div class="service-icon-box-items-2">
-                        <div class="icon">
-                            <i class="flaticon-email-marketing-1"></i>
-                            <div class="icon-bg">
-                                <img src="../../../assets/img/service/icon-bg-6.png" alt="img">
-                            </div>
-                        </div>
-                        <div class="content">
-                            <h3><a href="service-details.php"> Marketing <br> Strategy</a></h3>
-                            <p>
-                                Our strategy includes consistently evolving, to ensure we’re producing exceptional SEO
-                                for business. Nullam vel accumsan nisi.
-                            </p>
-                            <a href="service-details.php" class="link-btn">More Details
-                                <i class="far fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
+                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
                     <div class="service-icon-box-items-2">
                         <div class="icon">
                             <i class="flaticon-performance"></i>
@@ -159,19 +36,121 @@
                             </div>
                         </div>
                         <div class="content">
-                            <h3><a href="service-details.php">Influencer<br> Marketing</a></h3>
+                            <h3><a [routerLink]="'/digital-marketing'">Digital Marketing</a></h3>
                             <p>
-                                Our strategy includes consistently evolving, to ensure we’re producing exceptional SEO
-                                for business. Nullam vel accumsan nisi.
+                                In today’s digital-first world, your online presence defines your business success. At Bhiive Digi Tech, a results-driven digital marketing agency...
                             </p>
-                            <a href="service-details.php" class="link-btn">More Details
-                                <i class="far fa-arrow-right"></i>
+                            <a [routerLink]="'/digital-marketing'" class="link-btn">More Details
+                                <i class="fa fa-arrow-right"></i>
                             </a>
                         </div>
 
                     </div>
                 </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
+               
+                 <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
+                    <div class="service-icon-box-items-2">
+                        <div class="icon">
+                            <i class="flaticon-email-marketing"></i>
+                            <div class="icon-bg">
+                                <img src="../../../assets/img/service/icon-bg-4.png" alt="img">
+                            </div>
+                        </div>
+                        <div class="content">
+                            <h3><a [routerLink]="'/paid-marketing'">Paid  Marketing</a></h3>
+                            <p>
+                               In today's fast-paced digital market, waiting for customers to find you isn't an option. You need to reach them precisely when they are searching ...
+                            </p>
+                            <a [routerLink]="'/paid-marketing'" class="link-btn">More Details
+                                <i class="fa fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                    <div class="service-icon-box-items-2">
+                        <div class="icon">
+                            <i class="flaticon-seo"></i>
+                            <div class="icon-bg">
+                                <img src="../../../assets/img/service/icon-bg-1.png" alt="img">
+                            </div>
+                        </div>
+                        <div class="content">
+                            <h3><a [routerLink]="'/brand-building'">Brand Building</a></h3>
+                            <p>
+                                Your brand is the foundation of your business identity. At Bhiive Digi Tech, we offer comprehensive brand building services designed to strengthen...
+                            </p>
+                            <a [routerLink]="'/brand-building'" class="link-btn">More Details
+                                <i class="fa fa-arrow-right"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+                
+                <!-- <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
+                    <div class="service-icon-box-items-2">
+                        <div class="icon">
+                            <i class="flaticon-email-marketing-1"></i>
+                            <div class="icon-bg">
+                                <img src="../../../assets/img/service/icon-bg-2.png" alt="img">
+                            </div>
+                        </div>
+                        <div class="content">
+                            <h3><a href="/seopage">Search Engine <br>Optimization</a></h3>
+                            <p>
+                                Our strategy includes consistently evolving, to ensure we’re producing exceptional SEO
+                                for business. Nullam vel accumsan nisi.
+                            </p>
+                            <a href="/seopage" class="link-btn">More Details
+                                <i class="fa fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div> -->
+                
+               
+                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                    <div class="service-icon-box-items-2">
+                        <div class="icon">
+                            <i class="flaticon-seo"></i>
+                            <div class="icon-bg">
+                                <img src="../../../assets/img/service/icon-bg-5.png" alt="img">
+                            </div>
+                        </div>
+                        <div class="content">
+                            <h3><a [routerLink]="'/workflow-automation'">Workflow  Automation</a></h3>
+                            <p>
+                                Manual tasks slow down growth. Inefficient processes lead to errors, delays, and lost revenue. At Bhiive Digi Tech, we help businesses streamline...
+                            </p>
+                            <a [routerLink]="'/workflow-automation'" class="link-btn">More Details
+                                <i class="fa fa-arrow-right"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
+                    <div class="service-icon-box-items-2">
+                        <div class="icon">
+                            <i class="flaticon-email-marketing-1"></i>
+                            <div class="icon-bg">
+                                <img src="../../../assets/img/service/icon-bg-6.png" alt="img">
+                            </div>
+                        </div>
+                        <div class="content">
+                            <h3><a [routerLink]="'/market-automation'">Marketing Engine</a></h3>
+                            <p>
+                                Modern businesses grow faster when their marketing runs smart, automated, and strategically optimized. At Bhiive Digi Tech, we provide powerful ...
+                            </p>
+                            <a [routerLink]="'/market-automation'" class="link-btn">More Details
+                                <i class="fa fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
                     <div class="service-icon-box-items-2">
                         <div class="icon">
                             <i class="flaticon-email-marketing"></i>
@@ -180,17 +159,17 @@
                             </div>
                         </div>
                         <div class="content">
-                            <h3><a href="service-details.php">Google <br> and Meta Ads</a></h3>
+                            <h3><a href="/googleads">Google <br> and Meta Ads</a></h3>
                             <p>
                                 Our strategy includes consistently evolving, to ensure we’re producing exceptional SEO
                                 for business. Nullam vel accumsan nisi.
                             </p>
-                            <a href="service-details.php" class="link-btn">More Details
-                                <i class="far fa-arrow-right"></i>
+                            <a href="/googleads" class="link-btn">More Details
+                                <i class="fa fa-arrow-right"></i>
                             </a>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>

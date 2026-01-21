@@ -7,7 +7,7 @@
             </div>
             <div class="swiper testimonial-slider-3">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
+                    <div class="swiper-slide" *ngFor="let slide of testmonial">
                         <div class="testimonial-box-items">
                             <div class="testimonial-box">
                                 <div class="star-box-items">
@@ -20,120 +20,29 @@
                                     </div>
                                     <img src="assets/img/testimonial/01.png" alt="img">
                                 </div>
-                                <p>“Etiam viverra purus sed aliquet tincidunt diam auctor nibhe eget eget elementum lobortis ante massa quis dui suspendisse massa. Curabitur condimentum accumsan risus et porta nam ut nisi metus. Praesent orci ante cursus.”</p>
+                                <p>{{slide.description| lineclamp:30:3}}</p>
                             </div>
                             <div class="client-info">
                                 <div class="client-img">
-                                    <img src="assets/img/testimonial/client-info-01.png" alt="img">
+                                    <img src="{{slide.img}}" alt="img">
                                 </div>
                                 <div class="client-content">
-                                    <h3>William Smith</h3>
-                                    <p>Digital Marketer</p>
+                                    <h3>{{slide.name}}</h3>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="testimonial-box-items">
-                            <div class="testimonial-box">
-                                <div class="star-box-items">
-                                    <div class="star">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <img src="assets/img/testimonial/01.png" alt="img">
-                                </div>
-                                <p>“Etiam viverra purus sed aliquet tincidunt diam auctor nibhe eget eget elementum lobortis ante massa quis dui suspendisse massa. Curabitur condimentum accumsan risus et porta nam ut nisi metus. Praesent orci ante cursus.”</p>
-                            </div>
-                            <div class="client-info">
-                                <div class="client-img">
-                                    <img src="assets/img/testimonial/client-info-02.png" alt="img">
-                                </div>
-                                <div class="client-content">
-                                    <h3>William Smith</h3>
-                                    <p>Digital Marketer</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="testimonial-box-items">
-                            <div class="testimonial-box">
-                                <div class="star-box-items">
-                                    <div class="star">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <img src="assets/img/testimonial/01.png" alt="img">
-                                </div>
-                                <p>“Etiam viverra purus sed aliquet tincidunt diam auctor nibhe eget eget elementum lobortis ante massa quis dui suspendisse massa. Curabitur condimentum accumsan risus et porta nam ut nisi metus. Praesent orci ante cursus.”</p>
-                            </div>
-                            <div class="client-info">
-                                <div class="client-img">
-                                    <img src="assets/img/testimonial/client-info-03.png" alt="img">
-                                </div>
-                                <div class="client-content">
-                                    <h3>William Smith</h3>
-                                    <p>Digital Marketer</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Cta Support Section Start -->
-    <section class="cta-support-section fix section-padding pt-0 cta-support-bg-style">
-        <div class="container">
-            <div class="cta-support-wrapper zoom-effect-style" style="background-image: url('assets/img/cta/cta-support-bg.jpg');">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div class="cta-support-img wow fadeInUp" data-wow-delay=".3s">
-                            <img src="assets/img/cta/cta-left.png" alt="img">
-                        </div>
-                    </div>
-                    <div class="col-lg-6 mt-3 mt-lg-0">
-                        <div class="cta-support-content">
-                            <div class="section-title text-start">
-                                <span class="text-white wow fadeInUp">24/7 Support</span>
-                                <h2 class="text-white char-animation">24/7 Customer Support Services from Our SEOZ</h2>
-                            </div>
-                            <p class="cta-support-text wow fadeInUp" data-wow-delay=".4s">Welcome to SEOZ your trusted partner for comprehensive SEO and digital marketing solutions with our proven expertise</p>
-                            <div class="cta-support-box wow fadeInUp" data-wow-delay=".6s">
-                                <a href="contact.php" class="theme-btn">
-                                    Contact Us
-                                    <i class="far fa-arrow-right"></i>
-                                </a>
-                                <div class="phone-box">
-                                    <div class="icon">
-                                        <img src="assets/img/call.svg" alt="img">
-                                    </div>
-                                    <div class="content">
-                                        <p>Mail Us</p>
-                                        <h5>(704) 555-0127</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Faq Section Start -->
-    <section class="faq-section fix section-padding pt-0">
+    <section class="faq-section fix section-padding">
         <div class="container">
             <div class="section-title text-center">
-                <span class="wow fadeInUp">Our FAQs</span>
+                <span class="wow fadeInUp fs-3">Our FAQs</span>
                 <h2 class="char-animation">Frequently Asked Questions</h2>
             </div>
             <div class="row justify-content-center">
@@ -144,60 +53,61 @@
                                 <div class="accordion-item wow fadeInUp" data-wow-delay=".2s">
                                     <h5 class="accordion-header">
                                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
-                                            1. How long will it take before I see better rankings in google?
+                                            1. what is digital marketing? 
                                         </button>
                                     </h5>
                                     <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#accordion">
                                         <div class="accordion-body">
-                                            The time it will take for your website's search engine rankings to begin improving depends on several of its characteristics prior to optimization. Older websites, with diverse backlink portfolios and more trust from search engines
+                                            <p>Digital marketing encompasses all aspects and activities of marketing an organization, business, or brand across digital channels on the internet. Digital marketing strategies and tactics are crafted to target specific online audiences across a variety of internet-connected devices.</p>
+                                            <p class="mt-2">Digital marketing includes optimization across search engines (the likes of Google and Bing), visibility and engagement on social media platforms, email marketing communications, website design and development and integrated applications to connect and engage with prospects and customers.</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item wow fadeInUp" data-wow-delay=".4s">
                                     <h5 class="accordion-header">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
-                                            2. How long do search engine results last?
+                                            2. what does a digital marketer do? 
                                         </button>
                                     </h5>
                                     <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordion">
                                         <div class="accordion-body">
-                                            The time it will take for your website's search engine rankings to begin improving depends on several of its characteristics prior to optimization. Older websites, with diverse backlink portfolios and more trust from search engines
+                                            A digital marketer is a marketing specialist who understands how to develop and deploy effective marketing strategies online. A digital marketer understands connecting with an online audience. They can ensure your brand engages with your consumer from the first point of contact through after-sales service.
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item wow fadeInUp" data-wow-delay=".6s">
                                     <h5 class="accordion-header">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
-                                            Is travel insurance included in the package?
+                                           3. How cost-effective is digital marketing compared with traditional marketing?
                                         </button>
                                     </h5>
                                     <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordion">
                                         <div class="accordion-body">
-                                            The time it will take for your website's search engine rankings to begin improving depends on several of its characteristics prior to optimization. Older websites, with diverse backlink portfolios and more trust from search engines
+                                            Digital marketing is cost-effective in that you can get your message directly in front of your ideal audience. Consider that traditional marketing casts a wide net across the general public. In contrast, digital marketing takes a targeted approach and engages the consumer with the right message at the right time. You can measure your digital marketing efforts and the costs involved quite easily and mitigate unnecessary spending. This is far more difficult with traditional marketing campaigns. What's more, the costs involved with hiring a digital marketing agency are dependent on the project scope.
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item wow fadeInUp" data-wow-delay=".8s">
                                     <h5 class="accordion-header">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
-                                            4. Why should I choose Springboard SEO?
+                                            4. would my business benefit from digital marketing services? 
                                         </button>
                                     </h5>
                                     <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#accordion">
                                         <div class="accordion-body">
-                                            The time it will take for your website's search engine rankings to begin improving depends on several of its characteristics prior to optimization. Older websites, with diverse backlink portfolios and more trust from search engines
+                                            Every single brand has to have an online representation of the business. However, your digital footprint won't have any impact if you don't market it successfully. Every business would benefit from an ongoing, comprehensive digital marketing strategy and the support of an expert marketing team.
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item mb-0 wow fadeInUp" data-wow-delay=".9s">
                                     <h5 class="accordion-header">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
-                                            5. How much does search engine optimization cost?
+                                            5. How do you identify a successful digital marketing company? 
                                         </button>
                                     </h5>
                                     <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#accordion">
                                         <div class="accordion-body">
-                                            The time it will take for your website's search engine rankings to begin improving depends on several of its characteristics prior to optimization. Older websites, with diverse backlink portfolios and more trust from search engines
+                                            Look for a company that takes the time to assess your current and future marketing needs. A digital marketing agency worth its salt won’t promise immediate results because digital strategies take time to yield results. But it will boast a team of experts able to identify needs and gaps in your current strategy. What’s more, they will work with you to establish outcomes, align with your goals and offer consistent, transparent reporting. Be cautious about companies offering a quick fix. Choose an agency with proven successes, client testimonials and case studies and outstanding reviews across their services.
                                         </div>
                                     </div>
                                 </div>

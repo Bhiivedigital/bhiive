@@ -1,3 +1,48 @@
 .header-logo1 img {
     height: 67px;
 }
+.sidebaricons {
+    position: fixed;
+    z-index: 1040;
+    top: 50%;
+    bottom: 50%;
+    right: 0;
+}
+.sidebar-popup-contact li .loc-icon{
+    width: 72px;
+}
+.sidebar-popup-contact li a{
+    text-decoration: none;
+}
+
+.whatsapp-icon {
+    background: #69cc51;
+    color: #fff;
+    font-size: 34px;
+    margin-bottom: 10px;
+    width: 46px;
+    height: 50px;
+    text-align: center;
+    border-radius: 10px 0 0 10px;
+}
+.call-icon {
+    background: #018c47;
+    color: #fff;
+    font-size: 23px;
+    margin-bottom: 10px;
+    width: 46px;
+    padding-top: 6px;
+    height: 46px;
+    text-align: center;
+    border-radius: 10px 0 0 10px;
+}
+.sidebar-popup-contact li .loc-icon{
+    width: 72px;
+}
+.sidebar-popup-contact li a{
+    text-decoration: none;
+}
+
+div#requestQuote {
+    z-index: 9999;
+}
