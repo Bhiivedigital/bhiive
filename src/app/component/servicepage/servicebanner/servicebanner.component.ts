@@ -64,9 +64,9 @@ export class ServicebannerComponent {
       this.breadcrumbName = 'Marketing Strategy';
     } 
      else if (url.includes('market-automation')) {
-      this.pageName = 'Market Automation & Stategy';
+      this.pageName = 'Marketing Automation';
       this.bannerImage = '../../../../assets/img/breadcrumb.jpg';
-      this.breadcrumbName = 'Market Automation & Stategy';
+      this.breadcrumbName = 'Market Automation';
     } 
       else if (url.includes('about-us')) {
       this.pageName = 'About Our Company';

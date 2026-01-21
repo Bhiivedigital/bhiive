@@ -34,7 +34,6 @@ Version: 1.0.0
   padding-right: 5px;
   border-radius: 0;
   line-height: 1;
-  text-transform: capitalize;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   position: relative;
@@ -5966,8 +5965,8 @@ p {
 .faq-items .accordion-item .accordion-header .accordion-button::after {
   content: "\f078";
   background: transparent;
-  font-family: "Font Awesome 7 Free";
-  font-weight: 300;
+  font-family: "Font Awesome 7 free";
+  font-weight: 900;
   transition: all 0.3s ease-in-out !important;
   color: var(--header);
   top: 18px;
@@ -5977,8 +5976,8 @@ p {
 .faq-items .accordion-item .accordion-header .accordion-button:not(.collapsed)::after {
   content: "\f077";
   background: transparent;
-  font-family: "Font Awesome 7 Free";
-  font-weight: 300;
+  font-family: "Font Awesome 7 free";
+  font-weight: 900;
   transform: rotate(0);
   color: var(--theme-color);
 }

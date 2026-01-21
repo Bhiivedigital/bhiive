@@ -7,7 +7,7 @@
             </div>
             <div class="swiper testimonial-slider-3">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
+                    <div class="swiper-slide" *ngFor="let slide of testmonial">
                         <div class="testimonial-box-items">
                             <div class="testimonial-box">
                                 <div class="star-box-items">
@@ -20,114 +20,23 @@
                                     </div>
                                     <img src="assets/img/testimonial/01.png" alt="img">
                                 </div>
-                                <p>“Etiam viverra purus sed aliquet tincidunt diam auctor nibhe eget eget elementum lobortis ante massa quis dui suspendisse massa. Curabitur condimentum accumsan risus et porta nam ut nisi metus. Praesent orci ante cursus.”</p>
+                                <p>{{slide.description| lineclamp:30:3}}</p>
                             </div>
                             <div class="client-info">
                                 <div class="client-img">
-                                    <img src="assets/img/testimonial/client-info-01.png" alt="img">
+                                    <img src="{{slide.img}}" alt="img">
                                 </div>
                                 <div class="client-content">
-                                    <h3>William Smith</h3>
-                                    <p>Digital Marketer</p>
+                                    <h3>{{slide.name}}</h3>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="testimonial-box-items">
-                            <div class="testimonial-box">
-                                <div class="star-box-items">
-                                    <div class="star">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <img src="assets/img/testimonial/01.png" alt="img">
-                                </div>
-                                <p>“Etiam viverra purus sed aliquet tincidunt diam auctor nibhe eget eget elementum lobortis ante massa quis dui suspendisse massa. Curabitur condimentum accumsan risus et porta nam ut nisi metus. Praesent orci ante cursus.”</p>
-                            </div>
-                            <div class="client-info">
-                                <div class="client-img">
-                                    <img src="assets/img/testimonial/client-info-02.png" alt="img">
-                                </div>
-                                <div class="client-content">
-                                    <h3>William Smith</h3>
-                                    <p>Digital Marketer</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="testimonial-box-items">
-                            <div class="testimonial-box">
-                                <div class="star-box-items">
-                                    <div class="star">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <img src="assets/img/testimonial/01.png" alt="img">
-                                </div>
-                                <p>“Etiam viverra purus sed aliquet tincidunt diam auctor nibhe eget eget elementum lobortis ante massa quis dui suspendisse massa. Curabitur condimentum accumsan risus et porta nam ut nisi metus. Praesent orci ante cursus.”</p>
-                            </div>
-                            <div class="client-info">
-                                <div class="client-img">
-                                    <img src="assets/img/testimonial/client-info-03.png" alt="img">
-                                </div>
-                                <div class="client-content">
-                                    <h3>William Smith</h3>
-                                    <p>Digital Marketer</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Cta Support Section Start -->
-    <!-- <section class="cta-support-section fix section-padding pt-0 cta-support-bg-style">
-        <div class="container">
-            <div class="cta-support-wrapper zoom-effect-style" style="background-image: url('assets/img/cta/cta-support-bg.jpg');">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div class="cta-support-img wow fadeInUp" data-wow-delay=".3s">
-                            <img src="assets/img/cta/cta-left.png" alt="img">
-                        </div>
-                    </div>
-                    <div class="col-lg-6 mt-3 mt-lg-0">
-                        <div class="cta-support-content">
-                            <div class="section-title text-start">
-                                <span class="text-white wow fadeInUp">24/7 Support</span>
-                                <h2 class="text-white char-animation">24/7 Customer Support Services from Our SEOZ</h2>
-                            </div>
-                            <p class="cta-support-text wow fadeInUp" data-wow-delay=".4s">Welcome to SEOZ your trusted partner for comprehensive SEO and digital marketing solutions with our proven expertise</p>
-                            <div class="cta-support-box wow fadeInUp" data-wow-delay=".6s">
-                                <a href="contact.php" class="theme-btn">
-                                    Contact Us
-                                    <i class="fa fa-arrow-right"></i>
-                                </a>
-                                <div class="phone-box">
-                                    <div class="icon">
-                                        <img src="assets/img/call.svg" alt="img">
-                                    </div>
-                                    <div class="content">
-                                        <p>Mail Us</p>
-                                        <h5>(704) 555-0127</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
 
     <!-- Faq Section Start -->
     <section class="faq-section fix section-padding">
