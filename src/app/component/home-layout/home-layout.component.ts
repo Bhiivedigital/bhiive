@@ -9,6 +9,7 @@ import { CasestudyComponent } from './casestudy/casestudy.component';
 import { TestmonialComponent } from './testmonial/testmonial.component';
 import { ContactsectionComponent } from './contactsection/contactsection.component';
 import { Meta, Title } from '@angular/platform-browser';
+import { SchemaService } from '../shared/service/schema.service';
 
 @Component({
   selector: 'app-home-layout',
@@ -20,7 +21,7 @@ import { Meta, Title } from '@angular/platform-browser';
 export class HomeLayoutComponent {
  constructor(
     private title: Title,
-    private meta: Meta
+    private meta: Meta, private schemaService:SchemaService
   ) {}
 
   ngOnInit(): void {
@@ -34,5 +35,17 @@ export class HomeLayoutComponent {
     },
     true // <-- FORCE
   );
+  this.schemaService.updateSchema({
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://bhiive.com/#website",
+    "url": "https://bhiive.com/",
+    "name": "Bhiive Digi Tech",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://bhiive.com/?s={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  });
 }
 }

@@ -88,6 +88,11 @@ export class ServicebannerComponent {
       this.bannerImage = '../../../../assets/img/breadcrumb.jpg';
       this.breadcrumbName = 'Blog Details';
     } 
+     else if (url.includes('career')) {
+      this.pageName = 'Career';
+      this.bannerImage = '../../../../assets/img/breadcrumb.jpg';
+      this.breadcrumbName = 'Career';
+    } 
     else {
       this.pageName = 'Default';
       this.bannerImage = 'assets/banners/default-banner.jpg';

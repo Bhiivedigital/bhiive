@@ -1,22 +1,23 @@
 import { Component } from '@angular/core';
 import { ServicebannerComponent } from '../servicepage/servicebanner/servicebanner.component';
-import { AbstractControl, FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms'
+import { AbstractControl, FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 import { CommonModule } from '@angular/common';
 import { SchemaService } from '../shared/service/schema.service';
 
+
 @Component({
-  selector: 'app-contactpage',
+  selector: 'app-career',
   standalone: true,
-  imports: [ServicebannerComponent,FormsModule, ReactiveFormsModule, CommonModule],
-  templateUrl: './contactpage.component.html',
-  styleUrl: './contactpage.component.scss'
+  imports: [ServicebannerComponent, CommonModule, FormsModule, ReactiveFormsModule],
+  templateUrl: './career.component.html',
+  styleUrl: './career.component.scss'
 })
-export class ContactpageComponent {
-   form:any= FormGroup;
+export class CareerComponent {
+  form:any= FormGroup;
   submitted = false;
 
- constructor(private formBuilder: FormBuilder, private schemaService:SchemaService ) {}
+ constructor(private formBuilder: FormBuilder,private schemaService:SchemaService ) {}
 
 ngOnInit(): void {
     emailjs.init('bKJipK3m800SQHwLe'); // Ensure EmailJS is initialized
@@ -26,25 +27,26 @@ ngOnInit(): void {
       mobile: ['', [Validators.required, Validators.pattern("^[0-9]{10,13}$"),Validators.minLength(10),Validators.maxLength(10)]], // Ensure valid phone number
       message: [''] // Ensure message is required
     });
-    this.schemaService.updateSchema({
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "https://bhiive.com/#localbusiness",
-    "name": "Bhiive Digi Tech",
-    "url": "https://bhiive.com/",
-    "telephone": "094459 74970",
-    "priceRange": "$$",
-    "address": {
-      "@type": "Bhiive Digi Tech, Sriraman Street, Sembiyan, Perambur, Chennai, Tamil Nadu ",
-      "streetAddress": "Sriraman Street, Sembiyan, Perambur",
-      "addressLocality": "Chennai",
-      "addressRegion": "TN",
-      "postalCode": "600011",
-      "addressCountry": "IN"
-    }
+ const slug = 'digital-marketing';
+
+  this.schemaService.updateSchema({
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://bhiive.com/careers/#webpage",
+  "url": "https://bhiive.com/careers/",
+  "name": "Careers at Bhiive Digi Tech",
+  "description": "REPLACE CAREERS PAGE DESCRIPTION (e.g., Join our growing team in Chennai. Explore our open roles and build your career in digital technology.)",
+  "isPartOf": {
+    "@id": "https://bhiive.com/#website"
+  },
+  "publisher": {
+    "@id": "https://bhiive.com/#organization"
+
+}
   });
   }
 
+  
   // Getter for easy access to form fields in template
   get f(): { [key: string]: AbstractControl } {
     return this.form.controls;

@@ -12,6 +12,8 @@ import { ContactpageComponent } from './component/contactpage/contactpage.compon
 import { BlogComponent } from './component/blog/blog.component';
 import { BlogdetailsComponent } from './component/blog/blogdetails/blogdetails.component';
 import { PricvacypolicyComponent } from './component/pricvacypolicy/pricvacypolicy.component';
+import { CareerComponent } from './component/career/career.component';
+import { CareerdetailsComponent } from './component/careerdetails/careerdetails.component';
 
 
 export const routes: Routes = [
@@ -27,5 +29,10 @@ export const routes: Routes = [
     {path:'blog', component:BlogComponent, title:'Blogs'},
     {path:'blog-details', component:BlogdetailsComponent, title:'Blog Details'},
     {path:'privacy-policy', component:PricvacypolicyComponent, title:'Privacy Policy'},
-    {path:'contact-us', component:ContactpageComponent, title:'Contatus'}
+    {path:'contact-us', component:ContactpageComponent, title:'Contact Us'},
+    {path:'career', component:CareerComponent, title:'career'},
+   {path: 'careers/:slug',
+  loadComponent: () =>
+    import('./component/careerdetails/careerdetails.component')
+      .then(m => m.CareerdetailsComponent)}
 ];
