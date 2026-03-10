@@ -11,7 +11,12 @@ import { Meta, Title } from '@angular/platform-browser';
   styleUrl: './workflowautomation.component.scss'
 })
 export class WorkflowautomationComponent {
-constructor(private meta: Meta, private title: Title) {}
+constructor(private meta: Meta, private title: Title) {
+   this.meta.updateTag({
+      rel: 'canonical',
+      href: 'https://www.bhiive.com/workflow-automation'
+    });
+}
 
   ngOnInit(): void {
 

@@ -27,7 +27,7 @@ export const routes: Routes = [
     {path:'digital-marketing', component:DigitalmarketingComponent, title:'Digital Marketing'},
     {path:'market-automation', component:MarketautomationComponent, title:'Market Automation & Stategy'},
     {path:'blog', component:BlogComponent, title:'Blogs'},
-    {path:'blog-details', component:BlogdetailsComponent, title:'Blog Details'},
+    {path:'blog/:slug', component:BlogdetailsComponent, title:'Blog Details'},
     {path:'privacy-policy', component:PricvacypolicyComponent, title:'Privacy Policy'},
     {path:'contact-us', component:ContactpageComponent, title:'Contact Us'},
     {path:'career', component:CareerComponent, title:'career'},

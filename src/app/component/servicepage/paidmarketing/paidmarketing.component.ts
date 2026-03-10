@@ -11,7 +11,12 @@ import { Meta, Title } from '@angular/platform-browser';
   styleUrl: './paidmarketing.component.scss'
 })
 export class PaidmarketingComponent {
-constructor(private meta: Meta, private title: Title) {}
+constructor(private meta: Meta, private title: Title) {
+    this.meta.updateTag({
+      rel: 'canonical',
+      href: 'https://www.bhiive.com/paid-marketing'
+    });
+}
 
   ngOnInit(): void {
 

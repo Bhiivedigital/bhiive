@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ServicebannerComponent } from '../servicepage/servicebanner/servicebanner.component';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-aboutus',
@@ -9,5 +10,10 @@ import { ServicebannerComponent } from '../servicepage/servicebanner/servicebann
   styleUrl: './aboutus.component.scss'
 })
 export class AboutusComponent {
-
+constructor(private meta: Meta) {
+    this.meta.updateTag({
+      rel: 'canonical',
+      href: 'https://www.bhiive.com/about-us'
+    });
+  }
 }

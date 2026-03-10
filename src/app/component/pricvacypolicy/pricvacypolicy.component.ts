@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-pricvacypolicy',
@@ -8,5 +9,10 @@ import { Component } from '@angular/core';
   styleUrl: './pricvacypolicy.component.scss'
 })
 export class PricvacypolicyComponent {
-
+ constructor(private meta:Meta){
+  this.meta.updateTag({
+      rel: 'canonical',
+      href: 'https://www.bhiive.com/privacy-policy'
+    });
+ }
 }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ServicebannerComponent } from './servicebanner/servicebanner.component';
 import { RouterLink } from '@angular/router';
 import { SchemaService } from '../shared/service/schema.service';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-servicepage',
@@ -11,7 +12,14 @@ import { SchemaService } from '../shared/service/schema.service';
   styleUrl: './servicepage.component.scss'
 })
 export class ServicepageComponent {
-  constructor(private schemaService:SchemaService ){}
+  constructor(private schemaService:SchemaService,private meta:Meta ){
+    
+      this.meta.updateTag({
+          rel: 'canonical',
+          href: 'https://www.bhiive.com/services'
+        });
+     
+  }
   ngOnInit() {
   const slug = 'digital-marketing';
 

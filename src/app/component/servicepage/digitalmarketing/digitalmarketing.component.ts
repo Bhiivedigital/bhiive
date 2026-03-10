@@ -12,7 +12,12 @@ import { Meta, Title } from '@angular/platform-browser';
   styleUrl: './digitalmarketing.component.scss'
 })
 export class DigitalmarketingComponent {
-constructor(private meta: Meta, private title: Title) {}
+constructor(private meta: Meta, private title: Title) {
+   this.meta.updateTag({
+      rel: 'canonical',
+      href: 'https://www.bhiive.com/digital-marketing'
+    });
+}
 
   ngOnInit(): void {
 

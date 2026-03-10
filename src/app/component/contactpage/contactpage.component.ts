@@ -4,6 +4,7 @@ import { AbstractControl, FormBuilder, FormGroup, FormsModule, ReactiveFormsModu
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 import { CommonModule } from '@angular/common';
 import { SchemaService } from '../shared/service/schema.service';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-contactpage',
@@ -16,7 +17,12 @@ export class ContactpageComponent {
    form:any= FormGroup;
   submitted = false;
 
- constructor(private formBuilder: FormBuilder, private schemaService:SchemaService ) {}
+ constructor(private formBuilder: FormBuilder, private schemaService:SchemaService, private meta:Meta ) {
+  this.meta.updateTag({
+      rel: 'canonical',
+      href: 'https://www.bhiive.com/contact-us'
+    });
+ }
 
 ngOnInit(): void {
     emailjs.init('bKJipK3m800SQHwLe'); // Ensure EmailJS is initialized

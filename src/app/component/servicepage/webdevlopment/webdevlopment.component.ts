@@ -11,7 +11,12 @@ import { Meta, Title } from '@angular/platform-browser';
   styleUrl: './webdevlopment.component.scss'
 })
 export class WebdevlopmentComponent {
-constructor(private meta: Meta, private title: Title) {}
+constructor(private meta: Meta, private title: Title) {
+     this.meta.updateTag({
+      rel: 'canonical',
+      href: 'https://www.bhiive.com/web-development'
+    });
+}
 
   ngOnInit(): void {
 

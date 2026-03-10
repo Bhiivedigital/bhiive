@@ -3,16 +3,28 @@ import { ServicebannerComponent } from '../servicepage/servicebanner/servicebann
 import { RouterLink } from "@angular/router";
 import { BlogdetailsComponent } from './blogdetails/blogdetails.component';
 import { SchemaService } from '../shared/service/schema.service';
+import { Meta } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
+import { BlogService } from '../shared/service/blog.service';
 
 @Component({
   selector: 'app-blog',
   standalone: true,
-  imports: [ServicebannerComponent, RouterLink],
+  imports: [ServicebannerComponent, RouterLink, CommonModule],
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.scss'
 })
 export class BlogComponent {
-  constructor(private schemaService:SchemaService){ }
+blogs:any[] = [];
+
+
+  constructor(private schemaService:SchemaService, private meta: Meta, private blogService:BlogService){
+    this.meta.updateTag({
+      rel: 'canonical',
+      href: 'https://www.bhiive.com/blog'
+    });
+  
+   }
   
 ngOnInit() {
   this.schemaService.updateSchema({
@@ -33,6 +45,12 @@ ngOnInit() {
     "datePublished": "2025-01-01",
     "dateModified": "2025-01-10"
   });
+
+     this.blogService.getBlogs().subscribe(data=>{
+      this.blogs = data;
+    });
+
+  }
 }
 
-}
+
