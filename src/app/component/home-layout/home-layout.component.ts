@@ -31,7 +31,7 @@ export class HomeLayoutComponent {
   this.meta.addTag(
     {
       name: 'description',
-      content: 'Bhiive Digi Tech – Digital Marketing Agency'
+      content: 'Bhiive – Digital Marketing Agency'
     },
     true // <-- FORCE
   );
@@ -40,7 +40,7 @@ export class HomeLayoutComponent {
     "@type": "WebSite",
     "@id": "https://bhiive.com/#website",
     "url": "https://bhiive.com/",
-    "name": "Bhiive Digi Tech",
+    "name": "Bhiive",
     "potentialAction": {
       "@type": "SearchAction",
       "target": "https://bhiive.com/?s={search_term_string}",

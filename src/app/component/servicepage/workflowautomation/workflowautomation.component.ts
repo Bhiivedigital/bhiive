@@ -14,7 +14,7 @@ export class WorkflowautomationComponent {
 constructor(private meta: Meta, private title: Title) {
    this.meta.updateTag({
       rel: 'canonical',
-      href: 'https://www.bhiive.com/workflow-automation'
+      href: 'https://bhiive/workflow-automation'
     });
 }
 
@@ -28,7 +28,7 @@ constructor(private meta: Meta, private title: Title) {
     // Meta Tags
     this.meta.updateTag({
       name: 'description',
-      content: 'Transform your operations with Bhiive Digi Tech’s workflow automation services. We streamline repetitive tasks, improve process efficiency, reduce manual work, and help businesses scale with smart automated workflows tailored to your needs.'
+      content: 'Transform your operations with Bhiive’s workflow automation services. We streamline repetitive tasks, improve process efficiency, reduce manual work, and help businesses scale with smart automated workflows tailored to your needs.'
     });
     this.meta.updateTag({
       name: 'title',

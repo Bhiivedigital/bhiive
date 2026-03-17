@@ -14,7 +14,7 @@ export class BrandbuildingComponent {
 constructor(private meta: Meta, private title: Title) {
   this.meta.updateTag({
       rel: 'canonical',
-      href: 'https://www.bhiive.com/brand-building'
+      href: 'https://bhiive/brand-building'
     });
 }
 
@@ -28,7 +28,7 @@ constructor(private meta: Meta, private title: Title) {
     // Meta Tags
     this.meta.updateTag({
       name: 'description',
-      content: 'Boost your brand visibility with Bhiive Digi Tech’s expert brand building services. We craft strategic brand identities, compelling messaging, logo design and brand positioning to help businesses create meaningful connections, stand out in the marketplace and grow.'
+      content: 'Boost your brand visibility with Bhiive’s expert brand building services. We craft strategic brand identities, compelling messaging, logo design and brand positioning to help businesses create meaningful connections, stand out in the marketplace and grow.'
     });
     this.meta.updateTag({
       name: 'title',

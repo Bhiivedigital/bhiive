@@ -22,7 +22,7 @@ export class CareerComponent {
   
       this.meta.updateTag({
         rel: 'canonical',
-        href: 'https://www.bhiive.com/career'
+        href: 'https://bhiive/career'
       });
     
  }
@@ -42,7 +42,7 @@ ngOnInit(): void {
   "@type": "WebPage",
   "@id": "https://bhiive.com/careers/#webpage",
   "url": "https://bhiive.com/careers/",
-  "name": "Careers at Bhiive Digi Tech",
+  "name": "Careers at Bhiive",
   "description": "REPLACE CAREERS PAGE DESCRIPTION (e.g., Join our growing team in Chennai. Explore our open roles and build your career in digital technology.)",
   "isPartOf": {
     "@id": "https://bhiive.com/#website"

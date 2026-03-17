@@ -14,7 +14,7 @@ export class MarketautomationComponent {
 constructor(private meta: Meta, private title: Title) {
    this.meta.updateTag({
       rel: 'canonical',
-      href: 'https://www.bhiive.com/market-automation'
+      href: 'https://bhiive/market-automation'
     });
 }
 
@@ -28,7 +28,7 @@ constructor(private meta: Meta, private title: Title) {
     // Meta Tags
     this.meta.updateTag({
       name: 'description',
-      content: 'Streamline your marketing operations with Bhiive Digi Tech’s market automation services. Automate campaigns, lead nurturing, email follow-ups and analytics to boost conversions, save time, and improve ROI with intelligent workflows tailored to your business.'
+      content: 'Streamline your marketing operations with Bhiive’s market automation services. Automate campaigns, lead nurturing, email follow-ups and analytics to boost conversions, save time, and improve ROI with intelligent workflows tailored to your business.'
     });
     this.meta.updateTag({
       name: 'title',

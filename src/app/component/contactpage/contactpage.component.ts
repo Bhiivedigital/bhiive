@@ -20,7 +20,7 @@ export class ContactpageComponent {
  constructor(private formBuilder: FormBuilder, private schemaService:SchemaService, private meta:Meta ) {
   this.meta.updateTag({
       rel: 'canonical',
-      href: 'https://www.bhiive.com/contact-us'
+      href: 'https://bhiive/contact-us'
     });
  }
 
@@ -36,12 +36,12 @@ ngOnInit(): void {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": "https://bhiive.com/#localbusiness",
-    "name": "Bhiive Digi Tech",
+    "name": "Bhiive",
     "url": "https://bhiive.com/",
     "telephone": "094459 74970",
     "priceRange": "$$",
     "address": {
-      "@type": "Bhiive Digi Tech, Sriraman Street, Sembiyan, Perambur, Chennai, Tamil Nadu ",
+      "@type": "Bhiive, Sriraman Street, Sembiyan, Perambur, Chennai, Tamil Nadu ",
       "streetAddress": "Sriraman Street, Sembiyan, Perambur",
       "addressLocality": "Chennai",
       "addressRegion": "TN",

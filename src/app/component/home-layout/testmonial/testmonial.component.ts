@@ -13,12 +13,12 @@ export class TestmonialComponent {
 testmonial = [
     {
       name: 'sri makeovers',
-      description:'We had an amazing experience working with Bhiive Digi Tech Pvt Ltd for our digital marketing needs. From PPC campaigns to SEO strategies, they handled everything with expertise and delivered outstanding results.',
+      description:'We had an amazing experience working with Bhiive Pvt Ltd for our digital marketing needs. From PPC campaigns to SEO strategies, they handled everything with expertise and delivered outstanding results.',
       img:'assets/img/testimonial/client-info-02.png',
     },
      {
       name:'Hunter Property',
-      description:'The best website service I’ve experienced in chennai. Our business saw a 40% increase in leads after launching with Bhiive Digi Tech.',
+      description:'The best website service I’ve experienced in chennai. Our business saw a 40% increase in leads after launching with Bhiive.',
       img:'assets/img/testimonial/client-info-02.png',
      },
      {

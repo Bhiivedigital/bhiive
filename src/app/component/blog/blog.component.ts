@@ -21,7 +21,7 @@ blogs:any[] = [];
   constructor(private schemaService:SchemaService, private meta: Meta, private blogService:BlogService){
     this.meta.updateTag({
       rel: 'canonical',
-      href: 'https://www.bhiive.com/blog'
+      href: 'https://bhiive/blog'
     });
   
    }

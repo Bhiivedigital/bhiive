@@ -15,7 +15,7 @@ export class DigitalmarketingComponent {
 constructor(private meta: Meta, private title: Title) {
    this.meta.updateTag({
       rel: 'canonical',
-      href: 'https://www.bhiive.com/digital-marketing'
+      href: 'https://bhiive/digital-marketing'
     });
 }
 
@@ -29,7 +29,7 @@ constructor(private meta: Meta, private title: Title) {
     // Meta Tags
     this.meta.updateTag({
       name: 'description',
-      content: 'Grow your online presence with Bhiive Digi Tech’s result-driven digital marketing services. We offer SEO, social media marketing, PPC advertising, content strategy and lead generation solutions tailored to your business goals for measurable growth and ROI'
+      content: 'Grow your online presence with Bhiive’s result-driven digital marketing services. We offer SEO, social media marketing, PPC advertising, content strategy and lead generation solutions tailored to your business goals for measurable growth and ROI'
     });
     this.meta.updateTag({
       name: 'title',

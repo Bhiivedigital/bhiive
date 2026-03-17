@@ -14,7 +14,7 @@ export class PaidmarketingComponent {
 constructor(private meta: Meta, private title: Title) {
     this.meta.updateTag({
       rel: 'canonical',
-      href: 'https://www.bhiive.com/paid-marketing'
+      href: 'https://bhiive/paid-marketing'
     });
 }
 
@@ -28,7 +28,7 @@ constructor(private meta: Meta, private title: Title) {
     // Meta Tags
     this.meta.updateTag({
       name: 'description',
-      content: 'Get expert paid marketing services from Bhiive Digi Tech. We deliver performance-focused PPC, Google Ads, Meta Ads, and targeted ad campaigns that drive immediate traffic, qualified leads, and measurable ROI for your business growth.'
+      content: 'Get expert paid marketing services from Bhiive. We deliver performance-focused PPC, Google Ads, Meta Ads, and targeted ad campaigns that drive immediate traffic, qualified leads, and measurable ROI for your business growth.'
     });
     this.meta.updateTag({
       name: 'title',

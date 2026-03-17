@@ -12,7 +12,7 @@ export class PricvacypolicyComponent {
  constructor(private meta:Meta){
   this.meta.updateTag({
       rel: 'canonical',
-      href: 'https://www.bhiive.com/privacy-policy'
+      href: 'https://bhiive/privacy-policy'
     });
  }
 }

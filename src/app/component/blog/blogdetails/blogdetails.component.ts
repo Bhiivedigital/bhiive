@@ -19,7 +19,7 @@ blogData:any;
 constructor(private meta: Meta, private route: ActivatedRoute, private blogService:BlogService) {
     this.meta.updateTag({
       rel: 'canonical',
-      href: 'https://www.bhiive.com/blog'
+      href: 'https://bhiive/blog'
     });
   }
 

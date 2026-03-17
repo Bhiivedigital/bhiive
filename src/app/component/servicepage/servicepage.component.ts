@@ -16,7 +16,7 @@ export class ServicepageComponent {
     
       this.meta.updateTag({
           rel: 'canonical',
-          href: 'https://www.bhiive.com/services'
+          href: 'https://bhiive/services'
         });
      
   }
