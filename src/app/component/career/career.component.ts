@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { ServicebannerComponent } from '../servicepage/servicebanner/servicebanner.component';
 import { AbstractControl, FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
+import emailjs from '@emailjs/browser';
 import { CommonModule } from '@angular/common';
 import { SchemaService } from '../shared/service/schema.service';
-import { Meta } from '@angular/platform-browser';
-
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-career',
@@ -15,60 +14,55 @@ import { Meta } from '@angular/platform-browser';
   styleUrl: './career.component.scss'
 })
 export class CareerComponent {
-  form:any= FormGroup;
+  form: any = FormGroup;
   submitted = false;
 
- constructor(private formBuilder: FormBuilder,private schemaService:SchemaService,private meta:Meta ) {
-  
-      this.meta.updateTag({
-        rel: 'canonical',
-        href: 'https://bhiive/career'
-      });
-    
- }
+  constructor(private formBuilder: FormBuilder, private schemaService: SchemaService, private meta: Meta, private title: Title) {}
 
-ngOnInit(): void {
-    emailjs.init('bKJipK3m800SQHwLe'); // Ensure EmailJS is initialized
+  ngOnInit(): void {
+    this.title.setTitle('Careers at Bhiive | Join Our Digital Marketing Team in Chennai');
+
+    this.meta.updateTag({ name: 'description', content: 'Join the Bhiive team in Chennai. Explore open roles in digital marketing, web development, SEO, and more. Build your career with a fast-growing agency.' });
+    this.meta.updateTag({ name: 'keywords', content: 'careers at Bhiive, digital marketing jobs Chennai, SEO jobs, web development jobs, Bhiive hiring' });
+    this.meta.updateTag({ rel: 'canonical', href: 'https://bhiive.com/career' });
+
+    this.meta.updateTag({ property: 'og:title', content: 'Careers at Bhiive | Join Our Digital Marketing Team in Chennai' });
+    this.meta.updateTag({ property: 'og:description', content: 'Explore open roles at Bhiive in digital marketing, web development, and SEO in Chennai.' });
+    this.meta.updateTag({ property: 'og:url', content: 'https://bhiive.com/career' });
+    this.meta.updateTag({ property: 'og:type', content: 'website' });
+    this.meta.updateTag({ property: 'og:image', content: 'https://bhiive.com/assets/img/logo/logo1.png' });
+
+    this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
+    this.meta.updateTag({ name: 'twitter:title', content: 'Careers at Bhiive | Join Our Digital Marketing Team in Chennai' });
+    this.meta.updateTag({ name: 'twitter:description', content: 'Explore open roles at Bhiive in digital marketing, web development, and SEO.' });
+
+    emailjs.init('bKJipK3m800SQHwLe');
     this.form = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
       email: ['', [Validators.required, Validators.email]],
-      mobile: ['', [Validators.required, Validators.pattern("^[0-9]{10,13}$"),Validators.minLength(10),Validators.maxLength(10)]], // Ensure valid phone number
-      message: [''] // Ensure message is required
+      mobile: ['', [Validators.required, Validators.pattern("^[0-9]{10,13}$"), Validators.minLength(10), Validators.maxLength(10)]],
+      message: ['']
     });
- const slug = 'digital-marketing';
 
-  this.schemaService.updateSchema({
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "@id": "https://bhiive.com/careers/#webpage",
-  "url": "https://bhiive.com/careers/",
-  "name": "Careers at Bhiive",
-  "description": "REPLACE CAREERS PAGE DESCRIPTION (e.g., Join our growing team in Chennai. Explore our open roles and build your career in digital technology.)",
-  "isPartOf": {
-    "@id": "https://bhiive.com/#website"
-  },
-  "publisher": {
-    "@id": "https://bhiive.com/#organization"
-
-}
-  });
+    this.schemaService.updateSchema({
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://bhiive.com/career/#webpage",
+      "url": "https://bhiive.com/career",
+      "name": "Careers at Bhiive",
+      "description": "Join our growing team in Chennai. Explore open roles and build your career in digital marketing and technology.",
+      "isPartOf": { "@id": "https://bhiive.com/#website" },
+      "publisher": { "@id": "https://bhiive.com/#organization" }
+    });
   }
 
-  
-  // Getter for easy access to form fields in template
   get f(): { [key: string]: AbstractControl } {
     return this.form.controls;
   }
 
   async onSubmit() {
     this.submitted = true;
-
-    // Stop submission if form is invalid
-    if (this.form.invalid) {
-      // alert("Please fill in all required fields correctly.");
-      return;
-    }
-
+    if (this.form.invalid) return;
     try {
       let response = await emailjs.send("service_wjjtovg", "template_tt1n5xt", {
         subject: this.form.value.subject,
@@ -77,7 +71,6 @@ ngOnInit(): void {
         email: this.form.value.email,
         name: this.form.value.name,
       });
-
       console.log("Email sent successfully!", response);
       alert('Message sent successfully!');
       this.submitted = false;
@@ -87,11 +80,9 @@ ngOnInit(): void {
       alert('Failed to send message. Please try again.');
     }
   }
-  
+
   allowOnlyNumbers(event: KeyboardEvent) {
-  const char = event.key;
-  if (!/^[0-9]$/.test(char)) {
-    event.preventDefault();
+    const char = event.key;
+    if (!/^[0-9]$/.test(char)) event.preventDefault();
   }
-}
 }
