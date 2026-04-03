@@ -25,7 +25,10 @@
   <meta name="twitter:image" content="https://bhiive.com/assets/img/logo/logo1.png">
 
   <link rel="icon" type="image/x-icon" href="./assets/img/logo/logo-icon.png">
-
+  <!-- Tell browser to load the hero image first (LCP element) -->
+  <link rel="preload" as="image" href="./assets/img/hero/hero-1-img.webp"
+        media="(min-width: 992px)">
+  <link rel="preload" as="image" href="./assets/img/hero/hero-1-bg.webp">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PTCRZHPX2V"></script>
   <script>

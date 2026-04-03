@@ -18,13 +18,17 @@
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
                                     </div>
-                                    <img src="assets/img/testimonial/01.png" alt="img">
+                                    <img src="assets/img/testimonial/01.png"
+                                    alt="Client testimonial"
+                                    loading="lazy" width="60" height="60">
                                 </div>
                                 <p>{{slide.description| lineclamp:30:3}}</p>
                             </div>
                             <div class="client-info">
                                 <div class="client-img">
-                                    <img src="{{slide.img}}" alt="img">
+                                    <img [src]="slide.img"
+                                        [alt]="slide.name + ' – Bhiive client testimonial'"
+                                        loading="lazy" width="60" height="60">
                                 </div>
                                 <div class="client-content">
                                     <h3>{{slide.name}}</h3>
