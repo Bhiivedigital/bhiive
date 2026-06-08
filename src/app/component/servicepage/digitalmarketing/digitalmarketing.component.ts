@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ServicebannerComponent } from '../servicebanner/servicebanner.component';
 import { SidebarsecComponent } from '../sidebarsec/sidebarsec.component';
 import { Meta, Title } from '@angular/platform-browser';
+import { CanonicalService } from '../../shared/service/canonical.service';
 import { SchemaService } from '../../shared/service/schema.service';
 
 @Component({
@@ -12,14 +13,14 @@ import { SchemaService } from '../../shared/service/schema.service';
   styleUrl: './digitalmarketing.component.scss'
 })
 export class DigitalmarketingComponent {
-  constructor(private meta: Meta, private title: Title, private schemaService: SchemaService) {}
+  constructor(private meta: Meta, private title: Title, private schemaService: SchemaService, private canonicalService: CanonicalService) {}
 
   ngOnInit(): void {
     this.title.setTitle('Digital Marketing Services | SEO, PPC, Social Media & Lead Generation – Bhiive');
 
     this.meta.updateTag({ name: 'description', content: 'Grow your online presence with Bhiives result-driven digital marketing services. We offer SEO, social media marketing, PPC advertising, content strategy and lead generation tailored to your business goals.' });
     this.meta.updateTag({ name: 'keywords', content: 'digital marketing services, SEO services, PPC advertising, social media marketing, lead generation, online marketing agency, Bhiive Chennai' });
-    this.meta.updateTag({ rel: 'canonical', href: 'https://bhiive.com/digital-marketing' });
+    this.canonicalService.setCanonical('https://bhiive.com/digital-marketing');
 
     this.meta.updateTag({ property: 'og:title', content: 'Digital Marketing Services | SEO, PPC, Social Media & Lead Generation – Bhiive' });
     this.meta.updateTag({ property: 'og:description', content: 'Grow your online presence with Bhiives result-driven digital marketing services. We offer SEO, social media marketing, PPC advertising, content strategy and lead generation tailored to your business goals.' });

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ServicebannerComponent } from '../servicebanner/servicebanner.component';
 import { SidebarsecComponent } from '../sidebarsec/sidebarsec.component';
 import { Meta, Title } from '@angular/platform-browser';
+import { CanonicalService } from '../../shared/service/canonical.service';
 import { SchemaService } from '../../shared/service/schema.service';
 
 @Component({
@@ -12,14 +13,14 @@ import { SchemaService } from '../../shared/service/schema.service';
   styleUrl: './paidmarketing.component.scss'
 })
 export class PaidmarketingComponent {
-  constructor(private meta: Meta, private title: Title, private schemaService: SchemaService) {}
+  constructor(private meta: Meta, private title: Title, private schemaService: SchemaService, private canonicalService: CanonicalService) {}
 
   ngOnInit(): void {
     this.title.setTitle('Paid Marketing Services | PPC, Google Ads & Social Ads – Bhiive');
 
     this.meta.updateTag({ name: 'description', content: 'Get expert paid marketing services from Bhiive. We deliver performance-focused PPC, Google Ads, Meta Ads, and targeted campaigns that drive immediate traffic, qualified leads, and measurable ROI.' });
     this.meta.updateTag({ name: 'keywords', content: 'paid marketing services, PPC management, Google Ads, Facebook Ads, Instagram ads, performance marketing, Bhiive Chennai' });
-    this.meta.updateTag({ rel: 'canonical', href: 'https://bhiive.com/paid-marketing' });
+    this.canonicalService.setCanonical('https://bhiive.com/paid-marketing');
 
     this.meta.updateTag({ property: 'og:title', content: 'Paid Marketing Services | PPC, Google Ads & Social Ads – Bhiive' });
     this.meta.updateTag({ property: 'og:description', content: 'Get expert paid marketing services from Bhiive. We deliver performance-focused PPC, Google Ads, Meta Ads, and targeted campaigns that drive immediate traffic, qualified leads, and measurable ROI.' });

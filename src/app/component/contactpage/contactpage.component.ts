@@ -5,6 +5,7 @@ import emailjs from '@emailjs/browser';
 import { CommonModule } from '@angular/common';
 import { SchemaService } from '../shared/service/schema.service';
 import { Meta, Title } from '@angular/platform-browser';
+import { CanonicalService } from '../shared/service/canonical.service';
 
 @Component({
   selector: 'app-contactpage',
@@ -17,14 +18,14 @@ export class ContactpageComponent {
   form: any = FormGroup;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder, private schemaService: SchemaService, private meta: Meta, private title: Title) {}
+  constructor(private formBuilder: FormBuilder, private schemaService: SchemaService, private meta: Meta, private title: Title, private canonicalService: CanonicalService) {}
 
   ngOnInit(): void {
     this.title.setTitle('Contact Us | Get a Free Quote – Bhiive');
 
     this.meta.updateTag({ name: 'description', content: 'Get in touch with Bhiive for web design, SEO, digital marketing, and paid advertising services in Chennai. Request a free consultation today.' });
     this.meta.updateTag({ name: 'keywords', content: 'contact Bhiive, digital marketing agency Chennai contact, SEO services quote, free consultation' });
-    this.meta.updateTag({ rel: 'canonical', href: 'https://bhiive.com/contact-us' });
+    this.canonicalService.setCanonical('https://bhiive.com/contact-us');
 
     this.meta.updateTag({ property: 'og:title', content: 'Contact Us | Get a Free Quote – Bhiive' });
     this.meta.updateTag({ property: 'og:description', content: 'Get in touch with Bhiive for web design, SEO, and digital marketing services in Chennai.' });

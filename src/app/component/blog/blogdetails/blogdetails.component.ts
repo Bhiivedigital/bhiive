@@ -5,6 +5,7 @@ import { Meta } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { BlogService } from '../../shared/service/blog.service';
 import { CommonModule } from '@angular/common';
+import { CanonicalService } from '../../shared/service/canonical.service';
 
 @Component({
   selector: 'app-blogdetails',
@@ -14,24 +15,22 @@ import { CommonModule } from '@angular/common';
   styleUrl: './blogdetails.component.scss'
 })
 export class BlogdetailsComponent {
-    slug:any;
-blogData:any;
-constructor(private meta: Meta, private route: ActivatedRoute, private blogService:BlogService) {
-    this.meta.updateTag({
-      rel: 'canonical',
-      href: 'https://bhiive/blog'
+  slug: any;
+  blogData: any;
+
+  constructor(
+    private meta: Meta,
+    private route: ActivatedRoute,
+    private blogService: BlogService,
+    private canonicalService: CanonicalService
+  ) {}
+
+  ngOnInit() {
+    const slug = this.route.snapshot.paramMap.get('slug');
+    this.canonicalService.setCanonical(`https://bhiive.com/blog/${slug}`);
+
+    this.blogService.getBlogs().subscribe(data => {
+      this.blogData = data.find((x: any) => x.slug === slug);
     });
   }
-
-ngOnInit(){
-
-const slug = this.route.snapshot.paramMap.get('slug');
-
-this.blogService.getBlogs().subscribe(data=>{
-
-this.blogData = data.find((x:any)=> x.slug === slug);
-
-});
-
-}
 }

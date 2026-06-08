@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ServicebannerComponent } from '../servicebanner/servicebanner.component';
 import { SidebarsecComponent } from '../sidebarsec/sidebarsec.component';
 import { Meta, Title } from '@angular/platform-browser';
+import { CanonicalService } from '../../shared/service/canonical.service';
 import { SchemaService } from '../../shared/service/schema.service';
 
 @Component({
@@ -12,14 +13,14 @@ import { SchemaService } from '../../shared/service/schema.service';
   styleUrl: './brandbuilding.component.scss'
 })
 export class BrandbuildingComponent {
-  constructor(private meta: Meta, private title: Title, private schemaService: SchemaService) {}
+  constructor(private meta: Meta, private title: Title, private schemaService: SchemaService, private canonicalService: CanonicalService) {}
 
   ngOnInit(): void {
     this.title.setTitle('Brand Building Services | Brand Strategy, Identity & Growth – Bhiive');
 
     this.meta.updateTag({ name: 'description', content: 'Boost your brand visibility with Bhiives expert brand building services. We craft strategic brand identities, compelling messaging, logo design and brand positioning to help your business stand out and grow.' });
     this.meta.updateTag({ name: 'keywords', content: 'brand building services, brand strategy, brand identity design, logo design, brand positioning, Bhiive Chennai' });
-    this.meta.updateTag({ rel: 'canonical', href: 'https://bhiive.com/brand-building' });
+    this.canonicalService.setCanonical('https://bhiive.com/brand-building');
 
     this.meta.updateTag({ property: 'og:title', content: 'Brand Building Services | Brand Strategy, Identity & Growth – Bhiive' });
     this.meta.updateTag({ property: 'og:description', content: 'Boost your brand visibility with Bhiives expert brand building services. We craft strategic brand identities, compelling messaging, logo design and brand positioning to help your business stand out and grow.' });

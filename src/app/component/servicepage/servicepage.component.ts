@@ -3,6 +3,7 @@ import { ServicebannerComponent } from './servicebanner/servicebanner.component'
 import { RouterLink } from '@angular/router';
 import { SchemaService } from '../shared/service/schema.service';
 import { Meta, Title } from '@angular/platform-browser';
+import { CanonicalService } from '../shared/service/canonical.service';
 
 @Component({
   selector: 'app-servicepage',
@@ -12,14 +13,14 @@ import { Meta, Title } from '@angular/platform-browser';
   styleUrl: './servicepage.component.scss'
 })
 export class ServicepageComponent {
-  constructor(private schemaService: SchemaService, private meta: Meta, private title: Title) {}
+  constructor(private schemaService: SchemaService, private meta: Meta, private title: Title, private canonicalService: CanonicalService) {}
 
   ngOnInit() {
     this.title.setTitle('Our Services | Digital Marketing & Web Solutions – Bhiive');
 
     this.meta.updateTag({ name: 'description', content: 'Explore Bhiive\'s full range of services including digital marketing, SEO, paid advertising, brand building, web development, and workflow automation in Chennai.' });
     this.meta.updateTag({ name: 'keywords', content: 'digital marketing services, SEO, paid marketing, brand building, web development, workflow automation, Bhiive Chennai' });
-    this.meta.updateTag({ rel: 'canonical', href: 'https://bhiive.com/services' });
+    this.canonicalService.setCanonical('https://bhiive.com/services');
 
     this.meta.updateTag({ property: 'og:title', content: 'Our Services | Digital Marketing & Web Solutions – Bhiive' });
     this.meta.updateTag({ property: 'og:description', content: 'Explore Bhiive\'s full range of digital marketing, SEO, and web development services.' });

@@ -9,6 +9,7 @@ import { CasestudyComponent } from './casestudy/casestudy.component';
 import { TestmonialComponent } from './testmonial/testmonial.component';
 import { ContactsectionComponent } from './contactsection/contactsection.component';
 import { Meta, Title } from '@angular/platform-browser';
+import { CanonicalService } from '../shared/service/canonical.service';
 import { SchemaService } from '../shared/service/schema.service';
 
 @Component({
@@ -22,7 +23,7 @@ export class HomeLayoutComponent {
   constructor(
     private title: Title,
     private meta: Meta,
-    private schemaService: SchemaService
+    private schemaService: SchemaService, private canonicalService: CanonicalService
   ) {}
 
   ngOnInit(): void {
@@ -45,7 +46,7 @@ export class HomeLayoutComponent {
     this.meta.updateTag({ name: 'twitter:image', content: 'https://bhiive.com/assets/img/logo/logo1.png' });
 
     // Canonical
-    this.meta.updateTag({ rel: 'canonical', href: 'https://bhiive.com/' });
+    this.canonicalService.setCanonical('https://bhiive.com/');
 
     this.schemaService.updateSchema({
       "@context": "https://schema.org",
