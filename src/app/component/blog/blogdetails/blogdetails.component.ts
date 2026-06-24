@@ -6,11 +6,12 @@ import { ActivatedRoute } from '@angular/router';
 import { BlogService } from '../../shared/service/blog.service';
 import { CommonModule } from '@angular/common';
 import { CanonicalService } from '../../shared/service/canonical.service';
+import { BlogformComponent } from '../blogform/blogform.component';
 
 @Component({
   selector: 'app-blogdetails',
   standalone: true,
-  imports: [ServicebannerComponent, PostCommentComponent, CommonModule],
+  imports: [ServicebannerComponent, PostCommentComponent, CommonModule,BlogformComponent],
   templateUrl: './blogdetails.component.html',
   styleUrl: './blogdetails.component.scss'
 })
