@@ -50,12 +50,14 @@
                      <p class="mt-2">
                     {{ section.note }}
                   </p>
-                     <h4 class="wow fadeInUp mt-3" data-wow-delay=".2s">Final Thoughts</h4>
+                     
+                </div>
+                <div>
+                  <h4 class="wow fadeInUp mt-3" data-wow-delay=".2s">Final Thoughts</h4>
                       <p class="mt-2">
                     {{ blogData?.conclusion }}
                   </p>
                 </div>
-
               </div>
             </div>
 
@@ -87,16 +89,11 @@
             <!-- Search -->
             <div class="single-sidebar-widget">
               <div class="wid-title">
-                <h3>Search</h3>
+                <h3>Get a Quote</h3>
               </div>
 
-              <div class="search_widget">
-                <form>
-                  <input type="text" placeholder="Keywords here....">
-                  <button type="submit">
-                    <i class="fal fa-search"></i>
-                  </button>
-                </form>
+              <div class="">
+                <app-blogform></app-blogform>
               </div>
             </div>
 

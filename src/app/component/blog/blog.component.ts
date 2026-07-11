@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { ServicebannerComponent } from '../servicepage/servicebanner/servicebanner.component';
 import { RouterLink } from "@angular/router";
-import { BlogdetailsComponent } from './blogdetails/blogdetails.component';
 import { SchemaService } from '../shared/service/schema.service';
-import { Meta } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
+import { CanonicalService } from '../shared/service/canonical.service';
 import { CommonModule } from '@angular/common';
 import { BlogService } from '../shared/service/blog.service';
 
@@ -15,42 +15,39 @@ import { BlogService } from '../shared/service/blog.service';
   styleUrl: './blog.component.scss'
 })
 export class BlogComponent {
-blogs:any[] = [];
+  blogs: any[] = [];
 
+  constructor(private schemaService: SchemaService, private meta: Meta, private title: Title, private blogService: BlogService, private canonicalService: CanonicalService) {}
 
-  constructor(private schemaService:SchemaService, private meta: Meta, private blogService:BlogService){
-    this.meta.updateTag({
-      rel: 'canonical',
-      href: 'https://bhiive/blog'
+  ngOnInit() {
+    this.title.setTitle('Blog | Digital Marketing Tips & Insights – Bhiive');
+
+    this.meta.updateTag({ name: 'description', content: 'Explore the Bhiive blog for the latest digital marketing tips, SEO strategies, web development insights, and industry trends to help grow your business online.' });
+    this.meta.updateTag({ name: 'keywords', content: 'digital marketing blog, SEO tips, web development insights, social media marketing, Bhiive blog' });
+    this.canonicalService.setCanonical('https://bhiive.com/blog');
+
+    this.meta.updateTag({ property: 'og:title', content: 'Blog | Digital Marketing Tips & Insights – Bhiive' });
+    this.meta.updateTag({ property: 'og:description', content: 'Explore the Bhiive blog for digital marketing tips, SEO strategies and industry insights.' });
+    this.meta.updateTag({ property: 'og:url', content: 'https://bhiive.com/blog' });
+    this.meta.updateTag({ property: 'og:type', content: 'website' });
+    this.meta.updateTag({ property: 'og:image', content: 'https://bhiive.com/assets/img/logo/logo1.png' });
+
+    this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
+    this.meta.updateTag({ name: 'twitter:title', content: 'Blog | Digital Marketing Tips & Insights – Bhiive' });
+    this.meta.updateTag({ name: 'twitter:description', content: 'Explore the Bhiive blog for digital marketing tips, SEO strategies and industry insights.' });
+
+    this.schemaService.updateSchema({
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "@id": "https://bhiive.com/blog/#blog",
+      "url": "https://bhiive.com/blog",
+      "name": "Bhiive Blog",
+      "description": "Digital marketing tips, SEO strategies, and web development insights from Bhiive.",
+      "publisher": { "@id": "https://bhiive.com/#organization" }
     });
-  
-   }
-  
-ngOnInit() {
-  this.schemaService.updateSchema({
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "@id": "https://bhiive.com/blog/post-slug/#blogposting",
-    "headline": "SEO Tips for 2025",
-    "description": "Latest SEO strategies for better ranking",
-    "image": "https://bhiive.com/assets/blog/seo.jpg",
-    "author": {
-      "@type": "Person",
-      "name": "Bhiive Team"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "@id": "https://bhiive.com/#organization"
-    },
-    "datePublished": "2025-01-01",
-    "dateModified": "2025-01-10"
-  });
 
-     this.blogService.getBlogs().subscribe(data=>{
+    this.blogService.getBlogs().subscribe(data => {
       this.blogs = data;
     });
-
   }
 }
-
-

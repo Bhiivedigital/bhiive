@@ -63,7 +63,7 @@ export class ServicebannerComponent {
       this.bannerImage = '../../../../assets/img/breadcrumb.jpg';
       this.breadcrumbName = 'Marketing Strategy';
     } 
-     else if (url.includes('market-automation')) {
+     else if (url.includes('marketing-automation')) {
       this.pageName = 'Marketing Automation';
       this.bannerImage = '../../../../assets/img/breadcrumb.jpg';
       this.breadcrumbName = 'Market Automation';
