@@ -18,11 +18,6 @@
                   {{ blogData?.title }}
                 </h2>
 
-                <!-- Intro -->
-                <p class="wow fadeInUp" data-wow-delay=".3s">
-                  {{ blogData?.intro }}
-                </p>
-
                 <!-- Blog Image -->
                 <img
                   [src]="blogData?.image"
@@ -30,34 +25,8 @@
                   class="single-post-image wow fadeInUp"
                 />
 
-                <!-- Blog Sections -->
-                <div *ngFor="let section of blogData?.sections">
-
-                  <h4 class="char-animation mt-4">
-                    {{ section.heading }}
-                  </h4>
-
-                  <p class="mt-2">
-                    {{ section.description }}
-                  </p>
-
-                  <ul class="checked-list mb-4">
-                    <li *ngFor="let point of section.points">
-                      <i class="fa fa-check fs-5"></i>
-                      {{ point }}
-                    </li>
-                  </ul>
-                     <p class="mt-2">
-                    {{ section.note }}
-                  </p>
-                     
-                </div>
-                <div>
-                  <h4 class="wow fadeInUp mt-3" data-wow-delay=".2s">Final Thoughts</h4>
-                      <p class="mt-2">
-                    {{ blogData?.conclusion }}
-                  </p>
-                </div>
+                <!-- Blog Body (rendered from Strapi rich text) -->
+                <div class="post-body" [innerHTML]="blogData?.contentHtml"></div>
               </div>
             </div>
 
