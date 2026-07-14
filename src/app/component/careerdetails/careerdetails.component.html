@@ -1,0 +1,35 @@
+<app-servicebanner></app-servicebanner>
+<div class="container mb-3">
+<div *ngIf="job">
+
+  <h3 class="mt-5 fs-3">{{ job.title }}</h3>
+  <p><strong>Experience:</strong> {{ job.experience }}</p>
+  <p><strong>Location:</strong> {{ job.location }}</p>
+
+  <h3>Job Summary</h3>
+  <p>{{ job.summary }}</p>
+
+  <h3>Key Responsibilities</h3>
+  <ul>
+    <li *ngFor="let item of job.responsibilities">
+      {{ item }}
+    </li>
+  </ul>
+
+  <h3>Required Skills</h3>
+  <ul>
+    <li *ngFor="let item of job.requiredSkills">
+      {{ item }}
+    </li>
+  </ul>
+
+  <h3>Preferred Qualifications</h3>
+  <ul>
+    <li *ngFor="let item of job.preferredQualifications">
+      {{ item }}
+    </li>
+  </ul>
+    <a href="" class="card-link btn btn-primary mt-2 rounded-2">Apply Now</a>
+
+</div>
+</div>

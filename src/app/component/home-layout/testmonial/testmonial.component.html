@@ -18,13 +18,17 @@
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
                                     </div>
-                                    <img src="assets/img/testimonial/01.png" alt="img">
+                                    <img src="assets/img/testimonial/01.png"
+                                    alt="Client testimonial"
+                                    loading="lazy" width="60" height="60">
                                 </div>
                                 <p>{{slide.description| lineclamp:30:3}}</p>
                             </div>
                             <div class="client-info">
                                 <div class="client-img">
-                                    <img src="{{slide.img}}" alt="img">
+                                    <img [src]="slide.img"
+                                        [alt]="slide.name + ' – Bhiive client testimonial'"
+                                        loading="lazy" width="60" height="60">
                                 </div>
                                 <div class="client-content">
                                     <h3>{{slide.name}}</h3>
@@ -53,61 +57,68 @@
                                 <div class="accordion-item wow fadeInUp" data-wow-delay=".2s">
                                     <h5 class="accordion-header">
                                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
-                                            1. what is digital marketing? 
+                                            1.How is Bhiive’s "Growth System" different from other digital marketing agencies in Chennai?
                                         </button>
                                     </h5>
                                     <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#accordion">
                                         <div class="accordion-body">
-                                            <p>Digital marketing encompasses all aspects and activities of marketing an organization, business, or brand across digital channels on the internet. Digital marketing strategies and tactics are crafted to target specific online audiences across a variety of internet-connected devices.</p>
-                                            <p class="mt-2">Digital marketing includes optimization across search engines (the likes of Google and Bing), visibility and engagement on social media platforms, email marketing communications, website design and development and integrated applications to connect and engage with prospects and customers.</p>
+                                            <p>Unlike traditional agencies that focus only on "likes" or "traffic", Bhiive builds complete Growth Systems tailored for revenue. We don't just run ads, we implement end-to-end automation that nurtures leads from the first click to the final sale. While others report on vanity metrics, we report on customer acquisition cost (CAC) and profitability.</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item wow fadeInUp" data-wow-delay=".4s">
                                     <h5 class="accordion-header">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
-                                            2. what does a digital marketer do? 
+                                            2.Does Bhiive specialize in marketing for specific industries like Education or Retail?
                                         </button>
                                     </h5>
                                     <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordion">
                                         <div class="accordion-body">
-                                            A digital marketer is a marketing specialist who understands how to develop and deploy effective marketing strategies online. A digital marketer understands connecting with an online audience. They can ensure your brand engages with your consumer from the first point of contact through after-sales service.
+                                           Yes. We have deep expertise in high-competition sectors, specifically Educational Institutions (Kindergartens & Schools) and Service Businesses. We understand the seasonal nature of Chennai’s admission cycles and retail peaks. We use specific lead-generation blueprints designed to capture local market share during critical decision-making windows.
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item wow fadeInUp" data-wow-delay=".6s">
                                     <h5 class="accordion-header">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
-                                           3. How cost-effective is digital marketing compared with traditional marketing?
+                                           3.What is the expected ROI for a small business in Chennai investing in SEO vs. Traditional Ads?
                                         </button>
                                     </h5>
                                     <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordion">
                                         <div class="accordion-body">
-                                            Digital marketing is cost-effective in that you can get your message directly in front of your ideal audience. Consider that traditional marketing casts a wide net across the general public. In contrast, digital marketing takes a targeted approach and engages the consumer with the right message at the right time. You can measure your digital marketing efforts and the costs involved quite easily and mitigate unnecessary spending. This is far more difficult with traditional marketing campaigns. What's more, the costs involved with hiring a digital marketing agency are dependent on the project scope.
+                                            In 2026, digital ecosystems offer significantly higher measurability than traditional hoardings or newspaper ads. For most Chennai-based SMEs, our clients typically see a shift from "spending" to "investing" within the first 90 days. We target local intent keywords (e.g., "near me" searches) which have a 3x higher conversion rate than generic browsing, ensuring your budget targets people ready to buy now.
+
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item wow fadeInUp" data-wow-delay=".8s">
                                     <h5 class="accordion-header">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
-                                            4. would my business benefit from digital marketing services? 
+                                            4. I need results fast. What exactly happens in the first 30 days of working with you? 
                                         </button>
                                     </h5>
                                     <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#accordion">
                                         <div class="accordion-body">
-                                            Every single brand has to have an online representation of the business. However, your digital footprint won't have any impact if you don't market it successfully. Every business would benefit from an ongoing, comprehensive digital marketing strategy and the support of an expert marketing team.
+                                            We don't believe in "waiting periods." In the first 30 days, we execute our "Foundation Sprint":
+                                           <ul>
+                                            <li>Audit: We fix technical errors hurting your Google rank.</li>
+                                            <li>Tracking: We set up advanced analytics to track every phone call and form fill.</li>
+                                            <li>Quick Wins: We launch high-intent campaigns to generate immediate leads while your long-term SEO strategy builds momentum.</li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item mb-0 wow fadeInUp" data-wow-delay=".9s">
                                     <h5 class="accordion-header">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
-                                            5. How do you identify a successful digital marketing company? 
+                                            5.Do you offer "Generic Packages" or Custom Strategies?
+
                                         </button>
                                     </h5>
                                     <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#accordion">
                                         <div class="accordion-body">
-                                            Look for a company that takes the time to assess your current and future marketing needs. A digital marketing agency worth its salt won’t promise immediate results because digital strategies take time to yield results. But it will boast a team of experts able to identify needs and gaps in your current strategy. What’s more, they will work with you to establish outcomes, align with your goals and offer consistent, transparent reporting. Be cautious about companies offering a quick fix. Choose an agency with proven successes, client testimonials and case studies and outstanding reviews across their services.
+                                            We do not offer "cookie-cutter" packages because every business has different margins. Instead, we provide a Custom Growth Roadmap. Whether you need aggressive lead generation for a seasonal launch or steady brand building for long-term authority, we reverse-engineer a strategy based on your specific revenue goals, not a pre-set menu.
+
                                         </div>
                                     </div>
                                 </div>

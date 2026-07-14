@@ -63,7 +63,7 @@ export class ServicebannerComponent {
       this.bannerImage = '../../../../assets/img/breadcrumb.jpg';
       this.breadcrumbName = 'Marketing Strategy';
     } 
-     else if (url.includes('market-automation')) {
+     else if (url.includes('marketing-automation')) {
       this.pageName = 'Marketing Automation';
       this.bannerImage = '../../../../assets/img/breadcrumb.jpg';
       this.breadcrumbName = 'Market Automation';
@@ -87,6 +87,11 @@ export class ServicebannerComponent {
       this.pageName = 'Blog Details';
       this.bannerImage = '../../../../assets/img/breadcrumb.jpg';
       this.breadcrumbName = 'Blog Details';
+    } 
+     else if (url.includes('career')) {
+      this.pageName = 'Career';
+      this.bannerImage = '../../../../assets/img/breadcrumb.jpg';
+      this.breadcrumbName = 'Career';
     } 
     else {
       this.pageName = 'Default';

@@ -1,0 +1,103 @@
+[
+  {
+    "slug": "seo-analyst",
+    "title": "SEO Analyst",
+    "experience": "2–5 Years",
+    "location": "Chennai / Remote",
+    "summary": "We are looking for a results-driven SEO Analyst to improve organic visibility, keyword rankings, and website traffic through data-driven SEO strategies.",
+    "responsibilities": [
+      "Perform keyword research and competitor analysis",
+      "Conduct on-page and technical SEO audits",
+      "Optimize meta tags, headings, schema markup, and internal linking",
+      "Improve Core Web Vitals and page speed",
+      "Build high-quality backlinks using white-hat techniques",
+      "Monitor performance using GA4 and Search Console",
+      "Collaborate with content and development teams"
+    ],
+    "requiredSkills": [
+      "Strong understanding of technical and on-page SEO",
+      "Hands-on experience with SEO tools (Ahrefs, SEMrush, etc.)",
+      "Knowledge of schema markup and structured data",
+      "Basic understanding of HTML and CSS",
+      "Ability to analyze traffic and ranking data"
+    ],
+    "preferredQualifications": [
+      "Experience with Angular/React SEO",
+      "Experience handling enterprise SEO projects"
+    ]
+  },
+  {
+    "slug": "ppcspecialist",
+    "title": "PPC Ads Specialist",
+    "experience": "2–5 Years",
+    "location": "Chennai / Remote",
+    "summary": "We are seeking a performance-driven PPC Specialist to plan, execute, and optimize paid advertising campaigns to maximize ROI and lead generation.",
+    "responsibilities": [
+      "Manage campaigns on Google Ads and Meta Ads",
+      "Conduct keyword research and competitor analysis",
+      "Create compelling ad copies and creatives",
+      "Optimize campaigns for CPA, ROAS, and conversions",
+      "Perform A/B testing on ads and landing pages",
+      "Track and analyze campaign performance"
+    ],
+    "requiredSkills": [
+      "Strong knowledge of bidding strategies and conversion tracking",
+      "Experience managing high-budget campaigns",
+      "Data-driven mindset with analytical skills",
+      "Understanding of audience targeting and remarketing"
+    ],
+    "preferredQualifications": [
+      "Google Ads and Meta certifications",
+      "Experience in eCommerce or lead generation campaigns"
+    ]
+  },
+  {
+    "slug": "java-developer",
+    "title": "Java Developer",
+    "experience": "3–6 Years",
+    "location": "Chennai / Remote",
+    "summary": "We are looking for a skilled Java Developer to design, develop, and maintain scalable backend applications and APIs.",
+    "responsibilities": [
+      "Develop RESTful APIs using Spring Boot",
+      "Work with relational databases like MySQL or PostgreSQL",
+      "Integrate third-party APIs and services",
+      "Write clean, maintainable, and efficient code",
+      "Participate in code reviews and debugging",
+      "Deploy applications using Docker and CI/CD pipelines"
+    ],
+    "requiredSkills": [
+      "Strong knowledge of Core Java and OOP concepts",
+      "Experience with Spring Boot and Hibernate",
+      "Understanding of microservices architecture",
+      "Familiarity with Git version control"
+    ],
+    "preferredQualifications": [
+      "Experience with AWS or cloud platforms",
+      "Knowledge of DevOps practices"
+    ]
+  },
+  {
+    "slug": "automation-specialist",
+    "title": "Automation Specialist",
+    "experience": "2–5 Years",
+    "location": "Chennai / Remote",
+    "summary": "We are seeking an Automation Specialist to streamline business processes using workflow automation tools and API integrations.",
+    "responsibilities": [
+      "Build automation workflows using tools like n8n or Zapier",
+      "Integrate APIs and webhooks across systems",
+      "Automate marketing and CRM processes",
+      "Develop scripts using JavaScript or Python",
+      "Monitor, maintain, and troubleshoot automation workflows"
+    ],
+    "requiredSkills": [
+      "Strong understanding of APIs and REST services",
+      "Experience with CRM and marketing automation tools",
+      "Knowledge of JSON and webhook configurations",
+      "Problem-solving and debugging skills"
+    ],
+    "preferredQualifications": [
+      "Experience with RPA tools",
+      "Knowledge of AI integrations and automation best practices"
+    ]
+  }
+]

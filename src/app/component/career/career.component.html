@@ -1,0 +1,123 @@
+<app-servicebanner></app-servicebanner>
+
+    <!--Brand Building Section Start -->
+    <section class="service-detaile-section section-padding fix">
+        <div class="container">
+              <h2 class="char-animation text-center mb-3">Join Our Team!</h2>
+             <div class="row">
+                <div class="col-lg-12 col-md-12 col-12">
+                     <div class="row">
+                        <div class="col-lg-4 col-md-6 col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><strong> Seo Analyst </strong></h5>
+                            <h6 class="card-subtitle mb-2"><strong>Experience :</strong> 2–5 Years</h6>
+                            <h6 class="card-subtitle mb-2"><strong>Location :</strong> Chennai / Remote</h6>
+                            <p class="card-text">We are looking for a results-driven SEO Analyst to improve organic visibility, keyword rankings, and website traffic through data-driven SEO strategies.</p>
+                            <a href="/careers/seo-analyst" class="card-link btn btn-primary mt-2 rounded-2">Apply Now</a>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><strong> PPC Ads Specialist</strong></h5>
+                            <h6 class="card-subtitle mb-2"><strong>Experience :</strong> 2–5 Years</h6>
+                            <h6 class="card-subtitle mb-2"><strong>Location :</strong> Chennai / Remote</h6>
+                            <p class="card-text">We are seeking a performance-driven PPC Specialist to plan, execute, and optimize paid advertising campaigns to maximize ROI and lead generation.</p>
+                            <a href="/careers/ppcspecialist" class="card-link btn btn-primary mt-2 rounded-2">Apply Now</a>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><strong> Java Developer</strong></h5>
+                            <h6 class="card-subtitle mb-2"><strong>Experience :</strong> 3–6 Years</h6>
+                            <h6 class="card-subtitle mb-2"><strong>Location :</strong> Chennai / Remote</h6>
+                            <p class="card-text">We are looking for a skilled Java Developer to design, develop, and maintain scalable backend applications and APIs.</p>
+                            <a href="/careers/java-developer" class="card-link btn btn-primary mt-2 rounded-2">Apply Now</a>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                     <div class="row mt-3">
+                    <div class="col-lg-4 col-md-6 col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><strong> Automation Specialist</strong></h5>
+                            <h6 class="card-subtitle mb-2"><strong>Experience :</strong> 2–5 Years</h6>
+                            <h6 class="card-subtitle mb-2"><strong>Location :</strong> Chennai / Remote</h6>
+                            <p class="card-text">We are seeking an Automation Specialist to streamline business processes using workflow automation tools and API integrations.</p>
+                            <a href="/careers/automation-specialist" class="card-link btn btn-primary mt-2 rounded-2">Apply Now</a>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+            </div>
+              
+            <!-- <div class="col-lg-3 col-md-6 col-12">
+                 <div class="card">
+                <div class="card-body">
+                     <form [formGroup]="form" (ngSubmit)="onSubmit()" id="contact-form" class="contact-form-box">
+                    <div class="row g-4 align-items-center justify-content-center">
+                        <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay=".3s">
+                            <div class="form-clt">
+                                <input type="text" name="name" id="name" placeholder="Name" formControlName="name" [ngClass]="{ 'is-invalid': submitted && f['name'].errors }"  class="form-control">
+                                <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+                                    <div *ngIf="f['name'].errors['required']">Name is required</div>
+                                    <div *ngIf="f['name'].errors['minlength']">
+                                    Name must be at least 3 characters
+                                    </div>
+                                    <div *ngIf="f['name'].errors['maxlength']">
+                                        Name must not exceed 20 characters
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay=".5s">
+                            <div class="form-clt">
+                                <input type="text" name="email" id="email2" placeholder="Email address" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"  class="form-control">
+                                 <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                                    <div *ngIf="f['email'].errors['required']">Email is required</div>
+                                    <div *ngIf="f['email'].errors['email']">Email is invalid</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay=".6s">
+                            <div class="form-clt">
+                                    <input type="text" name="phone" id="phone" placeholder="Phone number" formControlName="mobile" class="form-control" (keypress)="allowOnlyNumbers($event)" [ngClass]="{ 'is-invalid': submitted && f['mobile'].errors }" maxlength="10">
+                                <div *ngIf="submitted && f['mobile'].errors" class="invalid-feedback">
+                                <div *ngIf="f['mobile'].errors['required']">Mobile No is required</div>
+                                <div *ngIf="f['mobile'].errors['minlength']">
+                                    Mobile No must be at least 10 characters
+                                </div>
+                                <div *ngIf="f['mobile'].errors['maxlength']">
+                                    Mobile No must be at least 13 characters
+                                </div>
+                                </div>
+                                </div>
+                        </div>
+                       
+                        <div class="col-lg-12 wow fadeInUp" data-wow-delay=".8s">
+                            <div class="form-clt">
+                                <textarea formControlName="message" class="form-control"  width="100%"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 wow fadeInUp" data-wow-delay=".9s">
+                            <div class="contact-button">
+                                <button type="submit" class="theme-btn">
+                                    Apply Now
+                                    <i class="fa fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                </div>
+            </div>
+                
+            </div> -->
+             </div> 
+        </div>
+    </section>

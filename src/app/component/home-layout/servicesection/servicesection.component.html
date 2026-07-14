@@ -10,7 +10,9 @@
                 <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s" *ngFor="let service of services">
                     <div  [ngClass]="service.cardClass">
                         <div class="service-icon">
-                            <img src="{{service.img}}" alt="img">
+                           <img [src]="service.img"
+                            [alt]="service.title + ' – Bhiive service'"
+                            loading="lazy" width="60" height="60">
                         </div>
                         <div class="service-content">
                             <h3><a [routerLink]="'/services'">{{service.title}}</a></h3>
