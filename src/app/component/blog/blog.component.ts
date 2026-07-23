@@ -16,6 +16,10 @@ import { BlogService } from '../shared/service/blog.service';
 })
 export class BlogComponent {
   blogs: any[] = [];
+  loading = true;
+
+  pageSize = 9;
+  currentPage = 1;
 
   constructor(private schemaService: SchemaService, private meta: Meta, private title: Title, private blogService: BlogService, private canonicalService: CanonicalService) {}
 
@@ -46,8 +50,34 @@ export class BlogComponent {
       "publisher": { "@id": "https://bhiive.com/#organization" }
     });
 
-    this.blogService.getBlogs().subscribe(data => {
-      this.blogs = data;
+    this.loading = true;
+    this.blogService.getBlogs().subscribe({
+      next: data => {
+        this.blogs = data;
+        this.loading = false;
+      },
+      error: () => {
+        this.loading = false;
+      }
     });
+  }
+
+  get totalPages(): number {
+    return Math.max(1, Math.ceil(this.blogs.length / this.pageSize));
+  }
+
+  get pages(): number[] {
+    return Array.from({ length: this.totalPages }, (_, i) => i + 1);
+  }
+
+  get pagedBlogs(): any[] {
+    const start = (this.currentPage - 1) * this.pageSize;
+    return this.blogs.slice(start, start + this.pageSize);
+  }
+
+  goToPage(page: number) {
+    if (page < 1 || page > this.totalPages || page === this.currentPage) return;
+    this.currentPage = page;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }

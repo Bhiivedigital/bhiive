@@ -1,5 +1,23 @@
+/* Header is position:absolute (main.css:1288) so it overlays the page rather
+   than taking up space — every hero/banner has to pad past its height.
+   67px logo + 14px vertical padding = ~95px tall, which is a lot of a phone
+   viewport. Shrinking the logo on small screens buys that space back.
+   Reducing header height only ever increases clearance, so this is safe for
+   the other pages that share this component. */
 .header-logo1 img {
     height: 67px;
+}
+
+@media (max-width: 767px) {
+    .header-logo1 img {
+        height: 52px;
+    }
+}
+
+@media (max-width: 400px) {
+    .header-logo1 img {
+        height: 46px;
+    }
 }
 .sidebaricons {
     position: fixed;

@@ -1,9 +1,87 @@
 div#requestQuote1 {
     z-index: 9999;
 }
-.hero-content h1{
-    font-size:70px;
+
+/* hero-1-bg.jpg has the halftone dots and the scribble/dot doodles baked in.
+   Under `background-size: cover` a narrow, tall phone viewport crops it hard,
+   so the doodles land on top of the headline or body copy at unpredictable
+   spots. Desktop keeps the artwork; tablet and below get the flat cream.
+   !important is required because the URL is an inline style attribute on the
+   <section>, which nothing else can outrank. */
+@media (max-width: 991px) {
+    .hero-section.hero-1 {
+        background-image: none !important;
+        background-color: #fff9ed;
+    }
 }
-.hero-img .img1{
+
+/* Hero headline type scale.
+   These live here rather than in src/styles/_responsive-fix.scss because
+   Angular's view encapsulation rewrites them to
+   `.hero-content[_ngcontent-x] h1[_ngcontent-x]`, which outranks any global
+   selector. A global override cannot win against this file, so the whole
+   ramp has to be defined here. */
+.hero-content h1 {
+    font-size: 70px;
+    line-height: 1.1;
+    overflow-wrap: break-word;
+}
+
+@media (max-width: 1399px) {
+    .hero-content h1 {
+        font-size: 58px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .hero-content h1 {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 991px) {
+    .hero-content h1 {
+        font-size: 40px;
+        line-height: 1.18;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-content h1 {
+        font-size: 32px;
+        line-height: 1.22;
+    }
+}
+
+@media (max-width: 575px) {
+    .hero-content h1 {
+        font-size: 28px;
+        line-height: 1.25;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero-content h1 {
+        font-size: 25px;
+    }
+}
+
+/* Fixed 540px overflows every phone viewport. */
+.hero-img .img1 {
     width: 540px;
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 991px) {
+    .hero-img .img1 {
+        width: auto;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-img .img1 {
+        max-width: 88%;
+    }
 }

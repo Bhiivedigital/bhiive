@@ -5,8 +5,15 @@
             <div class="news-area">
                 <div class="row">
                     <div class="col-12 col-lg-12">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4 col-12 ps-2 mb-4" *ngFor="let blog of blogs">
+
+                        <div class="blog-spinner-wrap text-center" *ngIf="loading">
+                            <div class="spinner-border" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+
+                        <div class="row" *ngIf="!loading">
+                            <div class="col-lg-4 col-md-4 col-12 ps-2 mb-4" *ngFor="let blog of pagedBlogs">
                         <div class="card">
                         <img [src]="blog.image" class="card-img-top" alt="..." height="250px">
                         <div class="card-body">
@@ -19,20 +26,26 @@
                         </div>
                         </div>
                             </div>
-                       
-                        <div class="page-nav-wrap text-center">
+
+                        <div class="page-nav-wrap text-center" *ngIf="!loading && totalPages > 1">
                             <ul>
-                                <li><a class="page-numbers" href="#">01</a></li>
-                                <li><a class="page-numbers" href="#">02</a></li>
-                                <li><a class="page-numbers" href="#">03</a></li>
-                                <li class="active"><a class="page-numbers" href="#">
-                                    <i class="fa fa-long-arrow-right"></i></a></li>
+                                <li [class.disabled]="currentPage === 1">
+                                    <a class="page-numbers" href="javascript:void(0)" (click)="goToPage(currentPage - 1)">
+                                        <i class="fa fa-long-arrow-left"></i></a>
+                                </li>
+                                <li *ngFor="let p of pages" [class.active]="p === currentPage">
+                                    <a class="page-numbers" href="javascript:void(0)" (click)="goToPage(p)">{{p < 10 ? '0' + p : p}}</a>
+                                </li>
+                                <li [class.disabled]="currentPage === totalPages">
+                                    <a class="page-numbers" href="javascript:void(0)" (click)="goToPage(currentPage + 1)">
+                                        <i class="fa fa-long-arrow-right"></i></a>
+                                </li>
                             </ul>
                         </div>
-                 
+
                 </div>
             </div>
         </div>
         </div>
-    </section> 
+    </section>
  

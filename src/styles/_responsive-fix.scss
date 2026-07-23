@@ -1,0 +1,322 @@
+/* ==========================================================================
+   responsive-fix.css
+   Loaded AFTER main.css so these rules win without editing the theme file.
+   Scope: homepage (hero + sections) mobile layout + preloader text overlap.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Global image safety
+   Theme sets fixed width/height attrs on many images; without these they
+   overflow the viewport on small screens and cause horizontal scroll.
+   -------------------------------------------------------------------------- */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Absolutely-positioned decorative shapes push the page wider than the
+   viewport on phones. Clip instead of scrolling sideways. */
+@media (max-width: 991px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. Preloader
+   Three bugs in the theme's version:
+     a) .letters-loading::before is absolute/left:0 while the base letter sat
+        after a whitespace text node -> the animated duplicate rendered offset
+        on top of the static one (the "overlapping text").
+     b) base letter color (#003566) === ::before color (var(--header) = #003566),
+        so the flip-in overlay was invisible except mid-rotation, where it read
+        as a smear rather than an animation.
+     c) rotateY() with no perspective on the parent renders as a flat
+        horizontal squash, not a 3D flip.
+   Rebuilt below as a deliberate letter-by-letter fill wave in brand purple.
+   -------------------------------------------------------------------------- */
+:root {
+  --preloader-accent: #af49e5;
+  --preloader-ghost: rgba(0, 53, 102, 0.16);
+}
+
+/* No background-color here on purpose: the white cover comes from the four
+   .loader-section .bg panels, which slide open on .loaded (main.js:405) to
+   reveal the page. A solid background would mask that reveal. */
+
+/* Ring: smaller, brand-coloured, eased so it doesn't read as a stock spinner. */
+.preloader .animation-preloader .spinner {
+  width: 5.5em;
+  height: 5.5em;
+  border-width: 3px;
+  border-color: rgba(175, 73, 229, 0.15);
+  border-top-color: var(--preloader-accent);
+  margin: 0 auto 2em auto;
+  animation: spinner 0.9s cubic-bezier(0.6, 0.15, 0.4, 0.85) infinite;
+}
+
+@media (max-width: 767px) {
+  .preloader .animation-preloader .spinner {
+    width: 4em;
+    height: 4em;
+    border-width: 2px;
+    margin: 0 auto 1.4em auto;
+  }
+}
+
+.preloader .animation-preloader .txt-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  line-height: 1;
+  margin-bottom: 22px;
+  perspective: 600px; /* fixes (c) - makes rotateY an actual flip */
+}
+
+/* Each letter is its own flex box so ::before centres exactly over the base
+   glyph instead of being anchored to left:0 of a text run. Fixes (a). */
+.preloader .animation-preloader .txt-loading .letters-loading {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  line-height: 1;
+  color: var(--preloader-ghost); /* fixes (b) - unfilled state */
+  transform-style: preserve-3d;
+}
+
+.preloader .animation-preloader .txt-loading .letters-loading::before {
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  color: var(--preloader-accent);
+  transform-origin: 50% 50%;
+  animation: letters-fill 2.4s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+/* Wave runs left to right across b-h-i-i-v-e, then holds before repeating.
+   Child 1 is the logo (no data-text-preloader, so no ::before). */
+.preloader .animation-preloader .txt-loading .letters-loading:nth-child(2)::before {
+  animation-delay: 0.1s;
+}
+.preloader .animation-preloader .txt-loading .letters-loading:nth-child(3)::before {
+  animation-delay: 0.2s;
+}
+.preloader .animation-preloader .txt-loading .letters-loading:nth-child(4)::before {
+  animation-delay: 0.3s;
+}
+.preloader .animation-preloader .txt-loading .letters-loading:nth-child(5)::before {
+  animation-delay: 0.4s;
+}
+.preloader .animation-preloader .txt-loading .letters-loading:nth-child(6)::before {
+  animation-delay: 0.5s;
+}
+
+@keyframes letters-fill {
+  0% {
+    opacity: 0;
+    transform: rotateY(-90deg) translateY(6px);
+  }
+  18%,
+  62% {
+    opacity: 1;
+    transform: rotateY(0deg) translateY(0);
+  }
+  80%,
+  100% {
+    opacity: 0;
+    transform: rotateY(90deg) translateY(-6px);
+  }
+}
+
+/* Logo pulses with the wave instead of sitting dead next to it. */
+.preloader .animation-preloader .txt-loading .letters-loading img {
+  height: 0.9em;
+  width: auto;
+  display: block;
+  animation: preloader-logo-pulse 2.4s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+@keyframes preloader-logo-pulse {
+  0%,
+  80%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.9);
+  }
+  18%,
+  62% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.preloader p {
+  margin-top: 4px;
+  text-align: center;
+  color: var(--preloader-accent);
+  animation: preloader-text-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes preloader-text-pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 767px) {
+  .preloader .animation-preloader .txt-loading {
+    font-size: 2.2em;
+    margin-bottom: 14px;
+  }
+  .preloader p {
+    font-size: 13px;
+    letter-spacing: 5px;
+  }
+}
+
+/* Respect users who ask for reduced motion: keep the brand fill, drop the
+   spin and 3D flip. */
+@media (prefers-reduced-motion: reduce) {
+  .preloader .animation-preloader .spinner {
+    animation-duration: 2.5s;
+    animation-timing-function: linear;
+  }
+  .preloader .animation-preloader .txt-loading .letters-loading::before,
+  .preloader .animation-preloader .txt-loading .letters-loading img,
+  .preloader p {
+    animation: none;
+  }
+  .preloader .animation-preloader .txt-loading .letters-loading::before {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. Hero section – mobile
+   -------------------------------------------------------------------------- */
+
+/* Theme forces height:100% on every img inside .hero-img below 1399px,
+   which distorts the artwork. Height must follow the aspect ratio. */
+.hero-1 .hero-img img {
+  height: auto;
+}
+
+/* Top padding must clear the absolutely-positioned header, which sits over
+   the hero instead of above it. Header height = logo + 14px padding each
+   side, and the logo shrinks at 767px/400px (header.component.scss), so the
+   padding steps down with it. Undershooting hides the headline behind the
+   navbar. */
+@media (max-width: 991px) {
+  .hero-1 {
+    padding: 125px 0 60px; /* header ~95px */
+  }
+  .hero-1 .hero-content {
+    text-align: center;
+  }
+  .hero-1 .hero-content .hero-btn {
+    justify-content: center;
+  }
+  .hero-1 .hero-img {
+    text-align: center;
+    margin-top: 40px;
+  }
+}
+
+/* NOTE: the hero h1 type scale and the .img1 width live in
+   heroslider.component.scss, NOT here. Angular view encapsulation rewrites
+   that file's selectors to `.hero-content[_ngcontent-x] h1[_ngcontent-x]`,
+   which outranks anything global — rules here would be silently dead. */
+
+@media (max-width: 767px) {
+  .hero-1 {
+    padding: 110px 0 40px; /* header ~80px */
+    background-position: center center;
+  }
+  .hero-1 .hero-content h1 {
+    margin-bottom: 12px;
+  }
+  .hero-1 .hero-content p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  .hero-1 .hero-img {
+    margin-top: 30px;
+  }
+  /* Decorative floaters overlap the artwork at this width. */
+  .hero-1 .hero-img .box-shape,
+  .hero-1 .hero-img .box-shape-2,
+  .hero-1 .plane-shape,
+  .hero-1 .left-shape {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero-1 {
+    padding: 98px 0 36px; /* header ~74px */
+  }
+  .hero-1 .hero-content p {
+    font-size: 14px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. Homepage content sections – mobile
+   -------------------------------------------------------------------------- */
+@media (max-width: 991px) {
+  .about-img,
+  .choose-us-img,
+  .contect-image {
+    text-align: center;
+  }
+  .about-img img,
+  .choose-us-img img,
+  .contect-image img {
+    width: 100%;
+    max-width: 540px;
+    height: auto;
+    margin: 0 auto;
+  }
+  /* Image column should sit under the copy, not squeezed beside it. */
+  .about-section .about-img,
+  .contact-section .contect-image {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .section-padding {
+    padding: 60px 0;
+  }
+  /* Full-bleed background photos crop off-centre on narrow viewports. */
+  .service-section-solve,
+  .testimonial-section,
+  .contact-section,
+  .cta-contact-form-section {
+    background-position: center center;
+    background-size: cover;
+  }
+  .contect-image.float-bob-y {
+    animation: none;
+  }
+  .about-img img,
+  .choose-us-img img,
+  .contect-image img {
+    max-width: 100%;
+  }
+}

@@ -1996,6 +1996,7 @@ p {
   }
 }
 .hero-1 .hero-content h1 {
+  padding-top: 16px;
   margin-bottom: 15px;
 }
 .hero-1 .hero-content p {

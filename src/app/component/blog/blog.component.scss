@@ -4,3 +4,18 @@ p{
 h4{
     height: 100px;
 }
+
+.blog-spinner-wrap {
+    padding: 100px 0;
+
+    .spinner-border {
+        width: 3rem;
+        height: 3rem;
+        color: var(--bs-primary, #ff5722);
+    }
+}
+
+.page-nav-wrap li.disabled a {
+    opacity: 0.4;
+    pointer-events: none;
+}
