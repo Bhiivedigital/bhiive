@@ -1,0 +1,102 @@
+{
+  "lead": "Your marketing team has a capacity problem — and hiring more people isn't always the answer.",
+  "intro": [
+    "Every lead needs follow-up. Every customer needs onboarding. Every campaign needs reporting. Done manually, these repetitive tasks consume time that should go into growth, strategy and customer relationships.",
+    "At Bhiive, we design and implement marketing automation systems that streamline operations, nurture leads automatically and scale marketing performance without increasing manual workload."
+  ],
+  "highlights": [
+    "Works with HubSpot, Zoho, Salesforce and more",
+    "Official WhatsApp Business API, opt-in only",
+    "Measurable time savings within 60–90 days"
+  ],
+  "sections": [
+    {
+      "type": "text",
+      "id": "what-it-is",
+      "heading": "What marketing automation actually is",
+      "paragraphs": [
+        "Marketing automation is not just a tool — it's a complete system built from strategy, workflows, integrations and automation logic.",
+        "Real automation means lead capture, segmentation, email nurturing, CRM updates, sales notifications, reporting and customer follow-ups all happen automatically in the background."
+      ]
+    },
+    {
+      "type": "text",
+      "id": "why-now",
+      "heading": "Why marketing automation matters in 2026",
+      "paragraphs": [
+        "Buyers now take longer to research, compare options and make decisions. Businesses that automate personalised communication gain a real competitive advantage.",
+        "AI-powered tools and modern automation platforms let businesses build scalable customer journeys that previously needed large marketing teams."
+      ]
+    },
+    {
+      "type": "cards",
+      "id": "services",
+      "heading": "Our marketing automation services",
+      "items": [
+        {
+          "title": "Automation strategy & audit",
+          "text": "We analyse your current marketing processes and find the opportunities for automation and efficiency.",
+          "points": ["Marketing workflow audit", "Automation opportunity mapping", "Lead journey analysis", "CRM & tool stack review", "Implementation roadmap"]
+        },
+        {
+          "title": "Lead nurture automation",
+          "text": "Automated nurture sequences that educate prospects and move them through your sales funnel.",
+          "points": ["Email nurture sequences", "Behaviour-based triggers", "Lead scoring", "Sales hand-off automation", "Customer segmentation"]
+        },
+        {
+          "title": "CRM & platform integration",
+          "text": "Your CRM, website, landing pages, ad platforms and email tools connected into one system.",
+          "points": ["HubSpot, Zoho & Salesforce integration", "Zapier & Make workflows", "Website & form integration", "Centralised customer data sync", "Automated lead routing"]
+        },
+        {
+          "title": "Email marketing automation",
+          "text": "Personalised email workflows that lift engagement, lead conversion and retention.",
+          "points": ["Welcome sequences", "Drip campaigns", "Re-engagement campaigns", "Behaviour-triggered emails", "Segmentation & A/B testing"]
+        },
+        {
+          "title": "WhatsApp marketing automation",
+          "text": "WhatsApp automation that improves customer communication and response rates.",
+          "points": ["WhatsApp Business API setup", "Automated lead follow-ups", "Broadcast campaigns", "Appointment reminders", "CRM & workflow integration"]
+        },
+        {
+          "title": "Marketing reporting automation",
+          "text": "Dashboards that track performance in real time without manual data collection.",
+          "points": ["Google Looker Studio dashboards", "CRM reporting", "Google Ads & Meta Ads reporting", "Email campaign analytics", "Real-time performance tracking"]
+        }
+      ]
+    },
+    {
+      "type": "checklist",
+      "id": "benefits",
+      "heading": "Why businesses invest in marketing automation",
+      "items": [
+        "Fewer manual marketing tasks and more time back",
+        "Better lead nurturing and customer engagement",
+        "Higher conversions with personalised workflows",
+        "Clear view of customer behaviour across the funnel",
+        "Marketing that scales without adding headcount"
+      ]
+    },
+    {
+      "type": "text",
+      "id": "long-term-value",
+      "heading": "The long-term value of marketing automation",
+      "paragraphs": [
+        "Automation systems compound over time. A nurture sequence built today keeps generating leads months later. Automated onboarding improves retention consistently. Reporting dashboards help teams make faster, better decisions every week.",
+        "Unlike paid ads, which stop working when spending stops, automation keeps creating value long after it's implemented."
+      ]
+    }
+  ],
+  "faqs": [
+    { "q": "Which tools do you use for marketing automation?", "a": "We work with HubSpot, Zoho CRM, Salesforce, ActiveCampaign, Mailchimp, Zapier, Make, Pabbly Connect, the WhatsApp Business API and more." },
+    { "q": "Do we need to switch our existing CRM?", "a": "Not necessarily. We integrate with most major CRM and marketing platforms and only recommend a migration when it's truly needed." },
+    { "q": "How long does implementation take?", "a": "Simple workflows can take 1–2 weeks, while advanced multi-stage automation systems may take 4–8 weeks depending on complexity." },
+    { "q": "Can you automate WhatsApp follow-ups legally?", "a": "Yes. We use the official WhatsApp Business API and compliant opt-in communication workflows." },
+    { "q": "What's the ROI of marketing automation?", "a": "Most businesses see measurable time savings, better lead conversion rates and lower operational costs within the first 60–90 days." }
+  ],
+  "related": ["workflow-automation", "digital-marketing", "paid-marketing"],
+  "cta": {
+    "heading": "Every lead deserves a follow-up",
+    "text": "Tell us which tools you use today. We'll sketch the journey your leads should be on and show you how to automate it."
+  }
+}

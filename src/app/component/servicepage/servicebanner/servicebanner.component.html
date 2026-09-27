@@ -12,7 +12,8 @@
                     </li>
                     <li *ngIf="breadcrumbName">{{ breadcrumbName }}</li>
                 </ul> -->
-                <h2 class="wow fadeInUp" data-wow-delay=".3s">{{ pageName }}</h2>
+                <h1 *ngIf="h1" class="wow fadeInUp" data-wow-delay=".3s">{{ title || pageName }}</h1>
+                <h2 *ngIf="!h1" class="wow fadeInUp" data-wow-delay=".3s">{{ title || pageName }}</h2>
             </div>
         </div>
     </div>

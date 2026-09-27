@@ -1,0 +1,106 @@
+{
+  "lead": "Your website is doing one of two things: converting visitors into leads, or leaking them.",
+  "intro": [
+    "A slow website loses visitors before they read a single word. A poorly structured website confuses prospects who were ready to buy. A website that isn't optimised for search doesn't get found in the first place.",
+    "Most businesses treat their website like a digital brochure — something to point people to, not something that actively generates business. At Bhiive, we build websites that are fast, search-optimised and designed to convert."
+  ],
+  "highlights": [
+    "Standard business sites in 3–5 weeks",
+    "Mobile-first and Core Web Vitals ready",
+    "SEO structure planned from the wireframe"
+  ],
+  "sections": [
+    {
+      "type": "text",
+      "id": "what-a-website-needs",
+      "heading": "What a high-performance website requires in 2026",
+      "paragraphs": [
+        "The standards for websites have changed dramatically. Google's Core Web Vitals affect rankings, mobile-first indexing is now the default, and website speed directly affects both SEO performance and conversions.",
+        "A modern business website needs:"
+      ],
+      "list": [
+        "Speed that passes Core Web Vitals on real phones",
+        "Technical SEO built into the structure, not bolted on",
+        "Mobile-first UX that makes the next step obvious",
+        "A conversion-focused page structure",
+        "Strong security and reliable hosting",
+        "Content architecture that matches how people search"
+      ]
+    },
+    {
+      "type": "cards",
+      "id": "services",
+      "heading": "Our website development services",
+      "items": [
+        {
+          "title": "Custom website design & development",
+          "text": "Custom websites that reflect your brand, communicate your value clearly and help convert visitors into customers.",
+          "points": ["Custom UI/UX design", "Business-focused website strategy", "Fast-loading optimised pages", "Responsive mobile-first layouts", "SEO-friendly structure", "Lead-generation focused design"]
+        },
+        {
+          "title": "Landing page development",
+          "text": "High-converting landing pages built for Google Ads, Meta Ads and lead generation campaigns.",
+          "points": ["Conversion-focused layouts", "Clear CTA optimisation", "Fast-loading mobile experience", "A/B testing support", "CRM integration", "Ad quality score optimisation"]
+        },
+        {
+          "title": "WordPress development",
+          "text": "Fast, secure, SEO-friendly WordPress websites without unnecessary bloat or performance issues.",
+          "points": ["Custom WordPress development", "Theme customisation", "WooCommerce setup", "Plugin integration", "Website speed optimisation", "Ongoing maintenance support"]
+        },
+        {
+          "title": "Website speed optimisation",
+          "text": "Improve Core Web Vitals, mobile performance and page load speed to lift rankings and engagement.",
+          "points": ["Core Web Vitals optimisation", "Image compression & WebP conversion", "Code minification", "Caching optimisation", "Font optimisation", "Third-party script optimisation"]
+        },
+        {
+          "title": "SEO-ready website development",
+          "text": "Every website is built with technical SEO best practices from the wireframe stage itself.",
+          "points": ["SEO-friendly URL structure", "Schema markup integration", "Meta title & description setup", "Structured content hierarchy", "Fast-loading architecture", "Search-intent focused pages"]
+        },
+        {
+          "title": "Website maintenance & support",
+          "text": "Keep your website secure, updated, optimised and running smoothly.",
+          "points": ["Regular security updates", "Performance monitoring", "Bug fixes & maintenance", "Content updates", "Backup management", "Technical support"]
+        }
+      ]
+    },
+    {
+      "type": "checklist",
+      "id": "why-bhiive",
+      "heading": "Why businesses choose Bhiive for website development",
+      "items": [
+        "Fast-loading websites optimised for performance",
+        "SEO-ready structure built from day one",
+        "Mobile-first responsive design approach",
+        "Conversion-focused layouts and CTA placement",
+        "Secure, scalable and future-ready development",
+        "Clean code and optimised technical architecture"
+      ]
+    },
+    {
+      "type": "steps",
+      "id": "process",
+      "heading": "Our website development process",
+      "items": [
+        { "title": "Discovery", "text": "Understanding your business goals, audience and competitors." },
+        { "title": "Architecture", "text": "Planning site structure, user journeys and conversion flow." },
+        { "title": "Design", "text": "Creating wireframes and visual designs aligned to your brand." },
+        { "title": "Development", "text": "Building clean, optimised and performance-focused pages." },
+        { "title": "Testing", "text": "Cross-device testing, SEO checks and speed optimisation." },
+        { "title": "Launch & support", "text": "Deployment, training and ongoing maintenance support." }
+      ]
+    }
+  ],
+  "faqs": [
+    { "q": "How long does website development take?", "a": "A standard business website usually takes 3–5 weeks. Larger custom projects may take 6–10 weeks depending on features and integrations." },
+    { "q": "Do you redesign existing websites?", "a": "Yes. We redesign and optimise existing websites to improve speed, SEO, UI/UX and conversion performance." },
+    { "q": "Will my website be mobile-optimised?", "a": "Absolutely. Every website we build follows a mobile-first approach and is tested across devices before launch." },
+    { "q": "Can I update the website myself?", "a": "Yes. We provide CMS-based solutions and training so you can easily manage routine content updates." },
+    { "q": "Do you provide website maintenance?", "a": "Yes. We offer ongoing website maintenance, security updates, performance monitoring and technical support plans." }
+  ],
+  "related": ["digital-marketing", "paid-marketing", "brand-building"],
+  "cta": {
+    "heading": "Is your website leaking leads?",
+    "text": "Tell us what your site needs to do. We'll come back with a plan, a timeline and a clear quote — no templates, no surprises."
+  }
+}

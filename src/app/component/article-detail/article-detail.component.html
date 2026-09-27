@@ -1,0 +1,128 @@
+<app-servicebanner [title]="bannerTitle" [h1]="false"></app-servicebanner>
+
+
+<section class="blog-wrapper section-padding">
+  <div class="container">
+    <div class="news-area">
+      <div class="row">
+
+        <!-- Blog Content -->
+        <div class="col-12 col-lg-8">
+          @switch (state) {
+            @case ('ready') {
+              @if (article; as a) {
+                <div class="blog-post-details border-wrap mt-0">
+                  <div class="single-blog-post post-details mt-0">
+
+                    <div class="post-content pt-0">
+
+                      <!-- Title (the page's <h1>) -->
+                      <h1 class="mt-0 char-animation article-title">
+                        {{ a.title }}
+                      </h1>
+
+                      <!-- Blog Image -->
+                      @if (a.cover) {
+                        <img
+                          [src]="a.cover"
+                          [alt]="a.coverAlt"
+                          class="single-post-image wow fadeInUp"
+                        />
+                      }
+
+                      <!-- Blog Body (CMS htmlContent, falling back to the blocks field) -->
+                      <div class="post-body" [innerHTML]="html" (click)="onBodyClick($event)"></div>
+                    </div>
+                  </div>
+
+                  <!-- Social Share -->
+                  <div class="row tag-share-wrap">
+                    <div class="col-lg-8 col-12"></div>
+
+                    <div class="col-lg-4 col-12 text-lg-end">
+                      <h4>Social Share</h4>
+                      <div class="social-share">
+                        <a [href]="share.facebook" target="_blank" rel="noopener" aria-label="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a [href]="share.x" target="_blank" rel="noopener" aria-label="Share on X"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a [href]="share.linkedin" target="_blank" rel="noopener" aria-label="Share on LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a [href]="share.whatsapp" target="_blank" rel="noopener" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              }
+            }
+            @case ('loading') {
+              <div class="text-center section-padding">
+                <div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div>
+              </div>
+            }
+            @case ('missing') {
+              <h2 class="mt-0">We couldn't find that article.</h2>
+              <p class="mt-3">It may have moved or been removed.</p>
+              <a routerLink="/articles" class="theme-btn mt-4">All Articles <i class="fa fa-arrow-right"></i></a>
+            }
+            @case ('error') {
+              <h2 class="mt-0">This article didn't load.</h2>
+              <p class="mt-3">Please check your connection and try again.</p>
+              <button type="button" class="theme-btn mt-4" (click)="retry()">Try Again <i class="fa fa-arrow-right"></i></button>
+            }
+          }
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-12 col-lg-4">
+          <div class="main-sidebar">
+
+            <div class="single-sidebar-widget">
+              <div class="wid-title">
+                <h3>Get a Quote</h3>
+              </div>
+
+              <div class="">
+                <app-blogform></app-blogform>
+              </div>
+            </div>
+
+            <!-- Recent News -->
+            @if (related.length) {
+              <div class="single-sidebar-widget">
+                <div class="wid-title">
+                  <h3>Recent News</h3>
+                </div>
+
+                <div class="popular-posts">
+                  @for (post of related; track post.slug) {
+                    <div class="single-post-item">
+                      <div
+                        class="thumb bg-cover"
+                        [style.background-image]="post.cover ? 'url(' + post.cover + ')' : null"
+                      ></div>
+
+                      <div class="post-content">
+                        <h5>
+                          <a [routerLink]="articlePath(post)">
+                            {{ post.title }}
+                          </a>
+                        </h5>
+
+                        @if (post.publishedAt) {
+                          <div class="post-date">
+                            <i class="far fa-calendar"></i>
+                            {{ post.publishedAt | date: 'd MMM y' }}
+                          </div>
+                        }
+                      </div>
+                    </div>
+                  }
+                </div>
+              </div>
+            }
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

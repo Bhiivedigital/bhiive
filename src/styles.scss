@@ -7,6 +7,12 @@
 @import "../src/assets/css/nice-select.css";
 @import "../src/assets/css/main.css";
 
+// Overrides for the theme above. Kept as a Sass partial under src/styles/
+// (NOT src/assets/) so the dev-server watcher picks up edits — plain .css
+// files imported from assets/ are not tracked through the Sass graph and
+// silently serve stale styles until ng serve is restarted.
+@import "styles/responsive-fix";
+
  .brandingul {
   padding: 0px 0px 00px 25px;
   margin: 0;

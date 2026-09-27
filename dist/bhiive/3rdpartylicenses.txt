@@ -1,5 +1,10 @@
 
 --------------------------------------------------------------------------------
+Package: @angular/core
+License: "MIT"
+
+
+--------------------------------------------------------------------------------
 Package: @angular/animations
 License: "MIT"
 
@@ -95,11 +100,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 --------------------------------------------------------------------------------
 Package: @angular/router
-License: "MIT"
-
-
---------------------------------------------------------------------------------
-Package: @angular/core
 License: "MIT"
 
 

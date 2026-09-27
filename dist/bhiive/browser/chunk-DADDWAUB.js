@@ -1,1 +1,0 @@
-import{P as r,U as e,vb as i}from"./chunk-JWOH5GXH.js";var a=(()=>{class t{constructor(o){this.http=o}getBlogs(){return this.http.get("../assets/blogs.json")}static{this.\u0275fac=function(s){return new(s||t)(e(i))}}static{this.\u0275prov=r({token:t,factory:t.\u0275fac,providedIn:"root"})}}return t})();export{a};

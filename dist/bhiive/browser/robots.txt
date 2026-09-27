@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bhiive.com/sitemap.xml
+# Built live from the CMS, so new articles are listed as soon as they are published.
+Sitemap: https://cms.bhiive.com/api/sitemap.xml

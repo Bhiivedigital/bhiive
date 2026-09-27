@@ -1,0 +1,62 @@
+  <app-servicebanner></app-servicebanner>
+    <!--<< Blog Wrapper Here >>-->
+     <section class="blog-wrapper section-padding">
+        <div class="container">
+            <div class="news-area">
+                <div class="row">
+                    <div class="col-12 col-lg-12">
+
+                        @if (loading) {
+                            <div class="blog-spinner-wrap text-center">
+                                <div class="spinner-border" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </div>
+                        } @else {
+                            <div class="row blog-grid">
+                                @for (blog of pagedBlogs; track blog.slug) {
+                                    <div class="col-12 col-md-6 col-lg-3 mb-4">
+                                        <a class="blog-card" [routerLink]="pathFor(blog)"
+                                           [attr.aria-label]="'Read ' + blog.title">
+                                            <div class="blog-card__media">
+                                                <img [src]="blog.cover || 'assets/img/news/post-1.jpg'" [alt]="blog.coverAlt" loading="lazy">
+                                                @if (topicOf(blog); as topic) {
+                                                    <span class="blog-card__cat">{{ topic }}</span>
+                                                }
+                                            </div>
+                                            <div class="blog-card__body">
+                                                <h4 class="blog-card__title">{{ blog.title }}</h4>
+                                                <p class="blog-card__text">{{ blog.excerpt }}</p>
+                                                <span class="blog-card__cta">Read Details</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                }
+                            </div>
+
+                            @if (totalPages > 1) {
+                                <div class="page-nav-wrap text-center">
+                                    <ul>
+                                        <li [class.disabled]="currentPage === 1">
+                                            <a class="page-numbers" href="javascript:void(0)" (click)="goToPage(currentPage - 1)">
+                                                <i class="fa fa-long-arrow-left"></i></a>
+                                        </li>
+                                        @for (p of pages; track p) {
+                                            <li [class.active]="p === currentPage">
+                                                <a class="page-numbers" href="javascript:void(0)" (click)="goToPage(p)">{{p < 10 ? '0' + p : p}}</a>
+                                            </li>
+                                        }
+                                        <li [class.disabled]="currentPage === totalPages">
+                                            <a class="page-numbers" href="javascript:void(0)" (click)="goToPage(currentPage + 1)">
+                                                <i class="fa fa-long-arrow-right"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            }
+                        }
+
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>

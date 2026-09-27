@@ -1,0 +1,79 @@
+<div class="lp-backdrop" *ngIf="isVisible" (click)="closePopup()"></div>
+
+<div class="lp-modal" *ngIf="isVisible" role="dialog" aria-modal="true" aria-labelledby="lp-title">
+  <div class="lp-aside">
+    <span class="lp-eyebrow">Free consultation</span>
+    <h3>Grow your business online</h3>
+    <p class="lp-sub">Tell us what you need. We'll come back with a plan and a clear quote — not a sales pitch.</p>
+    <ul class="lp-trust">
+      <li><i class="fas fa-check"></i><span><b>Websites</b> that are fast, SEO-ready and built to convert</span></li>
+      <li><i class="fas fa-check"></i><span><b>SEO, Google &amp; Meta Ads</b> measured by leads, not clicks</span></li>
+      <li><i class="fas fa-check"></i><span><b>Automation</b> that follows up every lead for you</span></li>
+    </ul>
+    <div class="lp-foot">
+      <i class="fas fa-lock"></i>
+      <span>Your details are used only to contact you. Never sold, never spammed.</span>
+    </div>
+  </div>
+
+  <div class="lp-form">
+    <button type="button" class="lp-close" aria-label="Close" (click)="closePopup()">
+      <i class="fas fa-times"></i>
+    </button>
+
+    <ng-container *ngIf="!sendSucceeded">
+      <h4 id="lp-title">Get a free quote</h4>
+      <p class="lp-lede">Takes under 40 seconds.</p>
+
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+        <div class="lp-grid">
+          <div class="lp-field lp-full">
+            <label for="lp-name">Your name <span class="req">*</span></label>
+            <input id="lp-name" type="text" formControlName="name" class="lp-ctrl" [class.error]="submitted && f['name'].errors" placeholder="Full name" autocomplete="name" />
+            <span class="lp-err" *ngIf="submitted && f['name'].errors">Name must be at least 3 characters</span>
+          </div>
+
+          <div class="lp-field">
+            <label for="lp-mobile">Mobile number <span class="req">*</span></label>
+            <input id="lp-mobile" type="tel" formControlName="mobile" class="lp-ctrl" [class.error]="submitted && f['mobile'].errors" placeholder="10-digit number" maxlength="10" (keypress)="allowOnlyNumbers($event)" autocomplete="tel-national" />
+            <span class="lp-err" *ngIf="submitted && f['mobile'].errors">Enter all 10 digits</span>
+          </div>
+
+          <div class="lp-field">
+            <label for="lp-email">Email</label>
+            <input id="lp-email" type="email" formControlName="email" class="lp-ctrl" [class.error]="submitted && f['email'].errors" placeholder="you@company.com" autocomplete="email" />
+            <span class="lp-err" *ngIf="submitted && f['email'].errors">Email is invalid</span>
+          </div>
+
+          <div class="lp-field lp-full">
+            <label for="lp-service">Service required <span class="req">*</span></label>
+            <select id="lp-service" formControlName="service" class="lp-ctrl" [class.error]="submitted && f['service'].errors">
+              <option value="" disabled>Select one</option>
+              <option *ngFor="let s of services()" [value]="s.name">{{ s.name }}</option>
+              <option value="Not sure yet">Not sure yet</option>
+            </select>
+            <span class="lp-err" *ngIf="submitted && f['service'].errors">Please select a service</span>
+          </div>
+        </div>
+
+        <div class="lp-btn-row">
+          <button type="submit" class="theme-btn" [disabled]="sending">
+            {{ sending ? 'Sending…' : 'Get my free quote' }}
+            <i class="fa fa-arrow-right"></i>
+          </button>
+          <a class="lp-btn-ghost" href="https://wa.me/919445974970" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i> WhatsApp us
+          </a>
+        </div>
+
+        <p class="lp-fail" *ngIf="sendFailed">Couldn't send your request. Please try again, or call +91 94459 74970.</p>
+      </form>
+    </ng-container>
+
+    <div class="lp-success" *ngIf="sendSucceeded">
+      <div class="lp-success-ic"><i class="fas fa-check"></i></div>
+      <h5>Thanks — we've got it</h5>
+      <p>Our team will get back to you shortly.</p>
+    </div>
+  </div>
+</div>
