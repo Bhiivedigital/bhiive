@@ -1,0 +1,161 @@
+@if (state === 'ready' && pillar; as p) {
+<app-servicebanner [title]="p.h1"></app-servicebanner>
+
+<section class="service-detaile-section section-padding fix">
+    <div class="container">
+        <div class="service-details-wrapper">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="service-details-content">
+
+                        <h3 class="mt-3">{{ p.name }} Services</h3>
+                        @if (p.lead) {
+                            <p class="mt-2 wow fadeInUp" data-wow-delay=".2s">{{ p.lead }}</p>
+                        }
+                        @for (para of p.intro; track $index) {
+                            <p class="mt-2 wow fadeInUp" data-wow-delay=".3s">{{ para }}</p>
+                        }
+
+                        @for (s of p.sections; track s.id) {
+                        <div [id]="s.id">
+                            @if (s.type === 'text') {
+                                <h3 class="mt-5">{{ s.heading }}</h3>
+                                @for (para of s.paragraphs; track $index) {
+                                    <p class="mt-3 wow fadeInUp" data-wow-delay=".3s">{{ para }}</p>
+                                }
+                                @for (item of s.list ?? []; track $index; let first = $first) {
+                                    <div class="icon-box-items gap-1" [class.mt-3]="first" [class.mt-0]="!first">
+                                        <div class="icon-box">
+                                            <i class="fa fa-check fs-5"></i>
+                                        </div>
+                                        <div class="icon-contnet">
+                                            <h3 class="fw-normal">{{ item }}</h3>
+                                        </div>
+                                    </div>
+                                }
+                                @if (s.closing) {
+                                    <p class="mt-4 wow fadeInUp" data-wow-delay=".3s">{{ s.closing }}</p>
+                                }
+                            } @else if (s.type === 'cards') {
+                                <div class="row g-4">
+                                    <h3 class="mt-5">{{ s.heading }}</h3>
+                                    @if (s.intro) {
+                                        <p class="mt-2">{{ s.intro }}</p>
+                                    }
+                                    @for (c of s.items; track $index) {
+                                        <div class="col-lg-6 wow fadeInUp" data-wow-delay=".4s">
+                                            <div class="icon-box-items mt-2 gap-2">
+                                                <div class="icon-box">
+                                                    <i class="far fa-check-circle fs-3"></i>
+                                                </div>
+                                                <div class="icon-contnet">
+                                                    <h3>{{ c.title }}</h3>
+                                                    <p>{{ c.text }}</p>
+                                                    @for (para of c.paragraphs ?? []; track $index) {
+                                                        <p class="mt-2">{{ para }}</p>
+                                                    }
+                                                    @if (c.points?.length) {
+                                                        <ul class="brandingul">
+                                                            @for (pt of c.points; track $index) {
+                                                                <li>{{ pt }}</li>
+                                                            }
+                                                        </ul>
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            } @else if (s.type === 'checklist') {
+                                <h3 class="how-title char-animation mt-5">{{ s.heading }}</h3>
+                                @if (s.intro) {
+                                    <p class="mt-2">{{ s.intro }}</p>
+                                }
+                                @for (item of s.items; track $index; let first = $first) {
+                                    <div class="icon-box-items gap-1" [class.mt-3]="first" [class.mt-0]="!first">
+                                        <div class="icon-box">
+                                            <i class="fa fa-check fs-5"></i>
+                                        </div>
+                                        <div class="icon-contnet">
+                                            <h3 class="fw-normal">{{ item }}</h3>
+                                        </div>
+                                    </div>
+                                }
+                            } @else if (s.type === 'steps') {
+                                <h3 class="how-title char-animation mt-5">{{ s.heading }}</h3>
+                                @if (s.intro) {
+                                    <p class="mt-2">{{ s.intro }}</p>
+                                }
+                                <div class="mt-3">
+                                    @for (st of s.items; track $index) {
+                                        <p><strong>{{ st.title }} →</strong> {{ st.text }}</p>
+                                    }
+                                </div>
+                            } @else if (s.type === 'statements') {
+                                <h3 class="how-title char-animation mt-5">{{ s.heading }}</h3>
+                                @for (st of s.items; track $index) {
+                                    <p><strong>{{ st.lead }}</strong> {{ st.text }}</p>
+                                }
+                            } @else if (s.type === 'tags') {
+                                <h3 class="how-title char-animation mt-5">{{ s.heading }}</h3>
+                                @for (para of s.paragraphs; track $index) {
+                                    <p class="fw-normal">{{ para }}</p>
+                                }
+                                <p class="fw-normal">{{ s.items.join(', ') }}</p>
+                            }
+                        </div>
+                        }
+
+                        @if (p.faqs.length) {
+                            <h4 class="how-title char-animation mt-5" id="faqs">FAQs</h4>
+                            @for (f of p.faqs; track $index; let i = $index) {
+                                <div class="icon-box-items gap-1 mt-3">
+                                    <div class="icon-contnet">
+                                        <h3 class="fw-normal">{{ i + 1 }}. {{ f.q }}</h3>
+                                        <p>{{ f.a }}</p>
+                                    </div>
+                                </div>
+                            }
+                        }
+
+                        @if (articles.length) {
+                            <h4 class="how-title char-animation mt-5" id="articles">{{ p.shortName }} Articles</h4>
+                            <ul class="brandingul mt-3">
+                                @for (a of articles; track a.slug) {
+                                    <li><a [routerLink]="articlePath(a)">{{ a.title }}</a></li>
+                                }
+                            </ul>
+                        }
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <app-sidebarsec></app-sidebarsec>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+} @else if (state === 'missing') {
+<app-servicebanner title="Page Not Found"></app-servicebanner>
+<section class="service-detaile-section section-padding fix">
+    <div class="container text-center">
+        <h3>We couldn't find that page.</h3>
+        <p class="mt-3">The link may be old or mistyped. These are the services we offer:</p>
+        <ul class="brandingul d-inline-block text-start mt-3">
+            @for (o of others; track o.slug) {
+                <li><a [routerLink]="['/', o.slug]">{{ o.name }}</a></li>
+            }
+        </ul>
+        <div class="mt-4">
+            <a routerLink="/services" class="theme-btn">All Services <i class="fa fa-arrow-right"></i></a>
+        </div>
+    </div>
+</section>
+} @else {
+<app-servicebanner></app-servicebanner>
+<div class="text-center section-padding">
+    <div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div>
+</div>
+}

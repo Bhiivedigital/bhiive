@@ -1,9 +1,106 @@
+# Bhiive — Apache / LiteSpeed (Hostinger) rules for the Angular build.
+# scripts/generate-static-seo.mjs writes one HTML file per route
+# (about-us.html, web-development/<article>.html, …) and fills in the
+# generated blog redirects below.
+
+Options -Indexes -MultiViews
+DirectoryIndex index.html
+
+# Pages are served without a trailing slash, so don't let mod_dir append one
+# to folders like /web-development/ that also exist as pages.
+<IfModule mod_dir.c>
+  DirectorySlash Off
+</IfModule>
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
 
-  RewriteRule ^index\.html$ - [L]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . /index.html [L]
+  # 1. One canonical host: https://bhiive.com (www and http both 301 here).
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+  # 2. The blog became /articles; every old post 301s to its new URL.
+  RewriteRule ^blog/?$ /articles [R=301,L,NC]
+# BEGIN generated blog redirects
+RewriteRule ^blog/google-ads-lead-generation/?$ /paid-marketing/google-ads-lead-generation [R=301,L,NC]
+RewriteRule ^blog/ai-workflow-automation/?$ /workflow-automation/ai-workflow-automation [R=301,L,NC]
+RewriteRule ^blog/digital-brand-building/?$ /brand-building/digital-brand-building [R=301,L,NC]
+RewriteRule ^blog/why-website-loading-slow/?$ /web-development/why-website-loading-slow [R=301,L,NC]
+RewriteRule ^blog/how-to-build-a-brand-identity/?$ /brand-building/how-to-build-a-brand-identity [R=301,L,NC]
+RewriteRule ^blog/the-future-of-artificial-intelligence/?$ /digital-marketing/the-future-of-artificial-intelligence [R=301,L,NC]
+RewriteRule ^blog/seo-vs-ppc-for-small-business/?$ /digital-marketing/seo-vs-ppc-for-small-business [R=301,L,NC]
+RewriteRule ^blog/digital-marketing-strategies-chennai/?$ /digital-marketing/digital-marketing-strategies-chennai [R=301,L,NC]
+RewriteRule ^blog/what-is-brand-building-and-why-does-it-matter/?$ /brand-building/what-is-brand-building-and-why-does-it-matter [R=301,L,NC]
+RewriteRule ^blog/website-development-process-step-by-step-guide/?$ /web-development/website-development-process-step-by-step-guide [R=301,L,NC]
+RewriteRule ^blog/what-is-digital-marketing-and-why-is-it-important/?$ /digital-marketing/what-is-digital-marketing-and-why-is-it-important [R=301,L,NC]
+RewriteRule ^blog/what-is-ppc-advertising-beginners-guide/?$ /paid-marketing/what-is-ppc-advertising-beginners-guide [R=301,L,NC]
+RewriteRule ^blog/how-automation-boosts-lead-generation/?$ /marketing-automation/how-automation-boosts-lead-generation [R=301,L,NC]
+RewriteRule ^blog/instagram-or-linkedin-choosing-the-right-platform-for-your-brand/?$ /digital-marketing/instagram-or-linkedin-choosing-the-right-platform-for-your-brand [R=301,L,NC]
+RewriteRule ^blog/five-e-commerce-website-mistakes-that-are-costing-you-sales/?$ /digital-marketing/five-e-commerce-website-mistakes-that-are-costing-you-sales [R=301,L,NC]
+RewriteRule ^blog/google-ads-vs-social-media-ads-where-should-your-budget-go/?$ /paid-marketing/google-ads-vs-social-media-ads-where-should-your-budget-go [R=301,L,NC]
+RewriteRule ^blog/local-seo-checklist-how-chennai-businesses-can-rank-on-google-maps/?$ /digital-marketing/local-seo-checklist-how-chennai-businesses-can-rank-on-google-maps [R=301,L,NC]
+RewriteRule ^blog/why-every-chennai-business-needs-a-mobile-first-website-in-2026/?$ /web-development/why-every-chennai-business-needs-a-mobile-first-website-in-2026 [R=301,L,NC]
+# END generated blog redirects
+
+  #    The sitemap is built live by the CMS (robots.txt points there too).
+  RewriteRule ^sitemap\.xml$ https://cms.bhiive.com/api/sitemap.xml [R=302,L]
+
+  # 3. Clean URLs: /index.html → /, /page.html → /page, /page/ → /page.
+  RewriteCond %{THE_REQUEST} \s/index\.html[\s?] [NC]
+  RewriteRule ^index\.html$ / [R=301,L]
+  RewriteCond %{THE_REQUEST} \s/([^\s?]+?)\.html[\s?] [NC]
+  RewriteCond %1 !^app$
+  RewriteRule ^ /%1 [R=301,L]
+  RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+  # 4. The homepage is the stamped index.html (the catch-all below would
+  #    otherwise match "/" before DirectoryIndex gets a chance).
+  RewriteRule ^$ index.html [L]
+
+  #    Real files (JS, CSS, images, robots.txt, the IndexNow key) as-is.
+  RewriteCond %{REQUEST_FILENAME} -f
+  RewriteRule ^ - [L]
+
+  # 5. Pre-stamped pages: /about-us → about-us.html
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.+)$ $1.html [L]
+
+  # 6. A missing asset is a 404, not the app shell.
+  RewriteRule \.(?:js|css|map|json|txt|xml|ico|png|jpe?g|gif|webp|avif|svg|woff2?|ttf|eot|pdf)$ - [R=404,L,NC]
+
+  # 7. Everything else boots the app (e.g. an article published after the last build).
+  RewriteRule ^ app.html [L]
+</IfModule>
+
+# Compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/xml application/javascript application/json image/svg+xml font/woff2
+</IfModule>
+
+# Caching: hashed bundles and images for a year; HTML always revalidated.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 week"
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType application/xml "access plus 1 hour"
+  ExpiresByType text/xml "access plus 1 hour"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
 </IfModule>

@@ -1,0 +1,20 @@
+/* The article title is the page <h1> (for SEO) with the theme's blog-title look
+   (main.css: .blog-wrapper .single-blog-post .post-content h2). */
+.blog-wrapper .single-blog-post .post-content h1.article-title {
+  line-height: 1.4;
+  font-size: 36px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+@media (max-width: 575px) {
+  .blog-wrapper .single-blog-post .post-content h1.article-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 414px) {
+  .blog-wrapper .single-blog-post .post-content h1.article-title {
+    font-size: 22px;
+  }
+}

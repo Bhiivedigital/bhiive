@@ -1,109 +1,77 @@
-// app.routes.ts
-import { Routes } from '@angular/router';
+import { Routes, UrlMatchResult, UrlSegment } from '@angular/router';
+
+const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+
+// Hub-and-spoke: every service is a pillar page at /:pillar, and every article
+// lives under the pillar it supports at /:pillar/:articleSlug. Services are
+// edited in the CMS, so these match any slug-shaped path; the pages show the
+// 404 view themselves when the service or article doesn't exist. They come
+// after every fixed route below, so /about-us etc. always win.
+function pillarMatcher(segments: UrlSegment[]): UrlMatchResult | null {
+  return segments.length === 1 && SLUG.test(segments[0].path)
+    ? { consumed: segments, posParams: { pillar: segments[0] } }
+    : null;
+}
+
+function articleMatcher(segments: UrlSegment[]): UrlMatchResult | null {
+  return segments.length === 2 && SLUG.test(segments[0].path) && SLUG.test(segments[1].path)
+    ? { consumed: segments, posParams: { pillar: segments[0], articleSlug: segments[1] } }
+    : null;
+}
 
 export const routes: Routes = [
   {
     path: '',
-    loadComponent: () =>
-      import('./component/home-layout/home-layout.component')
-        .then(m => m.HomeLayoutComponent),
-    title: 'Bhiive | Web Design & Digital Marketing Company in Chennai'
+    loadComponent: () => import('./component/home-layout/home-layout.component').then(m => m.HomeLayoutComponent),
   },
   {
     path: 'about-us',
-    loadComponent: () =>
-      import('./component/aboutus/aboutus.component')
-        .then(m => m.AboutusComponent),
-    title: 'About Bhiive | Digital Marketing Agency in Chennai'
+    loadComponent: () => import('./component/aboutus/aboutus.component').then(m => m.AboutusComponent),
   },
   {
     path: 'services',
-    loadComponent: () =>
-      import('./component/servicepage/servicepage.component')
-        .then(m => m.ServicepageComponent),
-    title: 'Our Services | Digital Marketing & Web Solutions – Bhiive'
+    loadComponent: () => import('./component/servicepage/servicepage.component').then(m => m.ServicepageComponent),
   },
   {
-    path: 'paid-marketing',
-    loadComponent: () =>
-      import('./component/servicepage/paidmarketing/paidmarketing.component')
-        .then(m => m.PaidmarketingComponent),
-    title: 'Paid Marketing Services | PPC, Social Ads & Lead-Driven Campaigns – Bhiive'
+    path: 'articles',
+    loadComponent: () => import('./component/articles/articles.component').then(m => m.ArticlesComponent),
   },
-  {
-    path: 'brand-building',
-    loadComponent: () =>
-      import('./component/servicepage/brandbuilding/brandbuilding.component')
-        .then(m => m.BrandbuildingComponent),
-    title: 'Brand Building Services | Brand Strategy, Identity & Growth – Bhiive'
-  },
-  {
-    path: 'web-development',
-    loadComponent: () =>
-      import('./component/servicepage/webdevlopment/webdevlopment.component')
-        .then(m => m.WebdevlopmentComponent),
-    title: 'Web Development Services | Custom, Responsive & SEO-Friendly Websites – Bhiive'
-  },
-  {
-    path: 'workflow-automation',
-    loadComponent: () =>
-      import('./component/servicepage/workflowautomation/workflowautomation.component')
-        .then(m => m.WorkflowautomationComponent),
-    title: 'Workflow Automation Services | Business Process & Task Automation – Bhiive'
-  },
-  {
-    path: 'digital-marketing',
-    loadComponent: () =>
-      import('./component/servicepage/digitalmarketing/digitalmarketing.component')
-        .then(m => m.DigitalmarketingComponent),
-    title: 'Digital Marketing Services | SEO, PPC, Social Media & Lead Generation – Bhiive'
-  },
-  {
-    path: 'marketing-automation',
-    loadComponent: () =>
-      import('./component/servicepage/marketautomation/marketautomation.component')
-        .then(m => m.MarketautomationComponent),
-    title: 'Market Automation Services | Marketing Automation & Strategy – Bhiive'
-  },
-  {
-    path: 'blog',
-    loadComponent: () =>
-      import('./component/blog/blog.component')
-        .then(m => m.BlogComponent),
-    title: 'Blog | Digital Marketing Tips & Insights – Bhiive'
-  },
+
+  // The blog became /articles. .htaccess answers these with a 301 for known
+  // posts; these routes cover in-app links and anything the server rules miss.
+  { path: 'blog', redirectTo: 'articles', pathMatch: 'full' },
   {
     path: 'blog/:slug',
-    loadComponent: () =>
-      import('./component/blog/blogdetails/blogdetails.component')
-        .then(m => m.BlogdetailsComponent),
-    title: 'Blog – Bhiive'
+    loadComponent: () => import('./component/articles/legacy-blog-redirect.component').then(m => m.LegacyBlogRedirectComponent),
   },
+
   {
     path: 'privacy-policy',
-    loadComponent: () =>
-      import('./component/pricvacypolicy/pricvacypolicy.component')
-        .then(m => m.PricvacypolicyComponent),
-    title: 'Privacy Policy – Bhiive'
+    loadComponent: () => import('./component/pricvacypolicy/pricvacypolicy.component').then(m => m.PricvacypolicyComponent),
   },
   {
     path: 'contact-us',
-    loadComponent: () =>
-      import('./component/contactpage/contactpage.component')
-        .then(m => m.ContactpageComponent),
-    title: 'Contact Us | Get a Free Quote – Bhiive'
+    loadComponent: () => import('./component/contactpage/contactpage.component').then(m => m.ContactpageComponent),
   },
   {
     path: 'career',
-    loadComponent: () =>
-      import('./component/career/career.component')
-        .then(m => m.CareerComponent),
-    title: 'Careers at Bhiive | Join Our Digital Marketing Team in Chennai'
+    loadComponent: () => import('./component/career/career.component').then(m => m.CareerComponent),
   },
+  { path: 'careers', redirectTo: 'career', pathMatch: 'full' },
   {
     path: 'careers/:slug',
-    loadComponent: () =>
-      import('./component/careerdetails/careerdetails.component')
-        .then(m => m.CareerdetailsComponent)
-  }
+    loadComponent: () => import('./component/careerdetails/careerdetails.component').then(m => m.CareerdetailsComponent),
+  },
+  {
+    matcher: pillarMatcher,
+    loadComponent: () => import('./component/pillar/pillar.component').then(m => m.PillarComponent),
+  },
+  {
+    matcher: articleMatcher,
+    loadComponent: () => import('./component/article-detail/article-detail.component').then(m => m.ArticleDetailComponent),
+  },
+  {
+    path: '**',
+    loadComponent: () => import('./component/not-found/not-found.component').then(m => m.NotFoundComponent),
+  },
 ];

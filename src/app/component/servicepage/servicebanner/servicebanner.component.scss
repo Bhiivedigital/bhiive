@@ -1,0 +1,14 @@
+/* The banner title is the page <h1> (for SEO); it keeps the theme's look for
+   `.page-heading h2` (main.css) so nothing changes visually. */
+.page-heading h1 {
+  color: var(--white);
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 130%;
+}
+
+@media (max-width: 575px) {
+  .page-heading h1 {
+    font-size: 40px;
+  }
+}

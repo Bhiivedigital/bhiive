@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { PreloaderComponent } from '../preloader/preloader.component';
 import { RouterLink, RouterLinkActive } from "@angular/router";
 import { AbstractControl, FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
+import { LeadService } from '../../../core/services/lead.service';
+import { ServiceCatalog } from '../../../core/services/service-catalog.service';
 import { CommonModule } from '@angular/common';
 
 declare const bootstrap: any;
@@ -17,8 +18,10 @@ declare const bootstrap: any;
 export class HeaderComponent {
 form:any= FormGroup;
   submitted = false;
+  // Services dropdown: the CMS service pages (bundled copy until the CMS answers).
+  readonly pillars = inject(ServiceCatalog).pillars;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder, private leads: LeadService) {}
 
    goToWhatsApp(): void {
   const phoneNumber = '9445974970'; // Use international format, no + or spaces
@@ -32,7 +35,6 @@ callNow(): void {
 
 
 ngOnInit(): void {
-    emailjs.init('bKJipK3m800SQHwLe'); // Ensure EmailJS is initialized
     this.form = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
       email: ['', [Validators.required, Validators.email]],
@@ -56,15 +58,14 @@ ngOnInit(): void {
     }
 
     try {
-      let response = await emailjs.send("service_wjjtovg", "template_tt1n5xt", {
-        subject: this.form.value.subject,
-        message: this.form.value.message,
-        mobile: this.form.value.mobile,
-        email: this.form.value.email,
+      // Saved in the CMS (Leads) and emailed via the same EmailJS template.
+      await this.leads.send({
         name: this.form.value.name,
+        email: this.form.value.email,
+        mobile: this.form.value.mobile,
+        message: this.form.value.message,
+        source: 'Get Quote popup',
       });
-
-      console.log("Email sent successfully!", response);
       alert('Message sent successfully!');
       this.submitted = false;
       this.form.reset();

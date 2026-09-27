@@ -14,6 +14,7 @@ export class ServicesectionComponent {
   services = [
     {
       title: 'Website Development',
+      link: '/web-development',
       description:
         'Build responsive, SEO-optimized websites that perform across devices and drive engagement. From corporate sites to e-commerce stores, we develop secure, scalable solutions tailored to your business goals.',
         img:'assets/img/service/icon-01.png',
@@ -21,6 +22,7 @@ export class ServicesectionComponent {
     },
      {
       title: 'Digital Marketing',
+      link: '/digital-marketing',
       description:
         'Comprehensive digital marketing services in Chennai that include SEO, content marketing, social media marketing, and analytics — all designed to boost your brand visibility and attract targeted traffic.',
       img:'assets/img/service/icon-02.png',
@@ -30,6 +32,7 @@ export class ServicesectionComponent {
 
     {
       title: 'Paid Advertising',
+      link: '/paid-marketing',
       img:'assets/img/service/icon-03.png',
       description:
         'Launch high-impact paid campaigns on Google Ads, Facebook & Instagram to increase leads, sales, and revenue through hyper-targeted advertising strategies....',
@@ -37,6 +40,7 @@ export class ServicesectionComponent {
     },
      {
       title: 'Brand Building',
+      link: '/brand-building',
       img:'assets/img/service/icon-04.png',
       description:
         'Elevate your brand with tailored strategy, audience research, and creative campaigns that strengthen your online presence and drive loyalty.',

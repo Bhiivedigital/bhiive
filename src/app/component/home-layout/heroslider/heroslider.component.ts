@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
+import { LeadService } from '../../../core/services/lead.service';
 
 @Component({
   selector: 'app-heroslider',
@@ -14,10 +14,9 @@ export class HerosliderComponent {
   form:any= FormGroup;
   submitted = false;
 
- constructor(private formBuilder: FormBuilder) {}
+ constructor(private formBuilder: FormBuilder, private leads: LeadService) {}
 
 ngOnInit(): void {
-    emailjs.init('bKJipK3m800SQHwLe'); // Ensure EmailJS is initialized
     this.form = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
       email: ['', [Validators.required, Validators.email]],
@@ -41,15 +40,14 @@ ngOnInit(): void {
     }
 
     try {
-      let response = await emailjs.send("service_wjjtovg", "template_tt1n5xt", {
-        subject: this.form.value.subject,
-        message: this.form.value.message,
-        mobile: this.form.value.mobile,
-        email: this.form.value.email,
+      // Saved in the CMS (Leads) and emailed via the same EmailJS template.
+      await this.leads.send({
         name: this.form.value.name,
+        email: this.form.value.email,
+        mobile: this.form.value.mobile,
+        message: this.form.value.message,
+        source: 'Homepage hero popup',
       });
-
-      console.log("Email sent successfully!", response);
       alert('Message sent successfully!');
       this.submitted = false;
       this.form.reset();

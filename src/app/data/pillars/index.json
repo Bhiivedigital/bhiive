@@ -1,0 +1,117 @@
+[
+  {
+    "slug": "web-development",
+    "name": "Website Development",
+    "shortName": "Web Development",
+    "icon": "fa-solid fa-code",
+    "eyebrow": "Websites that convert",
+    "h1": "Website Development Company in Chennai",
+    "menuText": "Fast, SEO-ready websites, landing pages and WordPress builds.",
+    "summary": "Fast, search-optimised websites built to turn visitors into enquiries — custom builds, landing pages, WordPress and ongoing care.",
+    "serviceType": "Website design and development",
+    "categories": ["web-design", "web-development"],
+    "keywords": ["website", "web-design", "web-development", "landing-page", "wordpress", "page-speed", "core-web-vitals"],
+    "matchOrder": 5,
+    "seo": {
+      "title": "Website Development Company in Chennai | Bhiive",
+      "description": "Custom, mobile-first websites built for speed, SEO and conversions. Bhiive designs and develops business sites, landing pages and WordPress in Chennai.",
+      "keywords": "website development company Chennai, web design Chennai, custom website development, landing page development, WordPress development Chennai"
+    }
+  },
+  {
+    "slug": "digital-marketing",
+    "name": "Digital Marketing",
+    "shortName": "Digital Marketing",
+    "icon": "fa-solid fa-chart-line",
+    "eyebrow": "Growth systems, not packages",
+    "h1": "Digital Marketing Agency in Chennai",
+    "menuText": "SEO, content, social media and email tied to revenue.",
+    "summary": "SEO, content, social and email marketing built as one growth system — every channel measured by the leads and revenue it brings in.",
+    "serviceType": "Digital marketing",
+    "categories": ["digital-marketing", "seo", "social-media-marketing", "e-commerce-marketing", "content-marketing"],
+    "keywords": ["seo", "social-media", "content-marketing", "instagram", "linkedin", "digital-marketing"],
+    "matchOrder": 6,
+    "fallback": true,
+    "seo": {
+      "title": "Digital Marketing Agency in Chennai | SEO & Social | Bhiive",
+      "description": "Bhiive is a Chennai digital marketing agency for SEO, content, social media and email marketing — growth systems measured by pipeline, not vanity metrics.",
+      "keywords": "digital marketing agency Chennai, SEO services Chennai, social media marketing Chennai, content marketing, email marketing agency India"
+    }
+  },
+  {
+    "slug": "paid-marketing",
+    "name": "Paid Marketing",
+    "shortName": "Paid Ads",
+    "icon": "fa-solid fa-bullseye",
+    "eyebrow": "Ads that pay for themselves",
+    "h1": "Paid Marketing Services: Google, Meta & LinkedIn Ads",
+    "menuText": "Google, Meta and LinkedIn Ads managed for cost per lead and ROAS.",
+    "summary": "Google Ads, Meta Ads and LinkedIn campaigns managed for cost per qualified lead and return on ad spend — with tracking you can trust.",
+    "serviceType": "Pay-per-click advertising management",
+    "categories": ["paid-marketing", "ppc", "google-ads"],
+    "keywords": ["ppc", "google-ads", "meta-ads", "facebook-ads", "linkedin-ads", "paid-ads", "paid-marketing"],
+    "matchOrder": 3,
+    "seo": {
+      "title": "Google & Meta Ads Management in Chennai | Bhiive",
+      "description": "PPC management for Google Ads, Meta Ads and LinkedIn Ads. Bhiive optimises for cost per qualified lead and ROAS, with conversion tracking set up right.",
+      "keywords": "Google Ads agency Chennai, PPC management Chennai, Meta Ads management, Facebook ads agency, LinkedIn ads B2B, paid marketing services"
+    }
+  },
+  {
+    "slug": "brand-building",
+    "name": "Brand Building",
+    "shortName": "Brand Building",
+    "icon": "fa-solid fa-pen-nib",
+    "eyebrow": "Compete on value, not price",
+    "h1": "Brand Building & Brand Strategy Services",
+    "menuText": "Positioning, identity, messaging and founder branding.",
+    "summary": "Brand strategy, identity and messaging that make it obvious what you do, who it is for and why you are the right choice.",
+    "serviceType": "Brand strategy and identity design",
+    "categories": ["brand-building", "branding"],
+    "keywords": ["brand"],
+    "matchOrder": 4,
+    "seo": {
+      "title": "Brand Building & Strategy Services in Chennai | Bhiive",
+      "description": "Brand strategy, positioning, identity design and messaging from Bhiive in Chennai — build a brand that attracts better clients and commands premium pricing.",
+      "keywords": "brand building services Chennai, brand strategy agency, brand identity design Chennai, logo design, brand positioning, LinkedIn personal branding"
+    }
+  },
+  {
+    "slug": "workflow-automation",
+    "name": "Workflow Automation",
+    "shortName": "Workflow Automation",
+    "icon": "fa-solid fa-diagram-project",
+    "eyebrow": "Stop doing it by hand",
+    "h1": "Workflow Automation Services for Growing Businesses",
+    "menuText": "Business process, CRM, lead and reporting automation.",
+    "summary": "Custom automation that connects your tools, removes repetitive work and keeps leads, orders and reports moving without manual effort.",
+    "serviceType": "Business process automation",
+    "categories": ["workflow-automation", "automation"],
+    "keywords": ["workflow", "process-automation", "business-automation", "zapier", "n8n"],
+    "matchOrder": 1,
+    "seo": {
+      "title": "Workflow Automation Services in Chennai | Bhiive",
+      "description": "Business process, CRM, lead follow-up and reporting automation with Zapier, Make, n8n and HubSpot. Bhiive builds systems that remove manual work.",
+      "keywords": "workflow automation services, business process automation Chennai, CRM automation, Zapier expert India, n8n automation, lead management automation"
+    }
+  },
+  {
+    "slug": "marketing-automation",
+    "name": "Marketing Automation",
+    "shortName": "Marketing Automation",
+    "icon": "fa-solid fa-envelope-open-text",
+    "eyebrow": "Nurture leads on autopilot",
+    "h1": "Marketing Automation Services",
+    "menuText": "Lead nurture, email, WhatsApp and CRM journeys.",
+    "summary": "Lead nurture, email and WhatsApp journeys connected to your CRM, so every lead gets the right follow-up at the right time.",
+    "serviceType": "Marketing automation",
+    "categories": ["marketing-automation", "email-marketing"],
+    "keywords": ["automation", "email-marketing", "whatsapp", "crm", "nurture", "drip"],
+    "matchOrder": 2,
+    "seo": {
+      "title": "Marketing Automation Services in Chennai | Bhiive",
+      "description": "Marketing automation for lead nurturing, email, WhatsApp and CRM integration. Bhiive builds HubSpot, Zoho and Salesforce journeys that convert.",
+      "keywords": "marketing automation agency India, HubSpot automation, email automation, WhatsApp marketing automation, lead nurturing, Zoho CRM integration"
+    }
+  }
+]

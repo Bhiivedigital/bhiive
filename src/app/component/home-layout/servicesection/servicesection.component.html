@@ -15,9 +15,9 @@
                             loading="lazy" width="60" height="60">
                         </div>
                         <div class="service-content">
-                            <h3><a [routerLink]="'/services'">{{service.title}}</a></h3>
+                            <h3><a [routerLink]="service.link">{{service.title}}</a></h3>
                              <p> {{ service.description | lineclamp:40:3 }}</p>
-                            <a [routerLink]="'/services'" class="link-btn">More Details
+                            <a [routerLink]="service.link" class="link-btn">More Details
                                 <i class="fa fa-arrow-right"></i>
                             </a>
                         </div>

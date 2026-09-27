@@ -1,0 +1,97 @@
+{
+  "lead": "Your team is spending hours on tasks that shouldn't need a human.",
+  "intro": [
+    "Sending follow-up emails manually. Copying data between tools. Chasing approvals. Updating spreadsheets. These aren't growth activities — they're operational drag, and every hour spent on them is an hour not spent on work that moves the needle.",
+    "At Bhiive, we build custom workflow automation systems that remove the manual work, connect your tools and let your business run without hiring more people to manage the chaos.",
+    "Anyone can set up a Zapier trigger. What we do is map your entire operation, find where time and money are leaking, and build automated systems that plug those gaps for good."
+  ],
+  "highlights": [
+    "Simple workflows live in 2–5 business days",
+    "Works with the tools you already use",
+    "Maintenance plans so automations keep running"
+  ],
+  "sections": [
+    {
+      "type": "text",
+      "id": "why-automate",
+      "heading": "Why your business needs workflow automation",
+      "paragraphs": [
+        "The businesses growing fastest right now aren't working harder. They've built smarter systems.",
+        "Marketing automation, CRM automation, sales pipeline automation, reporting automation — these aren't nice-to-haves any more. AI-powered tools have made automation more accessible than ever, but access without strategy is just noise.",
+        "Most businesses have 5–10 tools in their stack and almost none of them talk to each other properly. Leads fall through the cracks. Tasks get duplicated. Reporting takes hours instead of minutes. Your sales team does data entry when they should be closing.",
+        "Workflow automation fixes this. Not with magic — with systems."
+      ]
+    },
+    {
+      "type": "cards",
+      "id": "services",
+      "heading": "Our workflow automation services",
+      "items": [
+        {
+          "title": "Business process automation",
+          "text": "Most businesses have inefficient processes they've simply accepted as normal. We don't.",
+          "paragraphs": ["We audit your current workflows, map every step and identify where bottlenecks cost you time and money — then rebuild those processes as automated systems that are faster, cleaner and scalable."],
+          "points": ["Workflow mapping and documentation", "Bottleneck identification", "Automation of repetitive internal tasks", "Cross-department coordination", "Architecture that grows with you"]
+        },
+        {
+          "title": "CRM & sales pipeline automation",
+          "text": "Leads are expensive. Losing them to a missed follow-up is unacceptable.",
+          "paragraphs": ["From the moment a lead enters your pipeline, automated sequences handle the nurture — your team steps in when the prospect is ready to buy. We work with HubSpot, Zoho CRM, Salesforce, GoHighLevel and more."],
+          "points": ["Automated lead capture and routing", "Task assignment to the right person", "Timed follow-up sequences", "Deal stage automation", "Pipeline reporting"]
+        },
+        {
+          "title": "Lead management & follow-up",
+          "text": "Speed is conversion. The first business to follow up wins — consistently.",
+          "paragraphs": ["Automated lead management that responds instantly via WhatsApp, email or SMS, from first touch to a booked call."],
+          "points": ["Auto-reply workflows", "Multi-channel follow-ups (WhatsApp + email)", "Lead scoring and segmentation", "Appointment booking automation", "Real-time lead status tracking"]
+        },
+        {
+          "title": "Marketing campaign workflows",
+          "text": "Running campaigns manually is slow, expensive and error-prone.",
+          "paragraphs": ["We connect ad platforms, landing pages, email tools and your CRM into one system, so leads are captured, segmented and nurtured without manual work — and campaign data flows into your dashboards."],
+          "points": ["Google Ads and Meta Ads lead sync", "Email drip automation", "Audience segmentation workflows", "Automated campaign reporting", "Re-engagement for cold leads"]
+        },
+        {
+          "title": "E-commerce workflow automation",
+          "text": "For online stores, automation is the difference between scaling and drowning.",
+          "paragraphs": ["We automate the operational layer — order processing, customer communication, inventory — so your team can focus on growth."],
+          "points": ["Order confirmation and dispatch", "Abandoned cart recovery", "Inventory level alerts", "Payment status automation", "Review request workflows"]
+        },
+        {
+          "title": "Reporting & analytics automation",
+          "text": "If your reporting is still manual, you're always looking at yesterday's data.",
+          "paragraphs": ["We pull data from Google Analytics, Meta Ads, your CRM and email platform into dashboards that update in real time. Weekly and monthly reports go out automatically — no one builds a slide deck."]
+        }
+      ]
+    },
+    {
+      "type": "tags",
+      "id": "tools",
+      "heading": "Tools we work with",
+      "paragraphs": ["If your stack isn't listed, we'll find a way to make it work. We've built custom integrations for businesses with legacy tools that \"can't be automated\"."],
+      "items": ["Zapier", "Make (Integromat)", "Pabbly Connect", "n8n", "HubSpot", "Zoho", "Salesforce", "GoHighLevel", "Notion", "ClickUp", "Airtable", "Google Workspace", "Slack", "WhatsApp Business API"]
+    },
+    {
+      "type": "text",
+      "id": "why-bhiive",
+      "heading": "Why Bhiive",
+      "paragraphs": [
+        "We're a Chennai-based digital marketing and automation agency working with B2B businesses across India.",
+        "We don't sell automation as a product. We build it as a system — mapped to your business goals, designed to reduce operational friction and maintained so it keeps running.",
+        "Our clients don't just save time. They scale without growing headcount at the same rate. That's the point."
+      ]
+    }
+  ],
+  "faqs": [
+    { "q": "Which tools do you use for workflow automation?", "a": "Zapier, Make, Pabbly Connect, n8n, HubSpot, Zoho, Salesforce, GoHighLevel, Notion, ClickUp, Airtable, Google Workspace, Slack and the WhatsApp Business API. If you use something not on this list, ask us — we've likely worked with it." },
+    { "q": "How long does it take to automate a workflow?", "a": "Simple workflows take 2–5 business days. Multi-tool, multi-step automation systems take 1–3 weeks. We scope every project before starting, so you'll know exactly what to expect." },
+    { "q": "Do you offer ongoing support after setup?", "a": "Yes. We offer maintenance and optimisation plans so your automations keep running and improve as your business evolves." },
+    { "q": "Can automation work for small businesses?", "a": "Absolutely. Small teams benefit most because every hour saved has an outsized impact. You don't need a large operation to justify automation — you need inefficient processes, and most small businesses have plenty." },
+    { "q": "Is workflow automation safe for sensitive business data?", "a": "Yes. We follow data-handling best practices and work within the security protocols of each tool, and we discuss your data privacy requirements before any build begins." }
+  ],
+  "related": ["marketing-automation", "digital-marketing", "web-development"],
+  "cta": {
+    "heading": "Stop doing manually what a system can do",
+    "text": "Walk us through one process that eats your team's week. We'll show you how it could run on its own — and what it would take to build."
+  }
+}

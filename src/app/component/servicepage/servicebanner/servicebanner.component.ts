@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
 import { BannerConfig, BannerMap } from '../../shared/banner-config';
@@ -12,6 +12,11 @@ import { CommonModule } from '@angular/common';
   styleUrl: './servicebanner.component.scss'
 })
 export class ServicebannerComponent {
+
+  /** Overrides the URL-based name (service pages whose names come from the CMS). */
+  @Input() title = '';
+  /** The banner title is the page's single <h1>; article pages pass false (their title is the <h1>). */
+  @Input() h1 = true;
 
   bannerImage: string = '';
   pageName: string = '';
@@ -78,6 +83,11 @@ export class ServicebannerComponent {
       this.bannerImage = '../../../../assets/img/breadcrumb.jpg';
       this.breadcrumbName = 'Contact Us';
     } 
+    else if (url.includes('articles')) {
+      this.pageName = 'Articles';
+      this.bannerImage = '../../../../assets/img/breadcrumb.jpg';
+      this.breadcrumbName = 'Articles';
+    }
     else if (url.includes('blog')) {
       this.pageName = 'Blogs and News';
       this.bannerImage = '../../../../assets/img/breadcrumb.jpg';
